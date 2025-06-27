@@ -41,7 +41,7 @@ const Index = () => {
             </div>
             <div className="col-lg-5">
               <div className="hero-right-images text-lg-right wow fadeInUp delay-0-2s">
-                <img src="assets/images/truck.png" alt="Hero" />
+                <img src="assets/images/hero3.png" alt="Hero" />
               </div>
             </div>
           </div>
