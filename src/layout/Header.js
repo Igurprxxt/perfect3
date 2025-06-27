@@ -41,7 +41,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       alt="Logo"
                       title="Logo"
                       style={{
-                        maxWidth: 100,
+                        maxWidth: 120,
                       }}
                     />
                   </Link>
