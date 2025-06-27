@@ -36,13 +36,14 @@ const Header1 = ({ navToggle, setNavToggle }) => (
               <div className="logo-outer d-lg-flex align-items-center">
                 <div className="logo">
                   <Link legacyBehavior href="/">
-                    <a>
-                      <img
-                        src="assets/images/logos/logo.png"
-                        alt="Logo"
-                        title="Logo"
-                      />
-                    </a>
+                    <img
+                      src="assets/images/logos/logo.png"
+                      alt="Logo"
+                      title="Logo"
+                      style={{
+                        maxWidth: 100,
+                      }}
+                    />
                   </Link>
                 </div>
               </div>
@@ -52,13 +53,11 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                   <div className="navbar-header">
                     <div className="mobile-logo  br-10 p-15">
                       <Link legacyBehavior href="/">
-                        <a>
-                          <img
-                            src="assets/images/logos/logo.png"
-                            alt="Logo"
-                            title="Logo"
-                          />
-                        </a>
+                        <img
+                          src="assets/images/logos/logo.png"
+                          alt="Logo"
+                          title="Logo"
+                        />
                       </Link>
                     </div>
                     {/* Toggle Button */}
