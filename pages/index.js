@@ -254,14 +254,14 @@ const Index = () => {
             <div className="col-lg-8 text-center">
               <h2 className="section-title">Choose Your Training Package</h2>{" "}
               <p>
-                Whether you're just getting started or aiming for a career in
-                trucking, we have the right CDL training package for you.
+                Whether you&apos;re just getting started or aiming for a career
+                in trucking, we have the right CDL training package for you.
               </p>{" "}
             </div>{" "}
           </div>{" "}
           <div className="row justify-content-center">
             {trainingPackages.map((pkg, i) => (
-              <div className="col-lg-4 col-md-6">
+              <div className="col-lg-4 col-md-6" key={i}>
                 <div className="package-item border border-white text-blue p-4 rounded-lg shadow-md mb-4">
                   <h4 className="text-lg font-semibold mb-3">{pkg?.title}</h4>
                   <ul className="space-y-2 mb-4">

@@ -511,6 +511,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                 <a
                   href="https://www.instagram.com/perfect_plus_cdl_school?igsh=ZXd0dGVjNHlrcmFh"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-instagram" />
                 </a>
@@ -519,12 +520,17 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                 <a
                   href="https://www.facebook.com/share/18fv6icuto/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-facebook-f" />
                 </a>
               </Link>
               <Link target="_blank" legacyBehavior href="">
-                <a href="https://g.co/kgs/ecLPxQ1" target="_blank">
+                <a
+                  href="https://g.co/kgs/ecLPxQ1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fab fa-google" />
                 </a>
               </Link>
