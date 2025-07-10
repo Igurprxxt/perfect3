@@ -472,44 +472,71 @@ const Index = () => {
             <h2>Membership Plans</h2>
           </div>
           <div className="row justify-content-center">
-            {trainingPackages.map((pkg, i) => (
-              <div className="col-lg-4 col-md-6">
-                <div className="package-item border border-white text-blue p-4 rounded-lg shadow-md mb-4">
-                  <h4 className="text-lg font-semibold mb-3">{pkg?.title}</h4>
-                  <ul className="space-y-2 mb-4">
-                    {pkg?.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 10,
-                        }}
-                      >
-                        <Check className="w-4 h-4 text-green-500" />
-                        <span>{feature.label}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <h5 className="text-xl font-bold mb-3">{pkg.price}</h5>
-                  <button className="bg-blue text-white border border-white px-4 py-2 rounded">
-                    Enroll Now
-                  </button>
+            <div className="col-xl-4 col-md-6">
+              <div className="pricin-item wow fadeInUp delay-0-2s">
+                <span className="popularity">popular</span>
+                <div className="icon">
+                  <img src="assets/images/pricing/icon1.png" alt="Icon" />
                 </div>
+                <h4>Free Membership</h4>
+                <ul className="list-style-two">
+                  <li>Free Course Include</li>
+                  <li>Part Time Instructors</li>
+                  <li>Free Videos Course</li>
+                  <li>Free Access 1 Month (Videos)</li>
+                </ul>
+                <span className="price">0</span>
+                <Link legacyBehavior href="/pricing">
+                  <a className="theme-btn style-two">
+                    Choose plan <i className="fas fa-arrow-right" />
+                  </a>
+                </Link>
               </div>
-            ))}
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div className="pricin-item wow fadeInUp delay-0-4s">
+                <span className="popularity">popular</span>
+                <div className="icon">
+                  <img src="assets/images/pricing/icon2.png" alt="Icon" />
+                </div>
+                <h4>Basic Membership</h4>
+                <ul className="list-style-two">
+                  <li>Pro Course Include : 07</li>
+                  <li>Full Time Experts Instructors</li>
+                  <li>Premium Videos Course</li>
+                  <li>Pro Access 6 Month (Videos)</li>
+                </ul>
+                <span className="price">39</span>
+                <Link legacyBehavior href="/pricing">
+                  <a className="theme-btn style-two">
+                    Choose plan <i className="fas fa-arrow-right" />
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div className="pricin-item wow fadeInUp delay-0-6s">
+                <span className="popularity">popular</span>
+                <div className="icon">
+                  <img src="assets/images/pricing/icon3.png" alt="Icon" />
+                </div>
+                <h4>Advance Membership</h4>
+                <ul className="list-style-two">
+                  <li>Pro Course Include : 15</li>
+                  <li>Full Time Experts Instructors</li>
+                  <li>Premium Videos Course</li>
+                  <li>Pro Access 12 Month (Videos)</li>
+                </ul>
+                <span className="price">98</span>
+                <Link legacyBehavior href="/pricing">
+                  <a className="theme-btn style-two">
+                    Choose plan <i className="fas fa-arrow-right" />
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-        <img
-          className="rectangle-dots"
-          src="assets/images/shapes/rectangle-dots.png"
-          alt="Shape"
-        />
-        <img
-          className="circle-dots"
-          src="assets/images/shapes/circle-dots.png"
-          alt="Shape"
-        />
       </section>
       {/* Features Section End */}
       {/* About Section Start */}
