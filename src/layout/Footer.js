@@ -20,24 +20,22 @@ const Footer = ({ footer }) => {
 export default Footer;
 const FollowIcon = () => (
     <Fragment>
-      <Link legacyBehavior href="/contact">
+      <Link legacyBehavior href="https://www.facebook.com/share/18fv6icuto/">
         <a>
           <i className="fab fa-facebook-f" />
         </a>
       </Link>
-      <Link legacyBehavior href="/contact">
+      <Link
+        legacyBehavior
+        href="https://www.instagram.com/perfect_plus_cdl_school?igsh=ZXd0dGVjNHlrcmFh"
+      >
         <a>
-          <i className="fab fa-twitter" />
+          <i className="fab fa-instagram" />
         </a>
       </Link>
-      <Link legacyBehavior href="/contact">
+      <Link legacyBehavior href="https://g.co/kgs/ecLPxQ1">
         <a>
-          <i className="fab fa-linkedin-in" />
-        </a>
-      </Link>
-      <Link legacyBehavior href="/contact">
-        <a>
-          <i className="fab fa-youtube" />
+          <i className="fab fa-google" />
         </a>
       </Link>
     </Fragment>
@@ -112,7 +110,7 @@ const FollowIcon = () => (
   ),
   FooterBottom = () => (
     <Fragment>
-      <li>
+      {/* <li>
         <Link legacyBehavior href="/faqs">
           Faqs
         </Link>
@@ -131,14 +129,14 @@ const FollowIcon = () => (
         <Link legacyBehavior href="/contact">
           Payments
         </Link>
-      </li>
+      </li> */}
     </Fragment>
   ),
   CopyRight = () => (
     <p>
       © {new Date().getFullYear()}.{" "}
       <Link legacyBehavior href="/">
-        Wellern
+        PERFECT PLUS
       </Link>{" "}
       All rights reserved.
     </p>
@@ -184,8 +182,8 @@ const FollowIcon = () => (
                   <h5 className="footer-title">Get In Touch</h5>
                   <ul>
                     <li>
-                      <i className="fas fa-map-marker-alt" /> 55 Main Street,
-                      2nd Block, New York
+                      <i className="fas fa-map-marker-alt" /> 532 Houston St,
+                      West Sacramento, CA 95691, United States
                     </li>
                     <li>
                       <i className="far fa-envelope" />{" "}
@@ -193,11 +191,11 @@ const FollowIcon = () => (
                     </li>
                     <li>
                       <i className="fas fa-phone" />{" "}
-                      <a href="callto:+0123456789">+012 (345) 67 89</a>
+                      <a href="callto:+0123456789">+1 916-595-9200</a>
                     </li>
                     <li>
-                      <i className="far fa-clock" /> Sunday - Friday,
-                      <br /> 08 am - 05 pm
+                      <i className="far fa-clock" /> Sunday - Saturday,
+                      <br /> 08 am - 06 pm
                     </li>
                   </ul>
                 </div>
@@ -286,8 +284,8 @@ const FollowIcon = () => (
                   <h5 className="footer-title">Get In Touch</h5>
                   <ul>
                     <li>
-                      <i className="fas fa-map-marker-alt" /> 55 Main Street,
-                      2nd Block, New York
+                      <i className="fas fa-map-marker-alt" /> 532 Houston St,
+                      West Sacramento, CA 95691, United States
                     </li>
                     <li>
                       <i className="far fa-envelope" />{" "}
@@ -295,26 +293,20 @@ const FollowIcon = () => (
                     </li>
                     <li>
                       <i className="fas fa-phone" />{" "}
-                      <a href="callto:+0123456789">+012 (345) 67 89</a>
+                      <a href="callto:+0123456789">+1 916-595-9200</a>
                     </li>
                     <li>
                       <i className="far fa-clock" /> Sunday - Friday,
-                      <br /> 08 am - 05 pm
+                      <br /> 08 am - 06 pm
                     </li>
                   </ul>
                 </div>
               </div>
               <div className="col-sm-6">
-                <div className="footer-widget video-widget">
+                <div className=" ">
                   <p>Quis autem vel eum iure repre enderit voluptate</p>
-                  <div className="video-widget overlay my-20">
-                    <img src="assets/images/footer/video.jpg" alt="Video" />
-                    <a
-                      href="https://www.youtube.com/watch?v=9Y7ma241N8k"
-                      className="mfp-iframe video-play"
-                    >
-                      <i className="fas fa-play" />
-                    </a>
+                  <div className="my-2">
+                    <img src="assets/images/hero3.png" alt="Video" />
                   </div>
                   <Link legacyBehavior href="/about">
                     <a className="read-more">
