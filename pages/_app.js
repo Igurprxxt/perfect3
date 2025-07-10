@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
         {/*====== Favicon Icon ======*/}
         <link
           rel="shortcut icon"
-          href="assets/images/favicon.png"
+          href="assets/images/logos/logo.png"
           type="image/x-icon"
         />
         {/*====== Google Fonts ======*/}
