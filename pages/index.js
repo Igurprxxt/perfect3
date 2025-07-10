@@ -10,6 +10,11 @@ import { Check } from "lucide-react";
 import z from "zod";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import priceIcon_1 from "../public/assets/images/icon/6.webp";
+import priceIcon_2 from "../public/assets/images/icon/7.webp";
+import priceIcon_3 from "../public/assets/images/icon/8.webp";
+import Image from "next/image";
+import PricingPlan from "./pricing";
 
 const Index1Isotope = dynamic(
   () => import("../src/components/isotope/Index1Isotope"),
@@ -51,6 +56,195 @@ const trainingPackages = [
   },
 ];
 
+const pricing_data = [
+  {
+    id: 1,
+    page: "home_1",
+    plan: "Basic plan",
+    price: 12,
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration", class_name: "close" },
+      { list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+  {
+    id: 2,
+    page: "home_1",
+    plan: "Gold plan",
+    price: 59,
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration", class_name: "close" },
+      { list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+  {
+    id: 3,
+    page: "home_1",
+    plan: "Platinum plan",
+    price: 59,
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration", class_name: "close" },
+      { list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+
+  // home_2
+
+  {
+    id: 1,
+    page: "home_2",
+    plan: "Basic plan",
+    price: 12,
+    pricing_list: [
+      { icon: "fa fa-check", list: "30 Days Trial Features" },
+      { icon: "fa fa-check", list: "Synced To Cloud Database" },
+      { icon: "fa fa-check", list: "10 Hours Of Support" },
+      {
+        icon: "fa fa-times",
+        list: "Social Media Integration",
+        class_name: "close",
+      },
+      { icon: "fa fa-times", list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+  {
+    id: 2,
+    page: "home_2",
+    plan: "Gold plan",
+    price: 59,
+    pricing_list: [
+      { icon: "fa fa-check", list: "30 Days Trial Features" },
+      { icon: "fa fa-check", list: "Synced To Cloud Database" },
+      { icon: "fa fa-check", list: "10 Hours Of Support" },
+      {
+        icon: "fa fa-times",
+        list: "Social Media Integration",
+        class_name: "close",
+      },
+      { icon: "fa fa-times", list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+  {
+    id: 3,
+    page: "home_2",
+    plan: "Platinum plan",
+    price: 59,
+    pricing_list: [
+      { icon: "fa fa-check", list: "30 Days Trial Features" },
+      { icon: "fa fa-check", list: "Synced To Cloud Database" },
+      { icon: "fa fa-check", list: "10 Hours Of Support" },
+      {
+        icon: "fa fa-times",
+        list: "Social Media Integration",
+        class_name: "close",
+      },
+      { icon: "fa fa-times", list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+
+  // home_3
+
+  {
+    id: 1,
+    page: "home_3",
+    price_icon: "icomoon-save-money",
+    plan: "Basic plan",
+    price: 12,
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration", class_name: "close" },
+      { list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+  {
+    id: 2,
+    page: "home_3",
+    price_icon: "icomoon-money",
+    plan: "Gold plan",
+    price: 59,
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration", class_name: "close" },
+      { list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+  {
+    id: 3,
+    page: "home_3",
+    price_icon: "icomoon-solution",
+    plan: "Platinum plan",
+    price: 59,
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration", class_name: "close" },
+      { list: "Unlimited Features", class_name: "close" },
+    ],
+  },
+
+  // home_5
+
+  {
+    id: 1,
+    page: "home_5",
+    price_icon_img: priceIcon_1,
+    plan: "Basic Plan",
+    price: 19,
+    sub_price: ".50$",
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration" },
+      { list: "Unlimited Features" },
+    ],
+  },
+  {
+    id: 2,
+    page: "home_5",
+    price_icon_img: priceIcon_2,
+    plan: "Standard Plan",
+    price: 56,
+    sub_price: ".00$",
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration" },
+      { list: "Unlimited Features" },
+    ],
+  },
+  {
+    id: 3,
+    page: "home_5",
+    price_icon_img: priceIcon_3,
+    plan: "Premium Plan",
+    price: 56,
+    sub_price: ".50$",
+    pricing_list: [
+      { list: "30 Days Trial Features" },
+      { list: "Synced To Cloud Database" },
+      { list: "10 Hours Of Support" },
+      { list: "Social Media Integration" },
+      { list: "Unlimited Features" },
+    ],
+  },
+];
+
 const schema = z.object({
   name: z.string().optional(),
   email: z.string().optional(),
@@ -88,15 +282,37 @@ const Index = () => {
   };
   return (
     <Layout header={1} footer={1}>
-      <section className="hero-section rel z-1 pt-150 rpt-135 pb-75 rpb-100">
-        <div className="container">
+      <section
+        className="position-relative text-white"
+        style={{
+          backgroundImage: `url('/assets/images/banner.jpeg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          minHeight: "100vh", // ensure full height
+        }}
+      >
+        {/* Blue Overlay */}
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            zIndex: 1,
+          }}
+        ></div>
+
+        {/* Content */}
+        <div
+          className="container position-relative"
+          style={{ zIndex: 2, paddingTop: 150, paddingBottom: 75 }}
+        >
           <div className="row align-items-center">
             <div className="col-lg-7">
               <div className="hero-content rpt-25 rmb-75">
                 <span className="sub-title style-two mb-20 wow fadeInUp delay-0-2s">
                   Driving School
                 </span>
-                <h1 className="mb-20 wow fadeInUp delay-0-4s">
+                <h1 className="mb-20 wow fadeInUp delay-0-4s text-blue ">
                   Looking for a driving school?
                 </h1>
                 <p className="wow fadeInUp delay-0-6s">
@@ -114,7 +330,9 @@ const Index = () => {
             <div className="col-lg-5">
               <div className="hero-right-images  wow fadeInUp delay-0-2s">
                 <div className="bg-white p-4 rounded shadow-sm">
-                  <h5 className="mb-3 text-center">Contact Us</h5>
+                  <h5 className="mb-3 text-center " style={{ color: "black" }}>
+                    Contact Us
+                  </h5>
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-2">
                       <label className="form-label mb-1">Full Name</label>
@@ -247,66 +465,92 @@ const Index = () => {
       </section>
       {/* Hero Section End */}
       {/* Features Section Start done */}
-      <section className="features-section rel z-1 pt-80 pb-40 bg-blue text-white">
+      <section className="pricing-section bg-lighter rel z-2 pt-120 rpt-90 pb-100 rpb-70">
         <div className="container">
-          <div className="row justify-content-center mb-40">
-            {" "}
-            <div className="col-lg-8 text-center">
-              <h2 className="section-title">Choose Your Training Package</h2>{" "}
-              <p>
-                Whether you're just getting started or aiming for a career in
-                trucking, we have the right CDL training package for you.
-              </p>{" "}
-            </div>{" "}
-          </div>{" "}
+          <div className="section-title text-center mb-50">
+            <span className="sub-title-two">Pricing Package</span>
+            <h2>Membership Plans</h2>
+          </div>
           <div className="row justify-content-center">
-            {trainingPackages.map((pkg, i) => (
-              <div className="col-lg-4 col-md-6">
-                <div className="package-item border border-white text-blue p-4 rounded-lg shadow-md mb-4">
-                  <h4 className="text-lg font-semibold mb-3">{pkg?.title}</h4>
-                  <ul className="space-y-2 mb-4">
-                    {pkg?.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 10,
-                        }}
-                      >
-                        <Check className="w-4 h-4 text-green-500" />
-                        <span>{feature.label}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <h5 className="text-xl font-bold mb-3">{pkg.price}</h5>
-                  <button className="bg-blue text-white border border-white px-4 py-2 rounded">
-                    Enroll Now
-                  </button>
+            <div className="col-xl-4 col-md-6">
+              <div className="pricin-item wow fadeInUp delay-0-2s">
+                <span className="popularity">popular</span>
+                <div className="icon">
+                  <img src="assets/images/pricing/icon1.png" alt="Icon" />
                 </div>
+                <h4>Free Membership</h4>
+                <ul className="list-style-two">
+                  <li>Free Course Include</li>
+                  <li>Part Time Instructors</li>
+                  <li>Free Videos Course</li>
+                  <li>Free Access 1 Month (Videos)</li>
+                </ul>
+                <span className="price">0</span>
+                <Link legacyBehavior href="/pricing">
+                  <a className="theme-btn style-two">
+                    Choose plan <i className="fas fa-arrow-right" />
+                  </a>
+                </Link>
               </div>
-            ))}
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div className="pricin-item wow fadeInUp delay-0-4s">
+                <span className="popularity">popular</span>
+                <div className="icon">
+                  <img src="assets/images/pricing/icon2.png" alt="Icon" />
+                </div>
+                <h4>Basic Membership</h4>
+                <ul className="list-style-two">
+                  <li>Pro Course Include : 07</li>
+                  <li>Full Time Experts Instructors</li>
+                  <li>Premium Videos Course</li>
+                  <li>Pro Access 6 Month (Videos)</li>
+                </ul>
+                <span className="price">39</span>
+                <Link legacyBehavior href="/pricing">
+                  <a className="theme-btn style-two">
+                    Choose plan <i className="fas fa-arrow-right" />
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-6">
+              <div className="pricin-item wow fadeInUp delay-0-6s">
+                <span className="popularity">popular</span>
+                <div className="icon">
+                  <img src="assets/images/pricing/icon3.png" alt="Icon" />
+                </div>
+                <h4>Advance Membership</h4>
+                <ul className="list-style-two">
+                  <li>Pro Course Include : 15</li>
+                  <li>Full Time Experts Instructors</li>
+                  <li>Premium Videos Course</li>
+                  <li>Pro Access 12 Month (Videos)</li>
+                </ul>
+                <span className="price">98</span>
+                <Link legacyBehavior href="/pricing">
+                  <a className="theme-btn style-two">
+                    Choose plan <i className="fas fa-arrow-right" />
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-        <img
-          className="rectangle-dots"
-          src="assets/images/shapes/rectangle-dots.png"
-          alt="Shape"
-        />
-        <img
-          className="circle-dots"
-          src="assets/images/shapes/circle-dots.png"
-          alt="Shape"
-        />
       </section>
       {/* Features Section End */}
       {/* About Section Start */}
       <section className="about-section pt-130 rpt-100">
         <div className="container">
           <div className="row">
-            <div className="col-lg-5 align-self-center">
+            <div className="col-lg-5 align-self-start">
               <div className="  wow fadeInLeft delay-0-2s">
-                <img src="assets/images/truck.png" alt="Hero" />
+                <img
+                  src="/assets/images/about2.jpeg"
+                  alt="Hero"
+                  height={550}
+                  style={{ objectFit: "cover" }}
+                />
               </div>
             </div>
             <div className="col-lg-7">
