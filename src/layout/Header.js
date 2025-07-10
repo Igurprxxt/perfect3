@@ -85,29 +85,29 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                 {/* Main Menu End*/}
               </div>
               {/* Menu Button */}
-              <div className="menu-btn-sidebar d-flex align-items-center">
-                <form onSubmit={(e) => e.preventDefault()} action="#">
-                  {/* <input type="search" placeholder="Search" required="" />
+              {/* <div className="menu-btn-sidebar d-flex align-items-center">
+                <form onSubmit={(e) => e.preventDefault()} action="#"> */}
+              {/* <input type="search" placeholder="Search" required="" />
                   <button>
                     <i className="fas fa-search" />
                   </button> */}
-                </form>
-                {/* <button className="cart">
+              {/* </form> */}
+              {/* <button className="cart">
                   <i className="fas fa-shopping-bag" />
                 </button>
                 <button>
                   <i className="far fa-user-circle" />
                 </button> */}
-                {/* menu sidbar */}
-                <div className="menu-sidebar" onClick={() => sidebarOnclick()}>
+              {/* menu sidbar */}
+              {/* <div className="menu-sidebar" onClick={() => sidebarOnclick()}>
                   <button>
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                   </button>
-                </div>
-              </div>
+                </div> */}
             </div>
+            {/* </div> */}
           </div>
         </div>
 
@@ -153,7 +153,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       </Link>
                     </div>
                     {/* Toggle Button */}
-                    <button
+                    {/* <button
                       type="button"
                       className="navbar-toggle"
                       data-toggle="collapse"
@@ -162,7 +162,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       <span className="icon-bar" />
                       <span className="icon-bar" />
                       <span className="icon-bar" />
-                    </button>
+                    </button> */}
                   </div>
                   <div
                     className={`navbar-collapse collapse clearfix ${
@@ -177,7 +177,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
               </div>
               {/* Menu Button */}
               <div className="menu-btn-sidebar d-flex align-items-center">
-                <div className="nav-search">
+                {/* <div className="nav-search">
                   <button className="fa fa-search" />
                   <form
                     onSubmit={(e) => e.preventDefault()}
@@ -195,20 +195,20 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       className="searchbutton fa fa-search"
                     />
                   </form>
-                </div>
-                <button className="cart">
+                </div> */}
+                {/* <button className="cart">
                   <i className="fas fa-shopping-bag" />
-                </button>
-                <button>
+                </button> */}
+                {/* <button>
                   <i className="far fa-user-circle" />
-                </button>
+                </button> */}
                 {/* menu sidbar */}
                 <div className="menu-sidebar" onClick={() => sidebarOnclick()}>
-                  <button>
+                  {/* <button>
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                     <span className="icon-bar" />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -297,7 +297,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                     </Link>
                   </div>
                   {/* Toggle Button */}
-                  <button
+                  {/* <button
                     type="button"
                     className="navbar-toggle"
                     data-toggle="collapse"
@@ -307,7 +307,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                     <span className="icon-bar" />
-                  </button>
+                  </button> */}
                 </div>
                 <div
                   className={`navbar-collapse collapse clearfix ${
@@ -321,7 +321,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
               {/* Main Menu End*/}
             </div>
             {/* Menu Button */}
-            <div className="menu-btns d-lg-flex d-none align-items-center">
+            {/* <div className="menu-btns d-lg-flex d-none align-items-center">
               <div className="nice-select">
                 <span className="">English</span>
                 <ul className="list">
@@ -342,7 +342,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                   Register <i className="fas fa-arrow-right" />
                 </a>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -370,12 +370,12 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                     </a>
                   </Link>
                 </div>
-                <select name="select-languages" id="select-languages">
+                {/* <select name="select-languages" id="select-languages">
                   <option value="English">Eng</option>
                   <option value="Spanish">Spa</option>
                   <option value="Chinese">Chi</option>
                   <option value="Arabic">Ara</option>
-                </select>
+                </select> */}
               </div>
               <div className="nav-outer clearfix">
                 {/* Main Menu */}
@@ -393,7 +393,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       </Link>
                     </div>
                     {/* Toggle Button */}
-                    <button
+                    {/* <button
                       type="button"
                       className="navbar-toggle"
                       data-toggle="collapse"
@@ -403,7 +403,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       <span className="icon-bar" />
                       <span className="icon-bar" />
                       <span className="icon-bar" />
-                    </button>
+                    </button> */}
                   </div>
                   <div
                     className={`navbar-collapse collapse clearfix ${
@@ -418,12 +418,12 @@ const Header1 = ({ navToggle, setNavToggle }) => (
               </div>
               {/* Menu Button */}
               <div className="menu-btn-sidebar d-flex align-items-center">
-                <form onSubmit={(e) => e.preventDefault()} action="#">
+                {/* <form onSubmit={(e) => e.preventDefault()} action="#">
                   <input type="search" placeholder="Search" required="" />
                   <button>
                     <i className="fas fa-search" />
                   </button>
-                </form>
+                </form> */}
                 {/* <button className="cart">
                   <i className="fas fa-shopping-bag" />
                 </button>
@@ -431,13 +431,13 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                   <i className="far fa-user-circle" />
                 </button> */}
                 {/* menu sidbar */}
-                <div className="menu-sidebar" onClick={() => sidebarOnclick()}>
+                {/* <div className="menu-sidebar" onClick={() => sidebarOnclick()}>
                   <button>
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -502,46 +502,33 @@ const Header1 = ({ navToggle, setNavToggle }) => (
               Friday, 08am - 05pm
             </p>
           </div>
-          <div className="top-right d-flex align-items-center">
+          <div
+            className="top-center d-flex align-items-center"
+            style={{ marginRight: 120 }}
+          >
             <div className="social-style-two">
-              <Link legacyBehavior href="/contact">
-                <a>
-                  <i className="fab fa-twitter" />
-                </a>
-              </Link>
-              <Link legacyBehavior href="/contact">
-                <a>
-                  <i className="fab fa-facebook-f" />
-                </a>
-              </Link>
-              <Link legacyBehavior href="/contact">
-                <a>
+              <Link legacyBehavior target="_blank" href="">
+                <a
+                  href="https://www.instagram.com/perfect_plus_cdl_school?igsh=ZXd0dGVjNHlrcmFh"
+                  target="_blank"
+                >
                   <i className="fab fa-instagram" />
                 </a>
               </Link>
-              <Link legacyBehavior href="/contact">
-                <a>
-                  <i className="fab fa-pinterest-p" />
+              <Link href={""} target="_blank" legacyBehavior>
+                <a
+                  href="https://www.facebook.com/share/18fv6icuto/"
+                  target="_blank"
+                >
+                  <i className="fab fa-facebook-f" />
+                </a>
+              </Link>
+              <Link target="_blank" legacyBehavior href="">
+                <a href="https://g.co/kgs/ecLPxQ1" target="_blank">
+                  <i className="fab fa-google" />
                 </a>
               </Link>
             </div>
-            <ul className="top-menu">
-              <li>
-                <Link legacyBehavior href="/about">
-                  <a>Setting &amp; Privacy</a>
-                </Link>
-              </li>
-              <li>
-                <Link legacyBehavior href="/faqs">
-                  <a>Faqs</a>
-                </Link>
-              </li>
-              <li>
-                <Link legacyBehavior href="/about">
-                  <a>About</a>
-                </Link>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

@@ -1,10 +1,15 @@
 import Link from "next/link";
 import Layout from "../src/layout/Layout";
 
+const NoSSRSelect = dynamic(() => import("react-select"), { ssr: false });
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
 import Index1WorkStepSlider from "../src/components/slider/Index1WorkStepSlider";
 import { index1EventWrap, index1Testimonial } from "../src/sliderProps";
+import { Check } from "lucide-react";
+import z from "zod";
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const Index1Isotope = dynamic(
   () => import("../src/components/isotope/Index1Isotope"),
@@ -13,7 +18,74 @@ const Index1Isotope = dynamic(
   }
 );
 
+const trainingPackages = [
+  {
+    title: "Starter CDL Program",
+    price: "$1,499",
+    features: [
+      { label: "3 Weeks Duration", icon: "Check" },
+      { label: "Classroom + Range Training", icon: "Check" },
+      { label: "CDL Permit Assistance", icon: "Check" },
+      { label: "Basic Vehicle Inspection", icon: "Check" },
+    ],
+  },
+  {
+    title: "Professional CDL Program",
+    price: "$2,799",
+    features: [
+      { label: "6 Weeks Duration", icon: "Check" },
+      { label: "CDL-A License Training", icon: "Check" },
+      { label: "Highway Driving Practice", icon: "Check" },
+      { label: "Resume & Interview Coaching", icon: "Check" },
+    ],
+  },
+  {
+    title: "Elite Career Package",
+    price: "$4,499",
+    features: [
+      { label: "8 Weeks Duration", icon: "Check" },
+      { label: "Extra Road Hours + 1-on-1 Coaching", icon: "Check" },
+      { label: "Guaranteed Job Placement", icon: "Check" },
+      { label: "Housing Assistance Available", icon: "Check" },
+    ],
+  },
+];
+
+const schema = z.object({
+  name: z.string().optional(),
+  email: z.string().optional(),
+  phone: z.string().min(10, "Enter a valid phone number"),
+  inquiry: z.string().optional(),
+  message: z.string().optional(),
+});
+
+const inquiryOptions = [
+  { value: "cdl", label: "CDL Training" },
+  { value: "pricing", label: "Pricing" },
+  { value: "schedule", label: "Class Schedule" },
+  { value: "other", label: "Other" },
+];
+
 const Index = () => {
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      inquiry: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+  };
   return (
     <Layout header={1} footer={1}>
       <section className="hero-section rel z-1 pt-150 rpt-135 pb-75 rpb-100">
@@ -40,8 +112,133 @@ const Index = () => {
               </div>
             </div>
             <div className="col-lg-5">
-              <div className="hero-right-images text-lg-right wow fadeInUp delay-0-2s">
-                <img src="assets/images/hero3.png" alt="Hero" />
+              <div className="hero-right-images  wow fadeInUp delay-0-2s">
+                <div className="bg-white p-4 rounded shadow-sm">
+                  <h5 className="mb-3 text-center">Contact Us</h5>
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="mb-2">
+                      <label className="form-label mb-1">Full Name</label>
+                      <input
+                        type="text"
+                        placeholder="Enter name"
+                        style={{ height: 40, fontSize: "14px" }}
+                        className="form-control form-control-sm"
+                        {...register("name")}
+                      />
+                    </div>
+                    <div className="mb-2">
+                      <label className="form-label mb-1">Email</label>
+                      <input
+                        type="email"
+                        placeholder="Enter email"
+                        style={{ height: 40, fontSize: "14px" }}
+                        className="form-control form-control-sm"
+                        {...register("email")}
+                      />
+                    </div>
+                    <div className="mb-2">
+                      <label className="form-label mb-1">Phone Number</label>
+                      <input
+                        type="tel"
+                        placeholder="Enter phone number"
+                        style={{ height: 40, fontSize: "14px" }}
+                        className={`form-control form-control-sm ${
+                          errors.phone ? "is-invalid" : ""
+                        }`}
+                        {...register("phone")}
+                      />
+                      {errors.phone && (
+                        <div className="invalid-feedback">
+                          {errors.phone.message}
+                        </div>
+                      )}
+                    </div>
+                    <div className="mb-2">
+                      <label className="form-label mb-1">Inquiry About</label>
+                      <Controller
+                        control={control}
+                        name="inquiry"
+                        render={({ field }) => (
+                          <NoSSRSelect
+                            {...field}
+                            options={inquiryOptions}
+                            placeholder="Select a topic"
+                            styles={{
+                              control: (base, state) => ({
+                                ...base,
+
+                                backgroundColor: state.isFocused
+                                  ? "#ffffff"
+                                  : "#f7f7f7",
+                                border: state.isFocused
+                                  ? "1px solid #0d6efd"
+                                  : "1px solid #f7f7f7",
+                                boxShadow: "none",
+                                minHeight: 40,
+                                fontSize: 13,
+                                cursor: "pointer",
+                                transition: "all 0.2s ease-in-out",
+                              }),
+                              singleValue: (base) => ({
+                                ...base,
+                                color: "#333",
+                              }),
+                              placeholder: (base) => ({
+                                ...base,
+                                color: "#262d3d",
+                                fontSize: "14px",
+                                marginLeft: 20,
+                                fontWeight: 700,
+                              }),
+                              option: (base, state) => ({
+                                ...base,
+                                backgroundColor: state.isFocused
+                                  ? "#ffffff"
+                                  : "#f7f7f7",
+                                color: "#0d6efd", // Bootstrap blue
+                                cursor: "pointer",
+                                fontSize: 13,
+                              }),
+                              menu: (base) => ({
+                                ...base,
+                                backgroundColor: "#f7f7f7",
+                                border: "1px solid #ccc ",
+                                zIndex: 10,
+                              }),
+                              valueContainer: (base) => ({
+                                ...base,
+                                paddingTop: 4,
+                                paddingBottom: 4,
+                                paddingLeft: 8,
+                              }),
+                              indicatorsContainer: (base) => ({
+                                ...base,
+                                paddingRight: 6,
+                              }),
+                            }}
+                          />
+                        )}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="form-label mb-1">Message</label>
+                      <textarea
+                        rows={2}
+                        style={{ fontSize: "14px" }}
+                        placeholder="Enter message"
+                        className="form-control form-control-sm"
+                        {...register("message")}
+                      ></textarea>
+                    </div>
+                    <button
+                      type="submit"
+                      className="btn  btn-md w-100"
+                      style={{ backgroundColor: "#DF6B2F", color: "white" }}
+                    >
+                      Submit Request
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -49,52 +246,46 @@ const Index = () => {
         <span className="bg-text">Drive</span>
       </section>
       {/* Hero Section End */}
-      {/* Features Section Start */}
+      {/* Features Section Start done */}
       <section className="features-section rel z-1 pt-80 pb-40 bg-blue text-white">
         <div className="container">
+          <div className="row justify-content-center mb-40">
+            {" "}
+            <div className="col-lg-8 text-center">
+              <h2 className="section-title">Choose Your Training Package</h2>{" "}
+              <p>
+                Whether you're just getting started or aiming for a career in
+                trucking, we have the right CDL training package for you.
+              </p>{" "}
+            </div>{" "}
+          </div>{" "}
           <div className="row justify-content-center">
-            <div className="col-lg-4 col-md-6">
-              <div className="feature-item wow fadeInUp delay-0-2s">
-                <div className="image">
-                  <img src="assets/images/features/icon1.png" alt="Icon" />
-                </div>
-                <div className="content">
-                  <h4>Best Courses From Experts</h4>
-                  <p>
-                    Sit amet consectetur adipisc elit sed do eiusmod temporse
-                    incididunt labore dolore
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="feature-item wow fadeInUp delay-0-4s">
-                <div className="image">
-                  <img src="assets/images/features/icon2.png" alt="Icon" />
-                </div>
-                <div className="content">
-                  <h4>Over 500+ High Quality Vehicles</h4>
-                  <p>
-                    Sit amet consectetur adipisc elit sed do eiusmod temporse
-                    incididunt labore dolore
-                  </p>
+            {trainingPackages.map((pkg, i) => (
+              <div className="col-lg-4 col-md-6">
+                <div className="package-item border border-white text-blue p-4 rounded-lg shadow-md mb-4">
+                  <h4 className="text-lg font-semibold mb-3">{pkg?.title}</h4>
+                  <ul className="space-y-2 mb-4">
+                    {pkg?.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 10,
+                        }}
+                      >
+                        <Check className="w-4 h-4 text-green-500" />
+                        <span>{feature.label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <h5 className="text-xl font-bold mb-3">{pkg.price}</h5>
+                  <button className="bg-blue text-white border border-white px-4 py-2 rounded">
+                    Enroll Now
+                  </button>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="feature-item wow fadeInUp delay-0-6s">
-                <div className="image">
-                  <img src="assets/images/features/icon1.png" alt="Icon" />
-                </div>
-                <div className="content">
-                  <h4>Event &amp; Program Video Update</h4>
-                  <p>
-                    Sit amet consectetur adipisc elit sed do eiusmod temporse
-                    incididunt labore dolore
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <img
@@ -113,9 +304,9 @@ const Index = () => {
       <section className="about-section pt-130 rpt-100">
         <div className="container">
           <div className="row">
-            <div className="col-lg-5 align-self-end">
-              <div className="about-man rmb-75 wow fadeInLeft delay-0-2s">
-                <img src="assets/images/about/man.png" alt="Man" />
+            <div className="col-lg-5 align-self-center">
+              <div className="  wow fadeInLeft delay-0-2s">
+                <img src="assets/images/truck.png" alt="Hero" />
               </div>
             </div>
             <div className="col-lg-7">
@@ -194,11 +385,11 @@ const Index = () => {
       {/* <Index1Isotope /> */}
       {/* Coach Section End */}
       {/* Work Process Section Start */}
-      <section className="work-process-section bg-white rel z-1 pt-130 rpt-100 pb-100 rpb-70">
+      {/* <section className="work-process-section bg-white rel z-1 pt-130 rpt-100 pb-100 rpb-70">
         <div className="container">
           <Index1WorkStepSlider />
         </div>
-      </section>
+      </section> */}
       {/* Work Process Section End */}
       {/* Newsletter Section Start */}
       <section className="newsletter-section pb-130 rpb-100 wow fadeInUp delay-0-2s">
@@ -681,7 +872,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="blog-more-btn pt-30 text-center">
+          <div className="blog-more-btn pt-30 pb-36 text-center">
             <Link legacyBehavior href="/blog">
               <a className="theme-btn style-three">
                 view more news <i className="fas fa-arrow-right" />
@@ -690,9 +881,11 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <section className=" pt-130"></section>
       {/* Blog Section End */}
       {/* Logo Section Start */}
-      <div className="logo-section pt-130 rpt-100 pb-80 rpb-50">
+      {/* <div className="logo-section pt-130 rpt-100 pb-80 rpb-50">
         <div className="container">
           <div className="logo-inner">
             <div className="logo-item wow fadeInUp delay-0-1s">
@@ -745,10 +938,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Logo Section End */}
       {/* Instagram Section Start */}
-      <div className="instagram-section pb-120 rpb-90">
+      {/* <div className="instagram-section pb-120 rpb-90">
         <div className="container-fluid">
           <div className="row small-gap justify-content-center">
             <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
@@ -837,7 +1030,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </Layout>
   );
 };

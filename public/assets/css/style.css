@@ -12431,3 +12431,12 @@ blockquote .blockquote-footer:before {
 .footer-two .scroll-top {
   border-color: #DF6B2F;
 }
+
+
+.custom-select-40 {
+  height: 1px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  line-height: 1.2 !important;
+  font-size: 0.875rem !important; 
+}
