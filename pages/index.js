@@ -319,11 +319,11 @@ const Index = () => {
                   You’re in the perfect spot.
                 </p>
                 <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
-                  <Link legacyBehavior href="/course-grid">
+                  {/* <Link legacyBehavior href="/course-grid"> */}
                     <a className="theme-btn">
                       Get Your Free Trial <i className="fas fa-arrow-right" />
                     </a>
-                  </Link>
+                  {/* </Link> */}
                 </div>
               </div>
             </div>
@@ -486,11 +486,11 @@ const Index = () => {
                   <li>Free Access 1 Month (Videos)</li>
                 </ul>
                 <span className="price">0</span>
-                <Link legacyBehavior href="/pricing">
+                {/* <Link legacyBehavior href="/pricing"> */}
                   <a className="theme-btn style-two">
                     Choose plan <i className="fas fa-arrow-right" />
                   </a>
-                </Link>
+                {/* </Link> */}
               </div>
             </div>
             <div className="col-xl-4 col-md-6">
@@ -507,11 +507,11 @@ const Index = () => {
                   <li>Pro Access 6 Month (Videos)</li>
                 </ul>
                 <span className="price">39</span>
-                <Link legacyBehavior href="/pricing">
+                {/* <Link legacyBehavior href="/pricing"> */}
                   <a className="theme-btn style-two">
                     Choose plan <i className="fas fa-arrow-right" />
                   </a>
-                </Link>
+                {/* </Link> */}
               </div>
             </div>
             <div className="col-xl-4 col-md-6">
@@ -528,11 +528,11 @@ const Index = () => {
                   <li>Pro Access 12 Month (Videos)</li>
                 </ul>
                 <span className="price">98</span>
-                <Link legacyBehavior href="/pricing">
+                {/* <Link legacyBehavior href="/pricing"> */}
                   <a className="theme-btn style-two">
                     Choose plan <i className="fas fa-arrow-right" />
                   </a>
-                </Link>
+                {/* </Link> */}
               </div>
             </div>
           </div>
@@ -608,16 +608,16 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="about-btns">
-                  <Link legacyBehavior href="/about">
+                  {/* <Link legacyBehavior href="/about"> */}
                     <a className="theme-btn style-two my-15">
                       Learn more us <i className="fas fa-arrow-right" />
                     </a>
-                  </Link>
-                  <Link legacyBehavior href="/faqs">
+                  {/* </Link> */}
+                  {/* <Link legacyBehavior href="/faqs"> */}
                     <a className="read-more">
                       How it works <i className="fas fa-arrow-right" />
                     </a>
-                  </Link>
+                  {/* </Link> */}
                 </div>
               </div>
             </div>
@@ -1117,11 +1117,11 @@ const Index = () => {
             </div>
           </div>
           <div className="blog-more-btn pt-30 pb-36 text-center">
-            <Link legacyBehavior href="/blog">
+            {/* <Link legacyBehavior href="/blog"> */}
               <a className="theme-btn style-three">
                 view more news <i className="fas fa-arrow-right" />
               </a>
-            </Link>
+            {/* </Link> */}
           </div>
         </div>
       </section>
