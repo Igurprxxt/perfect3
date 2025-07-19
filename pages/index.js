@@ -312,7 +312,7 @@ const Index = () => {
                 <span className="sub-title style-two mb-20 wow fadeInUp delay-0-2s">
                   Driving School
                 </span>
-                <h1 className="mb-20 wow fadeInUp delay-0-4s text-blue ">
+                <h1 className="mb-20 text-6xl wow fadeInUp delay-0-4s text-blue ">
                   Looking for a driving school?
                 </h1>
                 <p className="wow fadeInUp delay-0-6s">
