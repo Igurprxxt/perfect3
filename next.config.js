@@ -1,4 +1,5 @@
-// next.config.js
+
+//#DF6B2F// next.config.js
 const path = require("path");
 
 module.exports = {

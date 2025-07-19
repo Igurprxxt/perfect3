@@ -43,9 +43,11 @@ function MyApp({ Component, pageProps }) {
         <link rel="stylesheet" href="assets/css/slick.min.css" />
         {/*====== Main Style ======*/}
         <link rel="stylesheet" href="assets/css/style.css" />
+
       </Head>
       {loading && <div className="preloader" />}
       <Component {...pageProps} />
+       {/* <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> */}
     </Fragment>
   );
 }

@@ -473,7 +473,9 @@ const Header1 = ({ navToggle, setNavToggle }) => (
         </div> */}
       </li>
       <li className="dropdown">
-        <a href="#">pages</a>
+         <Link legacyBehavior href="/enrollment">
+        <a href="#">Enrollment</a>
+         </Link>
         {/* <ul>
           <Pages />
         </ul>

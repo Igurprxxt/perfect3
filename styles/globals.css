@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your other global styles go here */
+
 /* @import "slick-carousel/slick/slick.css"; */
 .navigation li.dropdown:hover > ul {
   display: block;
