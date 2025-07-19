@@ -245,15 +245,20 @@ const FollowIcon = () => (
     </footer>
   ),
   Footer1 = ({ scrollTop }) => (
-    <footer className="main-footer bg-blue text-white pt-75">
-      <div className="container">
-        <div className="row justify-content-between">
-          <div className="col-lg-3 col-sm-4">
+    <footer className="main-footer bg-blue text-white pt-20">
+      <div className="px-2">
+        <div className="flex flex-col md:flex-row w-full items-start md:items-center justify-between">
+          {/* About Us */}
+          <div className="col-lg-4 col-sm-6 mb-6">
             <div className="footer-widget about-widget">
-              <h5 className="footer-title">About Us</h5>
+              <h5 className="footer-title">
+                About Perfect Plus Pacific Truck School
+              </h5>
               <p>
-                Sit amet consectetur adipiscin seeiusmod tempor incididunt ut
-                dolore magna aliqu asusp disse ultrices gravida commodo
+                Perfect Plus Pacific Truck School offers high-quality CDL
+                training programs in West Sacramento, CA. Whether you're just
+                starting your trucking journey or need a refresher, we’re here
+                to help every step of the way.
               </p>
               <h5 className="pt-5">Follow Us</h5>
               <div className="social-style-one">
@@ -261,74 +266,81 @@ const FollowIcon = () => (
               </div>
             </div>
           </div>
-          <div className="col-lg-2 col-md-3 col-sm-4">
-            <div className="footer-widget menu-widget">
-              <h5 className="footer-title">Courses</h5>
-              <ul>
-                <Courses />
+
+          {/* Contact Info */}
+          <div className="col-lg-4 col-sm-6 mb-6">
+            <div className="footer-widget contact-info-widget">
+              <h5 className="footer-title">Contact Us</h5>
+              <ul className="space-y-3">
+                <li>
+                  <i className="fas fa-map-marker-alt mr-2" />
+                  Pacific Truck School
+                  <br />
+                  532 Houston Street, West Sacramento, CA 95691
+                </li>
+                <li>
+                  <i className="far fa-clock mr-2" />
+                  Office Hours: Monday – Sunday, 8 AM – 5 PM
+                </li>
+                <li>
+                  <i className="fas fa-phone mr-2" />
+                  <a href="tel:+19165959200">Phone: 916-595-9200</a>
+                </li>
+
+                <li>
+                  <i className="fab fa-whatsapp mr-2" />
+                  WhatsApp: 916-595-9200
+                </li>
+
+                <li>
+                  <i className="far fa-envelope mr-2" />
+                  <a href="mailto:contact@getcdlready.com">
+                    contact@getcdlready.com
+                  </a>
+                </li>
+
+                <li>
+                  <i className="far fa-envelope mr-2" />
+                  <a href="mailto:admissions@getcdlready.com">
+                    admissions@getcdlready.com
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
-          <div className="col-lg-2 col-md-3 col-sm-4">
-            <div className="footer-widget menu-widget">
-              <h5 className="footer-title">Resources</h5>
-              <ul>
-                <Resources />
-              </ul>
-            </div>
-          </div>
-          <div className="col-lg-5">
-            <div className="row">
-              <div className="col-sm-6">
-                <div className="footer-widget contact-info-widget">
-                  <h5 className="footer-title">Get In Touch</h5>
-                  <ul>
-                    <li>
-                      <i className="fas fa-map-marker-alt" /> 532 Houston St,
-                      West Sacramento, CA 95691, United States
-                    </li>
-                    <li>
-                      <i className="far fa-envelope" />{" "}
-                      <a href="mailto:support@gmail.com">support@gmail.com</a>
-                    </li>
-                    <li>
-                      <i className="fas fa-phone" />{" "}
-                      <a href="callto:+0123456789">+1 916-595-9200</a>
-                    </li>
-                    <li>
-                      <i className="far fa-clock" /> Sunday - Friday,
-                      <br /> 08 am - 06 pm
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-sm-6">
-                <div className=" ">
-                  <p>Quis autem vel eum iure repre enderit voluptate</p>
-                  <div className="my-2">
-                    <img src="assets/images/hero3.png" alt="Video" />
-                  </div>
-                  <Link legacyBehavior href="/about">
-                    <a className="read-more">
-                      view more <i className="fas fa-arrow-right" />
-                    </a>
-                  </Link>
-                </div>
+
+          {/* View More or Media */}
+          <div className="col-lg-4 col-sm-12">
+            <div className="footer-widget">
+              <h5 className="footer-title">Our Training in Action</h5>
+              <p>
+                Experience our hands-on training environment — designed to get
+                you road-ready and confident.
+              </p>
+              <div className="-mt-24">
+                <img
+                  src="assets/images/hero3.png"
+                  alt="Training"
+                  className="rounded-md w-[300px]"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="copyright-area bg-dark-blue rel">
+
+      {/* Bottom Bar */}
+      <div className="copyright-area bg-dark-blue mt-10">
         <div className="container">
-          <div className="copyright-inner">
+          <div className="copyright-inner flex justify-between items-center py-4">
             <CopyRight />
             <ul className="footer-menu">
               <FooterBottom />
             </ul>
           </div>
         </div>
-        {/* Scroll Top Button */}
+
+        {/* Scroll To Top */}
         <button
           className="scroll-top scroll-to-target"
           data-target="html"

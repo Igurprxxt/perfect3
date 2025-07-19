@@ -25,222 +25,47 @@ const Index1Isotope = dynamic(
 
 const trainingPackages = [
   {
-    title: "Starter CDL Program",
-    price: "$1,499",
+    title: "Perfect Plus Training Program",
+    tag: "Top Choice",
+    // price: "$3,499",
     features: [
-      { label: "3 Weeks Duration", icon: "Check" },
-      { label: "Classroom + Range Training", icon: "Check" },
-      { label: "CDL Permit Assistance", icon: "Check" },
-      { label: "Basic Vehicle Inspection", icon: "Check" },
+      { label: "4–6 Weeks Duration", icon: "Check" },
+      { label: "Classroom + Behind-the-Wheel Training", icon: "Check" },
+      { label: "Pre-Trip Inspection & Road Test Prep", icon: "Check" },
+      { label: "CDL Class A License", icon: "Check" },
     ],
   },
   {
-    title: "Professional CDL Program",
-    price: "$2,799",
+    title: "CDL Class A – Fast Track Package",
+    tag: "Accelerated Option",
+    // price: "$3,999",
     features: [
-      { label: "6 Weeks Duration", icon: "Check" },
-      { label: "CDL-A License Training", icon: "Check" },
-      { label: "Highway Driving Practice", icon: "Check" },
-      { label: "Resume & Interview Coaching", icon: "Check" },
+      { label: "3 Weeks Intensive Training", icon: "Check" },
+      { label: "Extended Daily Training Hours", icon: "Check" },
+      { label: "Weekend & Evening Classes Available", icon: "Check" },
+      { label: "Includes All Perfect Plus Features", icon: "Check" },
     ],
   },
   {
-    title: "Elite Career Package",
-    price: "$4,499",
+    title: "CDL Refresher Course",
+    tag: "For Returning Drivers",
+    // price: "$1,299",
     features: [
-      { label: "8 Weeks Duration", icon: "Check" },
-      { label: "Extra Road Hours + 1-on-1 Coaching", icon: "Check" },
-      { label: "Guaranteed Job Placement", icon: "Check" },
-      { label: "Housing Assistance Available", icon: "Check" },
-    ],
-  },
-];
-
-const pricing_data = [
-  {
-    id: 1,
-    page: "home_1",
-    plan: "Basic plan",
-    price: 12,
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration", class_name: "close" },
-      { list: "Unlimited Features", class_name: "close" },
+      { label: "1–2 Weeks Duration", icon: "Check" },
+      { label: "Skills Assessment + Safety Updates", icon: "Check" },
+      { label: "Road Training Included", icon: "Check" },
+      { label: "Flexible Scheduling", icon: "Check" },
     ],
   },
   {
-    id: 2,
-    page: "home_1",
-    plan: "Gold plan",
-    price: 59,
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration", class_name: "close" },
-      { list: "Unlimited Features", class_name: "close" },
-    ],
-  },
-  {
-    id: 3,
-    page: "home_1",
-    plan: "Platinum plan",
-    price: 59,
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration", class_name: "close" },
-      { list: "Unlimited Features", class_name: "close" },
-    ],
-  },
-
-  // home_2
-
-  {
-    id: 1,
-    page: "home_2",
-    plan: "Basic plan",
-    price: 12,
-    pricing_list: [
-      { icon: "fa fa-check", list: "30 Days Trial Features" },
-      { icon: "fa fa-check", list: "Synced To Cloud Database" },
-      { icon: "fa fa-check", list: "10 Hours Of Support" },
-      {
-        icon: "fa fa-times",
-        list: "Social Media Integration",
-        class_name: "close",
-      },
-      { icon: "fa fa-times", list: "Unlimited Features", class_name: "close" },
-    ],
-  },
-  {
-    id: 2,
-    page: "home_2",
-    plan: "Gold plan",
-    price: 59,
-    pricing_list: [
-      { icon: "fa fa-check", list: "30 Days Trial Features" },
-      { icon: "fa fa-check", list: "Synced To Cloud Database" },
-      { icon: "fa fa-check", list: "10 Hours Of Support" },
-      {
-        icon: "fa fa-times",
-        list: "Social Media Integration",
-        class_name: "close",
-      },
-      { icon: "fa fa-times", list: "Unlimited Features", class_name: "close" },
-    ],
-  },
-  {
-    id: 3,
-    page: "home_2",
-    plan: "Platinum plan",
-    price: 59,
-    pricing_list: [
-      { icon: "fa fa-check", list: "30 Days Trial Features" },
-      { icon: "fa fa-check", list: "Synced To Cloud Database" },
-      { icon: "fa fa-check", list: "10 Hours Of Support" },
-      {
-        icon: "fa fa-times",
-        list: "Social Media Integration",
-        class_name: "close",
-      },
-      { icon: "fa fa-times", list: "Unlimited Features", class_name: "close" },
-    ],
-  },
-
-  // home_3
-
-  {
-    id: 1,
-    page: "home_3",
-    price_icon: "icomoon-save-money",
-    plan: "Basic plan",
-    price: 12,
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration", class_name: "close" },
-      { list: "Unlimited Features", class_name: "close" },
-    ],
-  },
-  {
-    id: 2,
-    page: "home_3",
-    price_icon: "icomoon-money",
-    plan: "Gold plan",
-    price: 59,
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration", class_name: "close" },
-      { list: "Unlimited Features", class_name: "close" },
-    ],
-  },
-  {
-    id: 3,
-    page: "home_3",
-    price_icon: "icomoon-solution",
-    plan: "Platinum plan",
-    price: 59,
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration", class_name: "close" },
-      { list: "Unlimited Features", class_name: "close" },
-    ],
-  },
-
-  // home_5
-
-  {
-    id: 1,
-    page: "home_5",
-    price_icon_img: priceIcon_1,
-    plan: "Basic Plan",
-    price: 19,
-    sub_price: ".50$",
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration" },
-      { list: "Unlimited Features" },
-    ],
-  },
-  {
-    id: 2,
-    page: "home_5",
-    price_icon_img: priceIcon_2,
-    plan: "Standard Plan",
-    price: 56,
-    sub_price: ".00$",
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration" },
-      { list: "Unlimited Features" },
-    ],
-  },
-  {
-    id: 3,
-    page: "home_5",
-    price_icon_img: priceIcon_3,
-    plan: "Premium Plan",
-    price: 56,
-    sub_price: ".50$",
-    pricing_list: [
-      { list: "30 Days Trial Features" },
-      { list: "Synced To Cloud Database" },
-      { list: "10 Hours Of Support" },
-      { list: "Social Media Integration" },
-      { list: "Unlimited Features" },
+    title: "CDL Class B Training",
+    tag: "Bus & Delivery Focused",
+    // price: "$2,499",
+    features: [
+      { label: "2–4 Weeks Duration", icon: "Check" },
+      { label: "Straight Truck & Bus Training", icon: "Check" },
+      { label: "Classroom + Hands-On Instruction", icon: "Check" },
+      { label: "Ideal for School Bus & Delivery Jobs", icon: "Check" },
     ],
   },
 ];
@@ -249,7 +74,7 @@ const schema = z.object({
   name: z.string().optional(),
   email: z.string().optional(),
   phone: z.string().min(10, "Enter a valid phone number"),
-  inquiry: z.string().optional(),
+  // inquiry: z.string().optional(),
   message: z.string().optional(),
 });
 
@@ -258,6 +83,43 @@ const inquiryOptions = [
   { value: "pricing", label: "Pricing" },
   { value: "schedule", label: "Class Schedule" },
   { value: "other", label: "Other" },
+];
+
+const reviews = [
+  {
+    name: "Bhupinder Singh",
+    date: "2 months ago",
+    content:
+      "“The Best Training Experience You Can Get!” I’ve seen other CDL programs, but nothing compares to the training at Pacific Truck School. The staff is knowledgeable, professional, and dedicated to student success. Every lesson was clear, and the driving practice was solid. Highly recommend!",
+    response:
+      "Thank you so much for your kind words and support! We're thrilled to hear that you had a great experience with us here in West Sacramento. Our team works hard to provide excellent service, and it means a lot to know we’re hitting the mark. If there's anything else we can help you with, don’t hesitate to reach out. Looking forward to serving you again!",
+  },
+  {
+    name: "Gurdeep Singh",
+    date: "2 months ago",
+    content:
+      "A friend referred me to Pacific Truck School. The Perfect Plus CDL package they offer is very budget friendly compared to other truck schools in Sacramento. My instructor was very knowledgeable and flexible with my schedules. I got my class A CDL license in just 2 weeks!!",
+    response:
+      "Thank you so much for your kind words and support! We're thrilled to hear that you had a great experience with us here in West Sacramento. Our team works hard to provide excellent service, and it means a lot to know we’re hitting the mark. If there's anything else we can help you with, don’t hesitate to reach out. Looking forward to serving you again!",
+  },
+  {
+    name: "Ravi Daksh",
+    date: "2 months ago",
+    content:
+      "“Top-Quality CDL Training!” Pacific Truck School offers the best training in the area. The instructors are experienced and truly know how to prepare you for the road and the exam. They focus on safety, hands-on practice, and real-world driving. I got my Class A CDL confidently and quickly!",
+  },
+  {
+    name: "Steve McKim",
+    date: "2 months ago",
+    content:
+      "I had an amazing instructor and one-on-one attention when I needed it. Dave had walk-around videos that helped me with my pre-trip, which was the area I needed the most help in. He also made himself available on certain days and times to ensure I could make the hours I needed. All the people at Pacific Truck School were very accommodating, polite, and fun to work with.",
+  },
+  {
+    name: "jbhangu",
+    date: "2 months ago",
+    content:
+      "“Top-Rated Commercial Truck School!” This is the best Class A truck driving school in the area. They offer professional training, flexible scheduling, and excellent support throughout the process. I passed my test on the first try thanks to their high-quality program.",
+  },
 ];
 
 const Index = () => {
@@ -307,12 +169,12 @@ const Index = () => {
           style={{ zIndex: 2, paddingTop: 150, paddingBottom: 75 }}
         >
           <div className="row align-items-center">
-            <div className="col-lg-7">
+            <div className="col-lg-8">
               <div className="hero-content rpt-25 rmb-75">
-                <span className="sub-title style-two mb-20 wow fadeInUp delay-0-2s">
+                <span className="sub-title style-two mb-4 wow fadeInUp delay-0-2s">
                   Driving School
                 </span>
-                <h1 className="mb-20 text-6xl wow fadeInUp delay-0-4s text-blue ">
+                <h1 className="mb-4 leading-normal font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
                   Looking for a driving school?
                 </h1>
                 <p className="wow fadeInUp delay-0-6s">
@@ -320,14 +182,14 @@ const Index = () => {
                 </p>
                 <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
                   {/* <Link legacyBehavior href="/course-grid"> */}
-                    <a className="theme-btn">
-                      Get Your Free Trial <i className="fas fa-arrow-right" />
-                    </a>
+                  <a className="theme-btn">
+                    Get Your Free Trial <i className="fas fa-arrow-right" />
+                  </a>
                   {/* </Link> */}
                 </div>
               </div>
             </div>
-            <div className="col-lg-5">
+            <div className="col-lg-4">
               <div className="hero-right-images  wow fadeInUp delay-0-2s">
                 <div className="bg-white p-4 rounded shadow-sm">
                   <h5 className="mb-3 text-center " style={{ color: "black" }}>
@@ -371,7 +233,7 @@ const Index = () => {
                         </div>
                       )}
                     </div>
-                    <div className="mb-2">
+                    {/* <div className="mb-2">
                       <label className="form-label mb-1">Inquiry About</label>
                       <Controller
                         control={control}
@@ -437,7 +299,7 @@ const Index = () => {
                           />
                         )}
                       />
-                    </div>
+                    </div> */}
                     <div className="mb-3">
                       <label className="form-label mb-1">Message</label>
                       <textarea
@@ -465,78 +327,56 @@ const Index = () => {
       </section>
       {/* Hero Section End */}
       {/* Features Section Start done */}
-      <section className="pricing-section bg-lighter rel z-2 pt-120 rpt-90 pb-100 rpb-70">
+      <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
         <div className="container">
-          <div className="section-title text-center mb-50">
-            <span className="sub-title-two">Pricing Package</span>
-            <h2>Membership Plans</h2>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-xl-4 col-md-6">
-              <div className="pricin-item wow fadeInUp delay-0-2s">
-                <span className="popularity">popular</span>
-                <div className="icon">
-                  <img src="assets/images/pricing/icon1.png" alt="Icon" />
-                </div>
-                <h4>Free Membership</h4>
-                <ul className="list-style-two">
-                  <li>Free Course Include</li>
-                  <li>Part Time Instructors</li>
-                  <li>Free Videos Course</li>
-                  <li>Free Access 1 Month (Videos)</li>
-                </ul>
-                <span className="price">0</span>
-                {/* <Link legacyBehavior href="/pricing"> */}
-                  <a className="theme-btn style-two">
-                    Choose plan <i className="fas fa-arrow-right" />
-                  </a>
-                {/* </Link> */}
+          <div className="row justify-content-center mb-10">
+            {" "}
+            <div className="col-lg-8 text-center">
+              <div className="section-title text-center mb-10">
+                <span className="sub-title mb-25">
+                  Perfect Plus Training Program
+                </span>
+                <h2>Best Value Program</h2>
               </div>
-            </div>
-            <div className="col-xl-4 col-md-6">
-              <div className="pricin-item wow fadeInUp delay-0-4s">
-                <span className="popularity">popular</span>
-                <div className="icon">
-                  <img src="assets/images/pricing/icon2.png" alt="Icon" />
-                </div>
-                <h4>Basic Membership</h4>
-                <ul className="list-style-two">
-                  <li>Pro Course Include : 07</li>
-                  <li>Full Time Experts Instructors</li>
-                  <li>Premium Videos Course</li>
-                  <li>Pro Access 6 Month (Videos)</li>
+            </div>{" "}
+          </div>{" "}
+          <div className="flex  justify-center gap-6 w-full">
+            {trainingPackages.map((pkg, i) => (
+              <div
+                key={i}
+                className="w-full sm:w-[400px] border border-white text-blue p-4 rounded-lg shadow-md"
+              >
+                {pkg.tag && (
+                  <span className="text-sm text-white bg-blue px-2 py-1 rounded-full inline-block mb-2">
+                    {pkg.tag}
+                  </span>
+                )}
+                <h4 className="text-lg font-semibold mb-3">{pkg.title}</h4>
+                <ul className="space-y-2 mb-4">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-500" />
+                      <span>{feature.label}</span>
+                    </li>
+                  ))}
                 </ul>
-                <span className="price">39</span>
-                {/* <Link legacyBehavior href="/pricing"> */}
-                  <a className="theme-btn style-two">
-                    Choose plan <i className="fas fa-arrow-right" />
-                  </a>
-                {/* </Link> */}
+                <button className="bg-blue text-white border border-white px-4 py-2 rounded">
+                  Enroll Now
+                </button>
               </div>
-            </div>
-            <div className="col-xl-4 col-md-6">
-              <div className="pricin-item wow fadeInUp delay-0-6s">
-                <span className="popularity">popular</span>
-                <div className="icon">
-                  <img src="assets/images/pricing/icon3.png" alt="Icon" />
-                </div>
-                <h4>Advance Membership</h4>
-                <ul className="list-style-two">
-                  <li>Pro Course Include : 15</li>
-                  <li>Full Time Experts Instructors</li>
-                  <li>Premium Videos Course</li>
-                  <li>Pro Access 12 Month (Videos)</li>
-                </ul>
-                <span className="price">98</span>
-                {/* <Link legacyBehavior href="/pricing"> */}
-                  <a className="theme-btn style-two">
-                    Choose plan <i className="fas fa-arrow-right" />
-                  </a>
-                {/* </Link> */}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+        <img
+          className="rectangle-dots"
+          src="assets/images/shapes/rectangle-dots.png"
+          alt="Shape"
+        />
+        <img
+          className="circle-dots"
+          src="assets/images/shapes/circle-dots.png"
+          alt="Shape"
+        />
       </section>
       {/* Features Section End */}
       {/* About Section Start */}
@@ -609,14 +449,14 @@ const Index = () => {
                 </div>
                 <div className="about-btns">
                   {/* <Link legacyBehavior href="/about"> */}
-                    <a className="theme-btn style-two my-15">
-                      Learn more us <i className="fas fa-arrow-right" />
-                    </a>
+                  <a className="theme-btn style-two my-15">
+                    Learn more us <i className="fas fa-arrow-right" />
+                  </a>
                   {/* </Link> */}
                   {/* <Link legacyBehavior href="/faqs"> */}
-                    <a className="read-more">
-                      How it works <i className="fas fa-arrow-right" />
-                    </a>
+                  <a className="read-more">
+                    How it works <i className="fas fa-arrow-right" />
+                  </a>
                   {/* </Link> */}
                 </div>
               </div>
@@ -624,193 +464,83 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* About Section End */}
-      {/* Coach Section Start */}
-      {/* <Index1Isotope /> */}
-      {/* Coach Section End */}
-      {/* Work Process Section Start */}
-      {/* <section className="work-process-section bg-white rel z-1 pt-130 rpt-100 pb-100 rpb-70">
-        <div className="container">
-          <Index1WorkStepSlider />
-        </div>
-      </section> */}
-      {/* Work Process Section End */}
-      {/* Newsletter Section Start */}
-      <section className="newsletter-section pb-130 rpb-100 wow fadeInUp delay-0-2s">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
-              <div className="newsletter-video overlay">
-                <img src="assets/images/video/video-bg.jpg" alt="Video" />
-                <a
-                  href="https://www.youtube.com/watch?v=9Y7ma241N8k"
-                  className="mfp-iframe video-play"
-                >
-                  <i className="fas fa-play" />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="newsletter-content bg-lighter">
-                <div className="section-title mb-20">
-                  <span className="sub-title mb-25">Newsletters</span>
-                  <h2>Get Our Every Single Notifications</h2>
-                </div>
-                <p>
-                  Sit amet consectetur adipiscinelit eiusmod tempor incididunt
-                  ut labore et dolore magna aliqua suspendisse ultrices gravida.
-                  commodo viverra maecenas accumsan facilisis.
-                </p>
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className="newsletter-form mt-25"
-                  action="#"
-                >
-                  <div className="newsletter-radios mb-25">
-                    <div className="custom-control custom-radio">
-                      <input
-                        type="radio"
-                        className="custom-control-input"
-                        id="hero-wekly"
-                        name="example1"
-                        defaultChecked=""
-                      />
-                      <label
-                        className="custom-control-label"
-                        htmlFor="hero-wekly"
-                      >
-                        Regular Updates
-                      </label>
-                    </div>
-                    <div className="custom-control custom-radio">
-                      <input
-                        type="radio"
-                        className="custom-control-input"
-                        id="hero-monthly"
-                        name="example1"
-                      />
-                      <label
-                        className="custom-control-label"
-                        htmlFor="hero-monthly"
-                      >
-                        Weekly Updates
-                      </label>
-                    </div>
-                  </div>
-                  <div className="newsletter-email">
-                    <label htmlFor="email">
-                      <i className="far fa-envelope" />
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      placeholder="Enter Email Address"
-                      required=""
-                    />
-                    <button type="submit" className="theme-btn">
-                      Subscribe <i className="fas fa-arrow-right" />
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Newsletter Section End */}
       {/* Events Section Start */}
       <section className="events-section rel z-1 py-130 rpy-100 bg-blue text-white">
         <div className="container">
-          <div className="row justify-content-center">
+          <div className="row justify-center">
             <div className="col-xl-7 col-lg-8 col-md-9">
               <div className="section-title text-center mb-55">
-                <span className="sub-title mb-25">Events &amp; Program</span>
-                <h2>We’reArranged Yearly Cultural Events &amp; Program</h2>
+                <span className="sub-title mb-25">Events & Programs</span>
+                <h2>Driving Dreams, Building Community</h2>
               </div>
             </div>
           </div>
+
           <Slider {...index1EventWrap} className="event-wrap">
             <div className="event-item wow fadeInUp delay-0-2s">
               <div className="image">
-                <img src="assets/images/events/event1.jpg" alt="Event" />
-                <span className="date">25 march 2022</span>
+                <img src="/assets/images/1319.jpg" alt="Graduation Ceremony" />
+                <span className="date">June 22, 2025</span>
               </div>
               <div className="content">
-                <h4>How Much Needs Life Coach For Human Beings</h4>
+                <h4>Graduation Day – Class A CDL Batch</h4>
                 <span className="location">
-                  <i className="fas fa-map-marker-alt" /> 55 Main Street, New
-                  York
+                  <i className="fas fa-map-marker-alt" /> West Sacramento
+                  Training Yard
                 </span>
               </div>
             </div>
+
             <div className="event-item wow fadeInUp delay-0-4s">
               <div className="image">
-                <img src="assets/images/events/event2.jpg" alt="Event" />
-                <span className="date">25 march 2022</span>
+                <img
+                  src="/assets/images/2149426492.jpg"
+                  alt="Safety Awareness Week"
+                />
+                <span className="date">May 5–9, 2025</span>
               </div>
               <div className="content">
-                <h4>How Much Needs Life Coach For Human Beings</h4>
+                <h4>National Trucking Safety Week</h4>
                 <span className="location">
-                  <i className="fas fa-map-marker-alt" /> 55 Main Street, New
-                  York
+                  <i className="fas fa-map-marker-alt" /> Main Campus, Classroom
+                  A
                 </span>
               </div>
             </div>
+
             <div className="event-item wow fadeInUp delay-0-6s">
               <div className="image">
-                <img src="assets/images/events/event3.jpg" alt="Event" />
-                <span className="date">25 march 2022</span>
+                <img
+                  src="/assets/images/comrades-achievement-employee-appreciation-photo_960396-53771.jpeg"
+                  alt="CDL Job Fair"
+                />
+                <span className="date">August 18, 2025</span>
               </div>
               <div className="content">
-                <h4>How Much Needs Life Coach For Human Beings</h4>
+                <h4>CDL Career Day & Employer Meet</h4>
                 <span className="location">
-                  <i className="fas fa-map-marker-alt" /> 55 Main Street, New
-                  York
+                  <i className="fas fa-map-marker-alt" /> Sacramento Convention
+                  Center
                 </span>
               </div>
             </div>
+
             <div className="event-item wow fadeInUp delay-0-2s">
               <div className="image">
-                <img src="assets/images/events/event1.jpg" alt="Event" />
-                <span className="date">25 march 2022</span>
+                <img src="/assets/images/46521.jpg" alt="Skills Challenge" />
+                <span className="date">September 14, 2025</span>
               </div>
               <div className="content">
-                <h4>How Much Needs Life Coach For Human Beings</h4>
+                <h4>Truck Handling & Skills Challenge</h4>
                 <span className="location">
-                  <i className="fas fa-map-marker-alt" /> 55 Main Street, New
-                  York
-                </span>
-              </div>
-            </div>
-            <div className="event-item wow fadeInUp delay-0-4s">
-              <div className="image">
-                <img src="assets/images/events/event2.jpg" alt="Event" />
-                <span className="date">25 march 2022</span>
-              </div>
-              <div className="content">
-                <h4>How Much Needs Life Coach For Human Beings</h4>
-                <span className="location">
-                  <i className="fas fa-map-marker-alt" /> 55 Main Street, New
-                  York
-                </span>
-              </div>
-            </div>
-            <div className="event-item wow fadeInUp delay-0-6s">
-              <div className="image">
-                <img src="assets/images/events/event3.jpg" alt="Event" />
-                <span className="date">25 march 2022</span>
-              </div>
-              <div className="content">
-                <h4>How Much Needs Life Coach For Human Beings</h4>
-                <span className="location">
-                  <i className="fas fa-map-marker-alt" /> 55 Main Street, New
-                  York
+                  <i className="fas fa-map-marker-alt" /> Driving Practice Yard
                 </span>
               </div>
             </div>
           </Slider>
         </div>
-        <span className="bg-text">coach</span>
+
+        <span className="bg-text">Drive</span>
         <img
           className="rectangle-dots"
           src="assets/images/shapes/rectangle-dots.png"
@@ -822,24 +552,91 @@ const Index = () => {
           alt="Shape"
         />
       </section>
+
       {/* Events Section End */}
+
+      <section className="core-values-section py-130 rpy-100 wow fadeInUp delay-0-2s">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6">
+              <div className="core-values-image overlay">
+                <img src="assets/images/video/video-bg.jpg" alt="Core Values" />
+                <a
+                  href="https://www.youtube.com/watch?v=9Y7ma241N8k"
+                  className="mfp-iframe video-play"
+                >
+                  <i className="fas fa-play" />
+                </a>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="core-values-content bg-lighter p-6">
+                <div className="section-title mb-6">
+                  <span className="sub-title ">Our Core Values</span>
+                </div>
+                <ul className="space-y-4">
+                  <li>
+                    <strong>🚛 Excellence in Training</strong>
+                    <br />
+                    We are committed to delivering top-quality education that
+                    equips our students with the skills and confidence to
+                    succeed on the road.
+                  </li>
+                  <li>
+                    <strong>🛡️ Safety First</strong>
+                    <br />
+                    Safety is at the heart of everything we do—from our
+                    curriculum to our driving practices—ensuring our graduates
+                    are responsible and road-ready.
+                  </li>
+                  <li>
+                    <strong>🤝 Integrity and Respect</strong>
+                    <br />
+                    We foster a culture of honesty, respect, and
+                    professionalism, both in the classroom and on the road.
+                  </li>
+                  <li>
+                    <strong>🌟 Empowerment Through Opportunity</strong>
+                    <br />
+                    We believe in opening doors to meaningful careers by
+                    providing accessible, supportive, and career-focused
+                    training.
+                  </li>
+                  <li>
+                    <strong>🇺🇸 Driving America Forward</strong>
+                    <br />
+                    Our mission goes beyond training drivers—we’re helping power
+                    the economy by preparing the workforce that keeps America
+                    moving.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section End */}
+
       {/* Testimonials Section Start */}
-      <section className="testimonials-section bg-white rel z-1 py-130 rpy-100">
+
+      <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-lg-5">
               <div className="testimonial-left-content rmb-65 wow fadeInLeft delay-0-2s">
                 <div className="section-title">
                   <span className="sub-title mb-15">Testimonials</span>
-                  <h2>Happy Clients Say About Coach</h2>
+                  <h2>What Our Students Say</h2>
                 </div>
                 <p>
-                  Quis autem veleum iure reprehenderit voluptate velit esse quam
-                  nihil molestiae consequatur vel illum dolore eum fugiat quo
-                  voluptas nulla pariatur
+                  We take pride in helping our students achieve their goals.
+                  Hear from real graduates who trained with us and now thrive in
+                  the trucking industry.
                 </p>
                 <h4 className="partner-title mt-25 mb-15">
-                  We Have <span>1356+</span> Global Partners
+                  We’ve Helped Over <span>1,000+</span> Students Get CDL
+                  Certified
                 </h4>
                 <div className="partner-iamges-wrap">
                   <img
@@ -870,122 +667,55 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
             <div className="col-lg-6">
               <Slider
                 {...index1Testimonial}
-                className="testimonial-wrap wow fadeInRight delay-0-2s"
+                className="testimonial-wrap wow fadeInRight delay-0-2s text-white"
               >
-                <div className="testimonial-item">
-                  <div className="testimonial-author">
-                    <img
-                      src="assets/images/testimonials/author.jpg"
-                      alt="Author"
-                    />
-                  </div>
-                  <div className="testimonial-content">
-                    <div className="designation">
-                      <h4>Justin C. Swanson</h4>
-                      <span>Business Manager</span>
-                    </div>
-                    <p>
-                      Voluptatem accusantium doloremq udantium totam rem aperiam
-                      eaque quae abillo inventore veritatis et quasi architecto
-                      beatae Sed ut perspiciatis unde omnis iste natus error sit
-                    </p>
-                    <div className="ratting">
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                    </div>
-                  </div>
-                </div>
-                <div className="testimonial-item">
-                  <div className="testimonial-author">
-                    <img
-                      src="assets/images/testimonials/author.jpg"
-                      alt="Author"
-                    />
-                  </div>
-                  <div className="testimonial-content">
-                    <div className="designation">
-                      <h4>Gerardo M. Jordan</h4>
-                      <span>Business Manager</span>
-                    </div>
-                    <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremq udantium totam rem aperiam
-                      eaque quae abillo inventore veritatis et quasi architecto
-                      beatae
-                    </p>
-                    <div className="ratting">
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
+                {reviews?.map((t, idx) => (
+                  <div className="testimonial-item" key={idx}>
+                    <div className="testimonial-content">
+                      <div className=" flex items-center justify-start! gap-9 mb-4">
+                        {t.avatar ? (
+                          <img src={t.avatar} alt={t.name} />
+                        ) : (
+                          <div className="w-16 h-16 rounded-full bg-gray-200 text-gray-800 font-semibold flex items-center justify-center text-sm">
+                            {t.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </div>
+                        )}
+                        <h4>{t.name}</h4>
+                        {/* <span>{t.content}</span> */}
+                      </div>
+                      <p>{t.content}</p>
+                      <div className="ratting">
+                        {[...Array(5)].map((_, i) => (
+                          <i className="fas fa-star" key={i} />
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="testimonial-item">
-                  <div className="testimonial-author">
-                    <img
-                      src="assets/images/testimonials/author.jpg"
-                      alt="Author"
-                    />
-                  </div>
-                  <div className="testimonial-content">
-                    <div className="designation">
-                      <h4>Justin C. Swanson</h4>
-                      <span>Business Manager</span>
-                    </div>
-                    <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremq udantium totam rem aperiam
-                      eaque quae abillo inventore veritatis et quasi architecto
-                      beatae
-                    </p>
-                    <div className="ratting">
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                    </div>
-                  </div>
-                </div>
-                <div className="testimonial-item">
-                  <div className="testimonial-author">
-                    <img
-                      src="assets/images/testimonials/author.jpg"
-                      alt="Author"
-                    />
-                  </div>
-                  <div className="testimonial-content">
-                    <div className="designation">
-                      <h4>Gerardo M. Jordan</h4>
-                      <span>Business Manager</span>
-                    </div>
-                    <p>
-                      Voluptatem accusantium doloremq udantium totam rem aperiam
-                      eaque quae abillo inventore veritatis et quasi architecto
-                      beatae Sed ut perspiciatis unde omnis iste natus error sit
-                    </p>
-                    <div className="ratting">
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                    </div>
-                  </div>
-                </div>
+                ))}
               </Slider>
             </div>
           </div>
         </div>
+        <img
+          className="rectangle-dots"
+          src="assets/images/shapes/rectangle-dots.png"
+          alt="Shape"
+        />
+        <img
+          className="circle-dots"
+          src="assets/images/shapes/circle-dots.png"
+          alt="Shape"
+        />
       </section>
+      <section className="testimonials-section bg-white rel z-1 py-130 rpy-100"></section>
+
       {/* Testimonials Section End */}
       {/* Blog Section Start */}
       <section className="blog-section">
@@ -1118,9 +848,9 @@ const Index = () => {
           </div>
           <div className="blog-more-btn pt-30 pb-36 text-center">
             {/* <Link legacyBehavior href="/blog"> */}
-              <a className="theme-btn style-three">
-                view more news <i className="fas fa-arrow-right" />
-              </a>
+            <a className="theme-btn style-three">
+              view more news <i className="fas fa-arrow-right" />
+            </a>
             {/* </Link> */}
           </div>
         </div>

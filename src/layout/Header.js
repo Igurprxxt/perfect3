@@ -27,9 +27,7 @@ export default Header;
 const Header1 = ({ navToggle, setNavToggle }) => (
     <Fragment>
       <header className="main-header">
-        {/* Header-Top */}
         <HeaderTop />
-        {/* Header-Upper */}
         <div className="header-upper">
           <div className="container-fluid clearfix">
             <div className="header-inner d-flex align-items-center justify-content-between">
@@ -40,8 +38,9 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       src="assets/images/logos/logo.png"
                       alt="Logo"
                       title="Logo"
+                      className="py-4"
                       style={{
-                        maxWidth: 100,
+                        maxWidth: 120,
                       }}
                     />
                   </Link>
@@ -473,9 +472,9 @@ const Header1 = ({ navToggle, setNavToggle }) => (
         </div> */}
       </li>
       <li className="dropdown">
-         <Link legacyBehavior href="/enrollment">
-        <a href="#">Enrollment</a>
-         </Link>
+        <Link legacyBehavior href="/enrollment">
+          <a href="#">Enrollment</a>
+        </Link>
         {/* <ul>
           <Pages />
         </ul>
