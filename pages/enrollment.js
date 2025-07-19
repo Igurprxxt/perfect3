@@ -13,13 +13,13 @@ import { Label } from "../src/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "../src/components/ui/radio-group";
 import { Checkbox } from "../src/components/ui/checkbox";
 import { Calendar, User, MapPin, FileText, PenTool } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "react-toastify";
 import Layout from "../src/layout/Layout";
 import PageBanner from "../src/components/PageBanner";
-
-const SERVICE_ID = 'service_uimxucn'; // e.g., 'service_xxxxxx'
-const TEMPLATE_ID = 'template_wy7cadp'; // e.g., 'template_xxxxxx'
-const PUBLIC_KEY = 'cj9evgivVEUn1Qkb3'; 
+import emailjs from "@emailjs/browser";
+const SERVICE_ID = "service_uimxucn"; // e.g., 'service_xxxxxx'
+const TEMPLATE_ID = "template_wy7cadp"; // e.g., 'template_xxxxxx'
+const PUBLIC_KEY = "cj9evgivVEUn1Qkb3";
 
 export default function Enrollment() {
   const {
@@ -51,56 +51,52 @@ export default function Enrollment() {
     }
   };
 
-  const onSubmit =async (data) => {
+  const onSubmit = async (data) => {
     if (!signatureRef.current?.isEmpty()) {
-      const signatureData = signatureRef.current
-        .toDataURL();
-      const formData = { ...data, signature: signatureData }
-        const templateParams = {
-      to_email: 'gurpreetramgarhia0808@gmail.com', // The email address where you want to send the form data
-      from_name: formData.firstName + ' ' + formData.lastName,
-      user_email: formData.email,
-      first_name: formData.firstName,
-      last_name: formData.lastName,
-      age: formData.age,
-      agree_to_terms: formData.agreeToTerms,
-      citizen: formData.citizen,
-      application_date: formData.date,
-      dob: formData.dob,
-      license: formData.license,
-      phone1: formData.phone1,
-      phone2: formData.phone2,
-      sex: formData.sex,
-      race: formData.race,
-      mailing_line1: formData.mailing.line1,
-      mailing_city: formData.mailing.city,
-      mailing_state: formData.mailing.state,
-      mailing_zip: formData.mailing.zip,
-      physical_line1: formData.physical.line1,
-      physical_city: formData.physical.city,
-      physical_state: formData.physical.state,
-      physical_zip: formData.physical.zip,
-      signature_data: formData.signature.split(',')[1], // Extract base64 part for attachment
-    };
-
-    try {
-      const response = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        templateParams,
-        PUBLIC_KEY
-      );
-      console.log('Email sent successfully!', response.status, response.text);
-      alert('Email sent successfully!'); // Use a custom modal instead of alert in React Native
-    } catch (error) {
-      console.error('Failed to send email:', error);
-      alert('Failed to send email. Please try again later.'); // Use a custom modal
-    }
-      toast.success("Enrollment submitted successfully!");
-      // reset();
-      signatureRef.current?.clear();
+      const signatureData = signatureRef.current.toDataURL();
+      const formData = { ...data, signature: signatureData };
+      const templateParams = {
+        to_email: "gurpreetramgarhia0808@gmail.com",
+        from_name: formData.firstName + " " + formData.lastName,
+        user_email: formData.email,
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        age: formData.age,
+        agree_to_terms: formData.agreeToTerms,
+        citizen: formData.citizen,
+        application_date: formData.date,
+        dob: formData.dob,
+        license: formData.license,
+        phone1: formData.phone1,
+        phone2: formData.phone2,
+        sex: formData.sex,
+        race: formData.race,
+        mailing_line1: formData.mailing.line1,
+        mailing_city: formData.mailing.city,
+        mailing_state: formData.mailing.state,
+        mailing_zip: formData.mailing.zip,
+        physical_line1: formData.physical.line1,
+        physical_city: formData.physical.city,
+        physical_state: formData.physical.state,
+        physical_zip: formData.physical.zip,
+        signature_data: formData.signature.split(",")[1],
+      };
+      try {
+        const response = await emailjs.send(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          templateParams,
+          PUBLIC_KEY
+        );
+        console.log("Email sent successfully!", response.status, response.text);
+        toast("Details submitted successfully!", { type: "success" });
+        reset();
+        signatureRef.current?.clear();
+      } catch (error) {
+        console.error("Failed to send email:", error);
+      }
     } else {
-      toast.error("Please provide your signature");
+      toast("Please provide your signature", { type: "error" });
     }
   };
 
@@ -167,7 +163,6 @@ export default function Enrollment() {
                     <Label htmlFor="firstName">First Name</Label>
                     <Input
                       id="firstName"
-                      
                       {...register("firstName", {
                         required: "First name is required",
                       })}
@@ -250,7 +245,9 @@ export default function Enrollment() {
                             required: "Please select sex",
                           })}
                         />
-                        <Label htmlFor="male">Male</Label>
+                        <Label htmlFor="male" className="mt-2">
+                          Male
+                        </Label>
                       </div>
                       <div className="flex items-center gap-x-2">
                         <RadioGroupItem
@@ -260,7 +257,9 @@ export default function Enrollment() {
                             required: "Please select sex",
                           })}
                         />
-                        <Label htmlFor="female">Female</Label>
+                        <Label htmlFor="female" className="mt-2">
+                          Female
+                        </Label>
                       </div>
                     </RadioGroup>
                     {errors.sex && (
@@ -281,7 +280,9 @@ export default function Enrollment() {
                             required: "Please specify citizenship status",
                           })}
                         />
-                        <Label htmlFor="citizen-yes">Yes</Label>
+                        <Label htmlFor="citizen-yes" className="mt-2">
+                          Yes
+                        </Label>
                       </div>
                       <div className="flex items-center gap-x-2">
                         <RadioGroupItem
@@ -291,7 +292,9 @@ export default function Enrollment() {
                             required: "Please specify citizenship status",
                           })}
                         />
-                        <Label htmlFor="citizen-no">No</Label>
+                        <Label htmlFor="citizen-no" className="mt-2">
+                          No
+                        </Label>
                       </div>
                     </RadioGroup>
                     {errors.citizen && (
@@ -449,7 +452,7 @@ export default function Enrollment() {
                     checked={sameAsPhysical}
                     onCheckedChange={handleSameAsPhysicalChange}
                   />
-                  <Label htmlFor="sameAsPhysical">
+                  <Label htmlFor="sameAsPhysical" className="mt-2">
                     Same as physical address
                   </Label>
                 </div>
@@ -531,7 +534,7 @@ export default function Enrollment() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="gap-y-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-gray-50  rounded-lg">
                   <p className="text-sm leading-relaxed">
                     <strong>RELEASE OF INFORMATION:</strong> I authorize Perfect
                     Plus CDL School Truck to obtain a motor vehicle report as
@@ -551,7 +554,7 @@ export default function Enrollment() {
                       required: "You must agree to the release of information",
                     })}
                   />
-                  <Label htmlFor="agreeToTerms" className="text-sm">
+                  <Label htmlFor="agreeToTerms" className="text-sm mt-2">
                     I agree to the release of information as stated above
                   </Label>
                 </div>
@@ -573,7 +576,10 @@ export default function Enrollment() {
               </CardHeader>
               <CardContent>
                 <div className="gap-y-4">
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50">
+                  <p className="text-sm text-gray-600">
+                    Please sign below using your mouse or touch device
+                  </p>
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-1 lg:p-4 bg-gray-50">
                     <SignatureCanvas
                       ref={signatureRef}
                       penColor="black"
@@ -585,10 +591,7 @@ export default function Enrollment() {
                       }}
                     />
                   </div>
-                  <div className="flex justify-between items-center">
-                    <p className="text-sm text-gray-600">
-                      Please sign above using your mouse or touch device
-                    </p>
+                  <div className=" mt-2">
                     <Button
                       type="button"
                       variant="outline"
@@ -603,8 +606,12 @@ export default function Enrollment() {
 
             {/* Submit Button */}
             <div className="text-center">
-              <Button type="submit" size="lg" className="px-12 py-3 mb-3 bg-[#DF6B2F] text-white rounded-md">
-                Submit Enrollment Application
+              <Button
+                type="submit"
+                size="lg"
+                className="px-10 py-3 mb-3 bg-[#DF6B2F] text-white rounded-md"
+              >
+                Submit Application
               </Button>
             </div>
           </form>

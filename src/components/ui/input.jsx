@@ -12,6 +12,8 @@ const Input = React.forwardRef(({ className, type, ...props }, ref) => {
       )}
       ref={ref}
       {...props}
+      autoComplete="off" // Add this line to turn off autofill suggestions
+      aria-autocomplete="none" // Add this line for better accessibility and brow
     />
   );
 });

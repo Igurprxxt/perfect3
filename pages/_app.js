@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import "../styles/globals.css";
+import { ToastContainer } from "react-toastify";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Fragment>
+       <ToastContainer />
       <Head>
         <title>Perfect Plus - Best Driving School</title>
         {/*====== Favicon Icon ======*/}
