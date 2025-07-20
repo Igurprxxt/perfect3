@@ -92,7 +92,7 @@ const reviews = [
     content:
       "“The Best Training Experience You Can Get!” I’ve seen other CDL programs, but nothing compares to the training at Pacific Truck School. The staff is knowledgeable, professional, and dedicated to student success. Every lesson was clear, and the driving practice was solid. Highly recommend!",
     response:
-      "Thank you so much for your kind words and support! We're thrilled to hear that you had a great experience with us here in West Sacramento. Our team works hard to provide excellent service, and it means a lot to know we’re hitting the mark. If there's anything else we can help you with, don’t hesitate to reach out. Looking forward to serving you again!",
+      "Thank you so much for your kind words and support! We’re thrilled to hear that you had a great experience with us here in West Sacramento. Our team works hard to provide excellent service, and it means a lot to know we’re hitting the mark. If there’s anything else we can help you with, don’t hesitate to reach out. Looking forward to serving you again!",
   },
   {
     name: "Gurdeep Singh",
@@ -100,7 +100,7 @@ const reviews = [
     content:
       "A friend referred me to Pacific Truck School. The Perfect Plus CDL package they offer is very budget friendly compared to other truck schools in Sacramento. My instructor was very knowledgeable and flexible with my schedules. I got my class A CDL license in just 2 weeks!!",
     response:
-      "Thank you so much for your kind words and support! We're thrilled to hear that you had a great experience with us here in West Sacramento. Our team works hard to provide excellent service, and it means a lot to know we’re hitting the mark. If there's anything else we can help you with, don’t hesitate to reach out. Looking forward to serving you again!",
+      "Thank you so much for your kind words and support! We’re thrilled to hear that you had a great experience with us here in West Sacramento. Our team works hard to provide excellent service, and it means a lot to know we’re hitting the mark. If there’s anything else we can help you with, don’t hesitate to reach out. Looking forward to serving you again!",
   },
   {
     name: "Ravi Daksh",
@@ -407,7 +407,7 @@ const Index = () => {
                   <p className="mb-3">
                     Founded in January 2025, our PCDL School was created with a
                     clear purpose: to train and prepare professional drivers who
-                    are ready to hit the road and help drive America's economy
+                    are ready to hit the road and help drive America’s economy
                     forward.
                   </p>
                   <p className="mb-3">

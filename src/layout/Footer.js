@@ -256,7 +256,7 @@ const FollowIcon = () => (
               </h5>
               <p>
                 Perfect Plus Pacific Truck School offers high-quality CDL
-                training programs in West Sacramento, CA. Whether you're just
+                training programs in West Sacramento, CA. Whether you’re just
                 starting your trucking journey or need a refresher, we’re here
                 to help every step of the way.
               </p>
