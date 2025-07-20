@@ -3822,6 +3822,7 @@ h6,
   animation: sticky 1s;
   -webkit-box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1);
   box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1);
+  border-bottom: 3px solid #ddd !important; /* 👈 Light gray bottom border */
 }
 .main-header.fixed-header .logo {
   margin-top: 0;
@@ -5473,7 +5474,7 @@ h6,
   top: 0;
   left: 0;
   opacity: 0.85;
-  background-color: #081a55;
+  background-color: #5a5a5b;
 }
 @media only screen and (max-width: 1500px) {
   .page-banner-area {
@@ -5547,6 +5548,7 @@ h6,
   font-size: 16px;
   margin: 5px 10px 0;
   font-family: "Font Awesome 5 Free";
+  border-bottom: "4px solid gray";
 }
 @media only screen and (max-width: 375px) {
   .breadcrumb-item + .breadcrumb-item::before {
@@ -5561,7 +5563,6 @@ h6,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 355px;
   margin-bottom: 30px;
 }
 @media only screen and (max-width: 480px) {

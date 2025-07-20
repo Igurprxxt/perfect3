@@ -7,7 +7,7 @@ import Layout from "../src/layout/Layout";
 import { testimonialtwoSlider } from "../src/sliderProps";
 const About = () => {
   return (
-    <Layout>
+    <Layout header={1} footer={1}>
       <PageBanner pageName={"About us"} />
       {/* Page Banner End */}
       {/* About Section Start */}

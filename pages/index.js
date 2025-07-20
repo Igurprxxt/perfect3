@@ -147,7 +147,7 @@ const Index = () => {
       <section
         className="position-relative text-white"
         style={{
-          backgroundImage: `url('/assets/images/banner.jpeg')`,
+          backgroundImage: `url('/assets/images/vehicle-move_23-2151846038.jpeg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -158,7 +158,7 @@ const Index = () => {
         <div
           className="position-absolute top-0 start-0 w-100 h-100"
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
             zIndex: 1,
           }}
         ></div>
@@ -330,7 +330,6 @@ const Index = () => {
       <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
         <div className="container">
           <div className="row justify-content-center mb-10">
-            {" "}
             <div className="col-lg-8 text-center">
               <div className="section-title text-center mb-10">
                 <span className="sub-title mb-25">
@@ -340,11 +339,11 @@ const Index = () => {
               </div>
             </div>{" "}
           </div>{" "}
-          <div className="flex  justify-center gap-6 w-full">
+          <div className="flex flex-wrap justify-center gap-6 w-full">
             {trainingPackages.map((pkg, i) => (
               <div
                 key={i}
-                className="w-full sm:w-[400px] border border-white text-blue p-4 rounded-lg shadow-md"
+                className="w-full sm:w-[350px] border border-white text-blue p-4 rounded-lg shadow-md"
               >
                 {pkg.tag && (
                   <span className="text-sm text-white bg-blue px-2 py-1 rounded-full inline-block mb-2">
@@ -383,87 +382,89 @@ const Index = () => {
       <section className="about-section pt-130 rpt-100">
         <div className="container">
           <div className="row">
-            <div className="col-lg-5 align-self-start">
-              <div className="  wow fadeInLeft delay-0-2s">
+            {/* 🔽 Image Column */}
+            <div className="col-lg-5 align-self-stretch">
+              <div className="h-full w-full">
                 <img
                   src="/assets/images/about2.jpeg"
                   alt="Hero"
-                  height={550}
-                  style={{ objectFit: "cover" }}
+                  className=" w-full h-[100%] md:w-full md:h-[80%] object-cover rounded"
                 />
               </div>
             </div>
-            <div className="col-lg-7">
-              <div className="about-content rel z-2 pb-115 rpb-85 wow fadeInRight delay-0-2s">
-                <div className="section-title mb-40">
-                  <span className="sub-title mb-25">about us</span>
+
+            {/* 🔽 Content Column */}
+            <div className="col-lg-7 mt-12 md:mt-0">
+              <div className="about-content rel z-2 pb-115 rpb-85 wow fadeInRight delay-0-2s h-full">
+                {/* Title */}
+                <div className="section-title mb-10">
+                  <span className="sub-title mb-25">About Us</span>
                   <h2>We Provide Life Coach From Expert Advisors</h2>
                 </div>
+
+                {/* Description */}
+                <div className="mb-4">
+                  <p className="mb-3">
+                    Founded in January 2025, our PCDL School was created with a
+                    clear purpose: to train and prepare professional drivers who
+                    are ready to hit the road and help drive America's economy
+                    forward.
+                  </p>
+                  <p className="mb-3">
+                    With over 25 years of experience in the trucking industry,
+                    our founder brings deep industry knowledge, real-world
+                    insight, and a passion for excellence to every aspect of our
+                    training program. We believe that skilled, safety-conscious
+                    drivers are the backbone of the transportation sector—and
+                    we’re here to help shape the next generation.
+                  </p>
+                  <p>
+                    At our school, we’re not just teaching people how to
+                    drive—we’re building careers, strengthening communities, and
+                    fueling progress across the nation.
+                  </p>
+                </div>
+
+                {/* Mission & Vision */}
                 <div className="about-features">
                   <div className="row">
-                    <div className="col-sm-6">
-                      <div className="feature-item">
-                        <div className="icon">
-                          <i className="fas fa-check" />
-                        </div>
-                        <div className="content">
-                          <h5>Exclusive Coach</h5>
-                          <p>Sit consectetur adipiscing eiuse tempor incides</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="feature-item">
-                        <div className="icon">
-                          <i className="fas fa-check" />
-                        </div>
-                        <div className="content">
-                          <h5>Creative Minds</h5>
-                          <p>Sit consectetur adipiscing eiuse tempor incides</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="feature-item">
-                        <div className="icon">
-                          <i className="fas fa-check" />
-                        </div>
-                        <div className="content">
-                          <h5>Master Certified</h5>
-                          <p>Sit consectetur adipiscing eiuse tempor incides</p>
+                    {[
+                      {
+                        title: "Our Mission",
+                        desc: `To empower aspiring drivers with the skills, confidence, and professionalism needed to succeed in the trucking industry—while upholding the highest standards of safety, integrity, and service.`,
+                      },
+                      {
+                        title: "Our Vision",
+                        desc: `To become a leading force in commercial driver education—shaping a future where every road is driven by skilled, responsible, and empowered professionals who keep America moving.`,
+                      },
+                    ].map((item, idx) => (
+                      <div key={idx} className="col-12 mb-3">
+                        <div className="feature-item w-full">
+                          <div className="icon hidden md:block">
+                            <i className="fas fa-check" />
+                          </div>
+                          <div className="content">
+                            <h5>{item.title}</h5>
+                            <p>{item.desc}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="feature-item">
-                        <div className="icon">
-                          <i className="fas fa-check" />
-                        </div>
-                        <div className="content">
-                          <h5>Video Tutorials</h5>
-                          <p>Sit consectetur adipiscing eiuse tempor incides</p>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
-                <div className="about-btns">
-                  {/* <Link legacyBehavior href="/about"> */}
-                  <a className="theme-btn style-two my-15">
-                    Learn more us <i className="fas fa-arrow-right" />
-                  </a>
-                  {/* </Link> */}
-                  {/* <Link legacyBehavior href="/faqs"> */}
-                  <a className="read-more">
-                    How it works <i className="fas fa-arrow-right" />
-                  </a>
-                  {/* </Link> */}
+
+                {/* Button */}
+                <div className="about-btns mt-4">
+                  <button className="theme-btn style-two my-15">
+                    Learn more about us <i className="fas fa-arrow-right" />
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* Events Section Start */}
       <section className="events-section rel z-1 py-130 rpy-100 bg-blue text-white">
         <div className="container">
@@ -560,13 +561,11 @@ const Index = () => {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="core-values-image overlay">
-                <img src="assets/images/video/video-bg.jpg" alt="Core Values" />
-                <a
-                  href="https://www.youtube.com/watch?v=9Y7ma241N8k"
-                  className="mfp-iframe video-play"
-                >
-                  <i className="fas fa-play" />
-                </a>
+                <img
+                  src="/assets/images/2151846035.jpg"
+                  alt="Core Values"
+                  className="w-full h-full"
+                />
               </div>
             </div>
             <div className="col-lg-6">
@@ -635,8 +634,8 @@ const Index = () => {
                   the trucking industry.
                 </p>
                 <h4 className="partner-title mt-25 mb-15">
-                  We’ve Helped Over <span>1,000+</span> Students Get CDL
-                  Certified
+                  We’ve Helped Over <span className="text-white">1,000+</span>{" "}
+                  Students Get CDL Certified
                 </h4>
                 <div className="partner-iamges-wrap">
                   <img
@@ -714,48 +713,52 @@ const Index = () => {
           alt="Shape"
         />
       </section>
-      <section className="testimonials-section bg-white rel z-1 py-130 rpy-100"></section>
 
       {/* Testimonials Section End */}
       {/* Blog Section Start */}
-      <section className="blog-section">
+      <section className="blog-section py-130 rpy-100 ">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-6 col-lg-7 col-md-8">
               <div className="section-title text-center mb-55">
-                <span className="sub-title mb-20">News &amp; Blog</span>
-                <h2>Read Some Store About News &amp; Blog</h2>
+                <span className="sub-title mb-25">News &amp; Blog</span>
+                <h2>Read Latest Insights From the Trucking World</h2>
               </div>
             </div>
           </div>
+
           <div className="row">
+            {/* Blog 1 */}
             <div className="col-lg-6">
               <div className="blog-item big-item wow fadeInUp delay-0-2s">
                 <div className="blog-image">
-                  <img src="assets/images/blog/blog1.jpg" alt="Blog" />
+                  <img
+                    src="/assets/images/male-worker-with-bulldozer-sand-quarry_1303-28112.jpeg"
+                    alt="Blog"
+                  />
                 </div>
                 <div className="blog-content">
                   <span className="date">
-                    <span>25</span> March
+                    <span>10</span> July
                   </span>
                   <div className="content">
                     <h4>
                       <Link legacyBehavior href="/blog-details">
-                        Building Web Layouts For Dual-Screen And Foldable
-                        Devices Designing
+                        How to Pass Your CDL Test the First Time: Top Tips from
+                        Instructors
                       </Link>
                     </h4>
                     <ul className="blog-meta">
                       <li>
-                        <i className="far fa-user" />{" "}
+                        <i className="far fa-user" />
                         <Link legacyBehavior href="/blog">
-                          By Somalia
+                          By Admin
                         </Link>
                       </li>
                       <li>
-                        <i className="far fa-comments" />{" "}
+                        <i className="far fa-comments" />
                         <Link legacyBehavior href="/blog">
-                          Comments (5)
+                          Comments (12)
                         </Link>
                       </li>
                     </ul>
@@ -763,37 +766,40 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
+            {/* Blog 2 */}
             <div className="col-xl-3 col-lg-6 col-sm-6">
               <div className="blog-item wow fadeInUp delay-0-4s">
                 <div className="blog-image">
-                  <img src="assets/images/blog/blog2.jpg" alt="Blog" />
+                  <img src="/assets/images/1308.jpg" alt="Blog" />
                 </div>
                 <div className="blog-content">
                   <span className="date">
-                    <span>25</span> March
+                    <span>28</span> June
                   </span>
                   <div className="content">
                     <ul className="blog-meta">
                       <li>
-                        <i className="far fa-user" />{" "}
+                        <i className="far fa-user" />
                         <Link legacyBehavior href="/blog">
-                          By Somalia
+                          By PCDL Team
                         </Link>
                       </li>
                       <li>
-                        <i className="far fa-comments" />{" "}
+                        <i className="far fa-comments" />
                         <Link legacyBehavior href="/blog">
-                          Com (5)
+                          Comments (8)
                         </Link>
                       </li>
                     </ul>
                     <h5>
                       <Link legacyBehavior href="/blog-details">
-                        Designing Better Linke Website And Email
+                        What To Expect During Your First Week of CDL Training
                       </Link>
                     </h5>
                     <p>
-                      Sit amet consectetur adiscins eiusmod tempor incididunt
+                      Learn the daily routine, truck simulator, and safety
+                      training timeline.
                     </p>
                     <Link legacyBehavior href="/blog-details">
                       <a className="read-more">
@@ -804,37 +810,40 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
+            {/* Blog 3 */}
             <div className="col-xl-3 col-lg-6 col-sm-6">
               <div className="blog-item wow fadeInUp delay-0-6s">
                 <div className="blog-image">
-                  <img src="assets/images/blog/blog3.jpg" alt="Blog" />
+                  <img src="/assets/images/1286.jpg" alt="Blog" />
                 </div>
                 <div className="blog-content">
                   <span className="date">
-                    <span>03</span> April
+                    <span>15</span> July
                   </span>
                   <div className="content">
                     <ul className="blog-meta">
                       <li>
-                        <i className="far fa-user" />{" "}
+                        <i className="far fa-user" />
                         <Link legacyBehavior href="/blog">
-                          By Somalia
+                          By Perfect Plus
                         </Link>
                       </li>
                       <li>
-                        <i className="far fa-comments" />{" "}
+                        <i className="far fa-comments" />
                         <Link legacyBehavior href="/blog">
-                          Com (5)
+                          Comments (3)
                         </Link>
                       </li>
                     </ul>
                     <h5>
                       <Link legacyBehavior href="/blog-details">
-                        Useful VS Code Esions Front-End Develop
+                        Top 5 Safety Tips Every New Truck Driver Should Know
                       </Link>
                     </h5>
                     <p>
-                      Sit amet consectetur adiscins eiusmod tempor incididunt
+                      Stay compliant and confident on the road with these
+                      essential habits.
                     </p>
                     <Link legacyBehavior href="/blog-details">
                       <a className="read-more">
@@ -846,165 +855,16 @@ const Index = () => {
               </div>
             </div>
           </div>
+
           <div className="blog-more-btn pt-30 pb-36 text-center">
-            {/* <Link legacyBehavior href="/blog"> */}
-            <a className="theme-btn style-three">
-              view more news <i className="fas fa-arrow-right" />
-            </a>
-            {/* </Link> */}
+            <Link legacyBehavior href="/blog">
+              <a className="theme-btn style-three">
+                View More News <i className="fas fa-arrow-right" />
+              </a>
+            </Link>
           </div>
         </div>
       </section>
-
-      <section className=" pt-130"></section>
-      {/* Blog Section End */}
-      {/* Logo Section Start */}
-      {/* <div className="logo-section pt-130 rpt-100 pb-80 rpb-50">
-        <div className="container">
-          <div className="logo-inner">
-            <div className="logo-item wow fadeInUp delay-0-1s">
-              <Link legacyBehavior href="/contact">
-                <img
-                  src="assets/images/client-logos/client-logo1.png"
-                  alt="Client Logo"
-                />
-              </Link>
-            </div>
-            <div className="logo-item wow fadeInUp delay-0-2s">
-              <Link legacyBehavior href="/contact">
-                <img
-                  src="assets/images/client-logos/client-logo2.png"
-                  alt="Client Logo"
-                />
-              </Link>
-            </div>
-            <div className="logo-item wow fadeInUp delay-0-3s">
-              <Link legacyBehavior href="/contact">
-                <img
-                  src="assets/images/client-logos/client-logo3.png"
-                  alt="Client Logo"
-                />
-              </Link>
-            </div>
-            <div className="logo-item wow fadeInUp delay-0-4s">
-              <Link legacyBehavior href="/contact">
-                <img
-                  src="assets/images/client-logos/client-logo4.png"
-                  alt="Client Logo"
-                />
-              </Link>
-            </div>
-            <div className="logo-item wow fadeInUp delay-0-5s">
-              <Link legacyBehavior href="/contact">
-                <img
-                  src="assets/images/client-logos/client-logo5.png"
-                  alt="Client Logo"
-                />
-              </Link>
-            </div>
-            <div className="logo-item wow fadeInUp delay-0-6s">
-              <Link legacyBehavior href="/contact">
-                <img
-                  src="assets/images/client-logos/client-logo6.png"
-                  alt="Client Logo"
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* Logo Section End */}
-      {/* Instagram Section Start */}
-      {/* <div className="instagram-section pb-120 rpb-90">
-        <div className="container-fluid">
-          <div className="row small-gap justify-content-center">
-            <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-              <div className="instagram-item wow fadeInUp delay-0-1s">
-                <img
-                  src="assets/images/instagram/instagram1.jpg"
-                  alt="Instagram"
-                />
-                <div className="instagram-hover">
-                  <a href="assets/images/instagram/instagram1.jpg">
-                    <i className="fab fa-instagram" />
-                    <span>Instagram</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-              <div className="instagram-item wow fadeInUp delay-0-2s">
-                <img
-                  src="assets/images/instagram/instagram2.jpg"
-                  alt="Instagram"
-                />
-                <div className="instagram-hover">
-                  <a href="assets/images/instagram/instagram2.jpg">
-                    <i className="fab fa-instagram" />
-                    <span>Instagram</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-              <div className="instagram-item wow fadeInUp delay-0-3s">
-                <img
-                  src="assets/images/instagram/instagram3.jpg"
-                  alt="Instagram"
-                />
-                <div className="instagram-hover">
-                  <a href="assets/images/instagram/instagram3.jpg">
-                    <i className="fab fa-instagram" />
-                    <span>Instagram</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-              <div className="instagram-item wow fadeInUp delay-0-4s">
-                <img
-                  src="assets/images/instagram/instagram4.jpg"
-                  alt="Instagram"
-                />
-                <div className="instagram-hover">
-                  <a href="assets/images/instagram/instagram4.jpg">
-                    <i className="fab fa-instagram" />
-                    <span>Instagram</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-              <div className="instagram-item wow fadeInUp delay-0-5s">
-                <img
-                  src="assets/images/instagram/instagram5.jpg"
-                  alt="Instagram"
-                />
-                <div className="instagram-hover">
-                  <a href="assets/images/instagram/instagram5.jpg">
-                    <i className="fab fa-instagram" />
-                    <span>Instagram</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-              <div className="instagram-item wow fadeInUp delay-0-6s">
-                <img
-                  src="assets/images/instagram/instagram6.jpg"
-                  alt="Instagram"
-                />
-                <div className="instagram-hover">
-                  <a href="assets/images/instagram/instagram6.jpg">
-                    <i className="fab fa-instagram" />
-                    <span>Instagram</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </Layout>
   );
 };

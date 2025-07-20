@@ -2,9 +2,9 @@ import PageBanner from "../src/components/PageBanner";
 import Layout from "../src/layout/Layout";
 const ContactUs = () => {
   return (
-    <Layout>
+    <Layout footer={1} header={1}>
       <PageBanner pageName={"Contact Us"} />
-      <section className="contact-info-area rel z-1 py-130 rpt-90 rpb-100">
+      {/* <section className="contact-info-area rel z-1 py-130 rpt-90 rpb-100">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-8">
@@ -62,10 +62,10 @@ const ContactUs = () => {
           </div>
         </div>
         <span className="bg-text">coach</span>
-      </section>
+      </section> */}
       {/* Contact Info End */}
       {/* Contact Form Start */}
-      <section className="contact-form-area wow fadeInUp delay-0-2s">
+      <section className="contact-form-area rel z-1 py-130 rpy-100  wow fadeInUp delay-0-2s">
         <div className="container">
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -145,11 +145,11 @@ const ContactUs = () => {
       </section>
       {/* Contact Form End */}
       {/* Location Map Area Start */}
-      <div className="contact-page-map">
+      <div className="features-section rel z-1  pt-[200px] ">
         <div className="our-location">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d136834.1519573059!2d-74.0154445224086!3d40.7260256534837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1639991650837!5m2!1sen!2sbd"
-            height={975}
+            height={600}
             style={{ border: 0, width: "100%" }}
             allowFullScreen=""
             loading="lazy"

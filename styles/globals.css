@@ -56,7 +56,7 @@ img.mfp-img {
 }
 .main-menu li.active > a,
 .header-navigation .main-menu ul > li.has-children.active > a:after {
-  color: #ff344f !important;
+  color: #035139 !important;
 }
 
 /* span.current {

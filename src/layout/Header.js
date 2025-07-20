@@ -29,8 +29,8 @@ const Header1 = ({ navToggle, setNavToggle }) => (
       <header className="main-header">
         <HeaderTop />
         <div className="header-upper">
-          <div className="container-fluid clearfix">
-            <div className="header-inner d-flex align-items-center justify-content-between">
+          <div className="container-fluid clearfix  ">
+            <div className="header-inner   d-flex align-items-center justify-content-between">
               <div className="logo-outer d-lg-flex align-items-center">
                 <div className="logo">
                   <Link legacyBehavior href="/">
@@ -47,7 +47,6 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                 </div>
               </div>
               <div className="nav-outer clearfix">
-                {/* Main Menu */}
                 <nav className="main-menu navbar-expand-lg">
                   <div className="navbar-header">
                     <div className="mobile-logo  br-10 p-15">
@@ -73,7 +72,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                     </button>
                   </div>
                   <div
-                    className={`navbar-collapse collapse clearfix ${
+                    className={`navbar-collapse  collapse clearfix ${
                       navToggle ? "show" : ""
                     }`}
                   >
@@ -83,34 +82,9 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                 </nav>
                 {/* Main Menu End*/}
               </div>
-              {/* Menu Button */}
-              {/* <div className="menu-btn-sidebar d-flex align-items-center">
-                <form onSubmit={(e) => e.preventDefault()} action="#"> */}
-              {/* <input type="search" placeholder="Search" required="" />
-                  <button>
-                    <i className="fas fa-search" />
-                  </button> */}
-              {/* </form> */}
-              {/* <button className="cart">
-                  <i className="fas fa-shopping-bag" />
-                </button>
-                <button>
-                  <i className="far fa-user-circle" />
-                </button> */}
-              {/* menu sidbar */}
-              {/* <div className="menu-sidebar" onClick={() => sidebarOnclick()}>
-                  <button>
-                    <span className="icon-bar" />
-                    <span className="icon-bar" />
-                    <span className="icon-bar" />
-                  </button>
-                </div> */}
             </div>
-            {/* </div> */}
           </div>
         </div>
-
-        {/*End Header Upper*/}
       </header>
     </Fragment>
   ),
@@ -174,46 +148,16 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                 </nav>
                 {/* Main Menu End*/}
               </div>
-              {/* Menu Button */}
+
               <div className="menu-btn-sidebar d-flex align-items-center">
-                {/* <div className="nav-search">
-                  <button className="fa fa-search" />
-                  <form
-                    onSubmit={(e) => e.preventDefault()}
-                    action="#"
-                    className="hide"
-                  >
-                    <input
-                      type="text"
-                      placeholder="Search"
-                      className="searchbox"
-                      required=""
-                    />
-                    <button
-                      type="submit"
-                      className="searchbutton fa fa-search"
-                    />
-                  </form>
-                </div> */}
-                {/* <button className="cart">
-                  <i className="fas fa-shopping-bag" />
-                </button> */}
-                {/* <button>
-                  <i className="far fa-user-circle" />
-                </button> */}
-                {/* menu sidbar */}
-                <div className="menu-sidebar" onClick={() => sidebarOnclick()}>
-                  {/* <button>
-                    <span className="icon-bar" />
-                    <span className="icon-bar" />
-                    <span className="icon-bar" />
-                  </button> */}
-                </div>
+                <div
+                  className="menu-sidebar"
+                  onClick={() => sidebarOnclick()}
+                ></div>
               </div>
             </div>
           </div>
         </div>
-        {/*End Header Upper*/}
       </header>
     </Fragment>
   ),
@@ -369,12 +313,6 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                     </a>
                   </Link>
                 </div>
-                {/* <select name="select-languages" id="select-languages">
-                  <option value="English">Eng</option>
-                  <option value="Spanish">Spa</option>
-                  <option value="Chinese">Chi</option>
-                  <option value="Arabic">Ara</option>
-                </select> */}
               </div>
               <div className="nav-outer clearfix">
                 {/* Main Menu */}
@@ -447,15 +385,9 @@ const Header1 = ({ navToggle, setNavToggle }) => (
     </Fragment>
   ),
   Menus = () => (
-    <ul className="navigation clearfix d-none d-lg-flex">
+    <ul className="navigation  clearfix d-none d-lg-flex">
       <li className="dropdown ">
         <a href="#">home</a>
-        {/* <ul>
-          <Home />
-        </ul> */}
-        {/* <div className="dropdown-btn">
-          <span className="fas fa-chevron-down" />
-        </div> */}
       </li>
       <li>
         <Link legacyBehavior href="/about">
@@ -464,32 +396,14 @@ const Header1 = ({ navToggle, setNavToggle }) => (
       </li>
       <li className="dropdown">
         <a href="#">Courses</a>
-        {/* <ul>
-          <Courses />
-        </ul>
-        <div className="dropdown-btn">
-          <span className="fas fa-chevron-down" />
-        </div> */}
       </li>
       <li className="dropdown">
         <Link legacyBehavior href="/enrollment">
           <a href="#">Enrollment</a>
         </Link>
-        {/* <ul>
-          <Pages />
-        </ul>
-        <div className="dropdown-btn">
-          <span className="fas fa-chevron-down" />
-        </div> */}
       </li>
       <li className="dropdown">
         <a href="#">blog</a>
-        {/* <ul>
-          <Blog />
-        </ul>
-        <div className="dropdown-btn">
-          <span className="fas fa-chevron-down" />
-        </div> */}
       </li>
     </ul>
   ),
