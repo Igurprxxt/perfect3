@@ -15,6 +15,7 @@ import priceIcon_2 from "../public/assets/images/icon/7.webp";
 import priceIcon_3 from "../public/assets/images/icon/8.webp";
 import Image from "next/image";
 import PricingPlan from "./pricing";
+import { useState } from "react";
 
 const Index1Isotope = dynamic(
   () => import("../src/components/isotope/Index1Isotope"),
@@ -138,6 +139,7 @@ const Index = () => {
       message: "",
     },
   });
+  const [hoverId, setHoverId] = useState();
 
   const onSubmit = (data) => {
     console.log("Form Data:", data);
@@ -171,10 +173,10 @@ const Index = () => {
           <div className="row align-items-center">
             <div className="col-lg-8">
               <div className="hero-content rpt-25 rmb-75">
-                <span className="sub-title style-two mb-4 wow fadeInUp delay-0-2s">
+                {/* <span className="sub-title style-two mb-4 wow fadeInUp delay-0-2s">
                   Driving School
-                </span>
-                <h1 className="mb-4 leading-normal font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
+                </span> */}
+                <h1 className="mb-4 leading-tight font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
                   Looking for a driving school?
                 </h1>
                 <p className="wow fadeInUp delay-0-6s">
@@ -193,7 +195,7 @@ const Index = () => {
               <div className="hero-right-images  wow fadeInUp delay-0-2s">
                 <div className="bg-white p-4 rounded shadow-sm">
                   <h5 className="mb-3 text-center " style={{ color: "black" }}>
-                    Contact Us
+                    Book Your First Lesson Now
                   </h5>
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-2">
@@ -343,23 +345,48 @@ const Index = () => {
             {trainingPackages.map((pkg, i) => (
               <div
                 key={i}
-                className="w-full sm:w-[350px] border border-white text-blue p-4 rounded-lg shadow-md"
+                className="w-full cursor-pointer sm:w-[350px] border border-white text-white p-4 rounded-lg shadow-md transition-all duration-300 hover:bg-white hover:text-[#0F256E] hover:border-[#0F256E]"
+                onMouseEnter={() => {
+                  setHoverId(i);
+                }}
+                onMouseLeave={() => {
+                  setHoverId();
+                }}
               >
                 {pkg.tag && (
-                  <span className="text-sm text-white bg-blue px-2 py-1 rounded-full inline-block mb-2">
+                  <span className="text-sm text-white bg-blue px-2 py-1 rounded-full inline-block mb-2 transition-all duration-300  ">
                     {pkg.tag}
                   </span>
                 )}
-                <h4 className="text-lg font-semibold mb-3">{pkg.title}</h4>
+                <h4
+                  className="text-lg font-semibold mb-3"
+                  style={{
+                    color: hoverId == i ? "#0F256E" : "",
+                  }}
+                >
+                  {pkg.title}
+                </h4>
                 <ul className="space-y-2 mb-4">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-green-500" />
-                      <span>{feature.label}</span>
+                      {hoverId === i ? (
+                        <Check className="w-4 h-4 stroke-[#0F256E]" />
+                      ) : (
+                        <Check className="w-4 h-4 stroke-white" />
+                      )}
+
+                      <span
+                        style={{
+                          color: hoverId == i ? "#0F256E" : "",
+                        }}
+                        className="hover:text-[#0F256E]"
+                      >
+                        {feature.label}
+                      </span>
                     </li>
                   ))}
                 </ul>
-                <button className="bg-blue text-white border border-white px-4 py-2 rounded">
+                <button className="bg-blue text-white border border-white px-4 py-2 rounded transition-all duration-300 ">
                   Enroll Now
                 </button>
               </div>
