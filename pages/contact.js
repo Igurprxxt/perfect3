@@ -1,6 +1,46 @@
+import { toast } from "react-toastify";
 import PageBanner from "../src/components/PageBanner";
 import Layout from "../src/layout/Layout";
+import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import { Input } from "../src/components/ui/input";
+import { TextArea } from "@radix-ui/themes";
+
+const SERVICE_ID = "service_uimxucn";
+const TEMPLATE_ID = "template_touimv4";
+const PUBLIC_KEY = "cj9evgivVEUn1Qkb3";
+
 const ContactUs = () => {
+    const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors ,isSubmitting},
+  } = useForm();
+
+   const onSubmit = async (data) => {
+    const formattedData = {
+      fullName: data.fullName,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+    };
+
+    try {
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        formattedData,
+        PUBLIC_KEY
+      );
+      toast("Details submitted successfully!", { type: "success" });
+      reset();
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast("Failed to send message.", { type: "error" });
+    }
+  };
+
   return (
     <Layout footer={1} header={1}>
       <PageBanner pageName={"Contact Us"} />
@@ -65,84 +105,54 @@ const ContactUs = () => {
       </section> */}
       {/* Contact Info End */}
       {/* Contact Form Start */}
-      <section className="contact-form-area rel z-1 py-130 rpy-100  wow fadeInUp delay-0-2s">
-        <div className="container">
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            id="contact-form"
-            className="contact-form p-50 z-1 rel"
-            name="contact-form"
-            action="#"
-            method="post"
-          >
-            <div className="section-title text-center mb-50">
-              <span className="sub-title-two">Send Us Message</span>
-              <h2>Have Any Questions! Say Hello</h2>
-            </div>
-            <div className="row mt-25">
-              <div className="col-md-4">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    id="full-name"
-                    name="full-name"
-                    className="form-control"
-                    defaultValue=""
-                    placeholder="Full Name"
-                    required=""
-                  />
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="form-group">
-                  <input
-                    type="email"
-                    id="email-address"
-                    name="email"
-                    className="form-control"
-                    defaultValue=""
-                    placeholder="Email Address"
-                    required=""
-                  />
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    id="phone"
-                    name="phone"
-                    className="form-control"
-                    defaultValue=""
-                    placeholder="Phone Number"
-                    required=""
-                  />
-                </div>
-              </div>
-              <div className="col-md-12">
-                <div className="form-group">
-                  <textarea
-                    name="message"
-                    id="message"
-                    className="form-control"
-                    rows={4}
-                    placeholder="Write Message"
-                    required=""
-                    defaultValue={""}
-                  />
-                </div>
-              </div>
-              <div className="col-md-12">
+ <section className="py-32 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="bg-white p-10 shadow-lg rounded-lg"
+        >
+          <div className="text-center mb-10">
+            <p className="text-blue-800 font-medium uppercase">Need Assistance? Get in Touch</p>
+            <h2 className="text-2xl md:text-3xl font-bold">Reach Out Anytime</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
+            <Input
+              placeholder="Full Name"
+              {...register('fullName', { required: 'Full Name is required' })}
+            />
+            <Input
+              placeholder="Email Address"
+              type="email"
+              {...register('email', { required: 'Email is required' })}
+            />
+            <Input
+              placeholder="Phone Number"
+              {...register('phone', { required: 'Phone Number is required' })}
+            />
+          </div>
+
+          <div className="mb-6">
+            <TextArea
+              placeholder="Write Message"
+               className={
+                     "flex w-full rounded-md  text-base  file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                   }
+              rows={5}
+              {...register('message', { required: 'Message is required' })}
+            />
+          </div>
+
+           <div className="col-md-12">
                 <div className="form-group text-center mb-0">
-                  <button type="submit" className="theme-btn">
+                  <button type="submit" className="theme-btn cursor-pointer">
                     send Message <i className="fas fa-arrow-right" />
                   </button>
                 </div>
               </div>
-            </div>
-          </form>
-        </div>
-      </section>
+        </form>
+      </div>
+    </section>
       {/* Contact Form End */}
       {/* Location Map Area Start */}
       <div className="features-section rel z-1  pt-[200px] ">
