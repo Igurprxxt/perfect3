@@ -394,8 +394,8 @@ const Header1 = ({ navToggle, setNavToggle }) => (
           <a>About</a>
         </Link>
       </li>
-      <li className="dropdown">
-        <a href="#">Courses</a>
+      <li className="dropdown" href="/training-program">
+        <a href="#">Training Program</a>
       </li>
       <li className="dropdown">
         <Link legacyBehavior href="/enrollment">
