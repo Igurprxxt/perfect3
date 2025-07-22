@@ -72,7 +72,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                     </button>
                   </div>
                   <div
-                    className={`navbar-collapse  collapse clearfix ${
+                    className={`navbar-collapse  clearfix ${
                       navToggle ? "show" : ""
                     }`}
                   >
@@ -294,7 +294,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
   ),
   DefaultHeader = ({ navToggle, setNavToggle }) => (
     <Fragment>
-      <header className="main-header header-two">
+      <header className="main-header header-two ">
         {/* Header-Top */}
         <HeaderTop />
         {/* Header-Upper */}
@@ -314,9 +314,9 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                   </Link>
                 </div>
               </div>
-              <div className="nav-outer clearfix">
+              <div className="nav-outer clearfix ">
                 {/* Main Menu */}
-                <nav className="main-menu navbar-expand-lg">
+                <nav className="main-menu navbar-expand-lg ">
                   <div className="navbar-header">
                     <div className="mobile-logo bg-green br-10 p-15">
                       <Link legacyBehavior href="/">
@@ -385,25 +385,34 @@ const Header1 = ({ navToggle, setNavToggle }) => (
     </Fragment>
   ),
   Menus = () => (
-    <ul className="navigation  clearfix d-none d-lg-flex">
-      <li className="dropdown ">
-        <a href="#">home</a>
+    <ul className="navigation clearfix d-none d-lg-flex">
+      <li className="dropdown">
+        <Link legacyBehavior href="/">
+          <a>home</a>
+        </Link>
       </li>
       <li>
         <Link legacyBehavior href="/about">
           <a>About</a>
         </Link>
       </li>
-      <li className="dropdown" href="/training-program">
-        <a href="#">Training Program</a>
-      </li>
       <li className="dropdown">
-        <Link legacyBehavior href="/enrollment">
-          <a href="#">Enrollment</a>
+        <Link legacyBehavior href="/program">
+          <a>Our Packages</a>
         </Link>
       </li>
       <li className="dropdown">
-        <a href="#">blog</a>
+        <Link legacyBehavior href="/enrollment">
+          <a>Enrollment</a>
+        </Link>
+      </li>
+      <li className="dropdown">
+        <a>blog</a>
+      </li>
+       <li className="dropdown">
+        <Link legacyBehavior href="/contact">
+          <a>Contact</a>
+        </Link>
       </li>
     </ul>
   ),

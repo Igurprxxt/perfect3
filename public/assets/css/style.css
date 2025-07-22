@@ -3751,6 +3751,7 @@ h6,
   .main-header .header-upper {
     padding-left: 0;
     padding-right: 0;
+    background-color: #fff;
   }
 }
 .main-header .logo-outer {
@@ -5488,7 +5489,7 @@ h6,
   }
 }
 .page-banner-area:before {
-  mix-blend-mode: multiply;
+  mix-blend-mode: darken;
 }
 .page-banner-area .circle-one,
 .page-banner-area .circle-two {
