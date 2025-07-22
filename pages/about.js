@@ -15,6 +15,10 @@ import {
   Handshake,
   Star,
   Flag,
+  Sparkles,
+  BookOpenText,
+  CheckCircle,
+  Users,
 } from "lucide-react";
 import TrainingPackage from "../src/components/trainingPackage";
 import BlogSection from "../src/components/blogSection";
@@ -59,7 +63,7 @@ const About = () => {
                 <div className="flex justify-center">
                   <div className="h-full w-full">
                     <img
-                      src="/assets/images/about2.jpeg"
+                      src="/assets/images/truckimage2.jpg"
                       alt="Hero"
                       className=" w-full h-[100%] md:w-full md:h-[80%] object-cover rounded"
                     />
@@ -98,6 +102,13 @@ const About = () => {
                       skilled, responsible, and empowered professionals who keep
                       America moving.
                     </p>
+                  </div>
+                  <div className="h-[500px] w-full space-y-4">
+                    <img
+                      src="/assets/images/truckimage1.jpg"
+                      alt="Hero"
+                      className=" w-full h-[100%] md:w-full md:h-[80%] object-cover rounded"
+                    />
                   </div>
                 </div>
 
@@ -282,15 +293,13 @@ const About = () => {
                   training, expert guidance, and flexible learning options
                   designed for your success.
                 </p>
+
                 <div className="why-learn-feature pt-30">
-                  <div className="row">
-                    <div className="col-sm-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="">
                       <div className="feature-three-item">
                         <div className="icon">
-                          <img
-                            src="assets/images/features/icon10.png"
-                            alt="Icon"
-                          />
+                          <Sparkles color="#DF6B2F" size={50} />
                         </div>
                         <h4>Expert Advisors</h4>
                         <p>
@@ -300,13 +309,10 @@ const About = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="col-sm-6">
+                    <div className="">
                       <div className="feature-three-item">
                         <div className="icon">
-                          <img
-                            src="assets/images/features/icon11.png"
-                            alt="Icon"
-                          />
+                          <BookOpenText color="#DF6B2F" size={50} />
                         </div>
                         <h4>Popular CDL Programs</h4>
                         <p>
@@ -316,22 +322,48 @@ const About = () => {
                         </p>
                       </div>
                     </div>
+                    <div className="">
+                      <div className="feature-three-item">
+                        <div className="icon">
+                          <CheckCircle color="#DF6B2F" size={50} />
+                        </div>
+                        <h4>Flexible Scheduling</h4>
+                        <p>
+                          Choose full-time or part-time classes, including
+                          evenings and weekends, to fit training into your
+                          lifestyle.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="">
+                      <div className="feature-three-item">
+                        <div className="icon">
+                          <Users color="#DF6B2F" size={50} />
+                        </div>
+                        <h4>Career Support</h4>
+                        <p>
+                          Get ongoing help with job placement, resume building,
+                          and interview preparation from our dedicated career
+                          services team.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="why-learn-image wow fadeInRight delay-0-2s">
-                <img src="assets/images/about/why-learn.jpg" alt="Why Learn" />
+                <img src="assets/images/image5.jpg" alt="Why Learn" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Testimonial />
+      {/* <Testimonial /> */}
 
-      <BlogSection />
+      {/* <BlogSection /> */}
     </Layout>
   );
 };

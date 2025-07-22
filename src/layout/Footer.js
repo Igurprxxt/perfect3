@@ -317,11 +317,11 @@ const FollowIcon = () => (
                 Experience our hands-on training environment — designed to get
                 you road-ready and confident.
               </p>
-              <div className="-mt-24">
+              <div className="h-[100px] w-[150px] mt-4 ml-12">
                 <img
-                  src="assets/images/hero3.png"
+                  src="assets/images/logos/logo.png"
                   alt="Training"
-                  className="rounded-md w-[300px]"
+                  className="rounded-md"
                 />
               </div>
             </div>
