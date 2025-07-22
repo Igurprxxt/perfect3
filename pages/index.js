@@ -151,7 +151,10 @@ const Index = () => {
       <section
         className="position-relative text-white"
         style={{
-          backgroundImage: `url('/assets/images/vehicle-move_23-2151846038.jpeg')`,
+          // backgroundImage: `url('/assets/images/vehicle-move_23-2151846038.jpeg')`,
+          // backgroundImage: `url('/assets/images/imageHero.jpg')`,
+          // backgroundImage: `url('/assets/images/image6.jpeg')`,
+          backgroundImage: `url('/assets/images/image3.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -611,7 +614,7 @@ const Index = () => {
                         Excellence in Training
                       </h3>
                     </div>
-                    <p>
+                    <p className="text-justify md:text-left">
                       We are committed to delivering top-quality education that
                       equips our students with the skills and confidence to
                       succeed on the road.
@@ -623,7 +626,7 @@ const Index = () => {
                       {/* Green color for truck */}
                       <h3 className="text-lg font-bold">Safety First</h3>
                     </div>
-                    <p>
+                    <p className="text-justify md:text-left">
                       Safety is at the heart of everything we do—from our
                       curriculum to our driving practices—ensuring our graduates
                       are responsible and road-ready.
@@ -637,7 +640,7 @@ const Index = () => {
                         Integrity and Respect
                       </h3>
                     </div>
-                    <p>
+                    <p className="text-justify md:text-left">
                       We foster a culture of honesty, respect, and
                       professionalism, both in the classroom and on the road.
                     </p>
@@ -650,7 +653,7 @@ const Index = () => {
                         Empowerment Through Opportunity
                       </h3>
                     </div>
-                    <p>
+                    <p className="text-justify md:text-left">
                       We believe in opening doors to meaningful careers by
                       providing accessible, supportive, and career-focused
                       training.

@@ -6,7 +6,8 @@ const PageBanner = ({ pageTitle, pageName }) => {
       className="page-banner-area rel z-1 text-white text-center"
       style={{
         backgroundImage:
-          "url(/assets/images/image3.png)",
+          "url(/assets/images/imageHero.jpg)",
+          // "url(/assets/images/image6.jpeg)",
       }}
     >
       <div className="container">

@@ -28,7 +28,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
     <Fragment>
       <header className="main-header">
         <HeaderTop />
-        <div className="header-upper">
+        <div className="">
           <div className="container-fluid clearfix  ">
             <div className="header-inner   d-flex align-items-center justify-content-between">
               <div className="logo-outer d-lg-flex align-items-center">
@@ -38,7 +38,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       src="assets/images/logos/logo.png"
                       alt="Logo"
                       title="Logo"
-                      className="py-4"
+                      className="py-2"
                       style={{
                         maxWidth: 120,
                       }}
