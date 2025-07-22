@@ -28,7 +28,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
     <Fragment>
       <header className="main-header">
         <HeaderTop />
-        <div className="">
+        <div className="header-upper">
           <div className="container-fluid clearfix  ">
             <div className="header-inner   d-flex align-items-center justify-content-between">
               <div className="logo-outer d-lg-flex align-items-center">
