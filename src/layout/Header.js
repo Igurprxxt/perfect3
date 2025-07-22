@@ -26,6 +26,7 @@ const Header = ({ header }) => {
 export default Header;
 const Header1 = ({ navToggle, setNavToggle }) => (
     <Fragment>
+      {console.log("navToggle", navToggle)}
       <header className="main-header">
         <HeaderTop />
         <div className="header-upper">
@@ -64,7 +65,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       className="navbar-toggle"
                       data-toggle="collapse"
                       data-target=".navbar-collapse"
-                      onClick={() => setNavToggle(!navToggle)}
+                      onClick={() => setNavToggle((prev) => !prev)}
                     >
                       <span className="icon-bar" />
                       <span className="icon-bar" />
@@ -73,7 +74,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                   </div>
                   <div
                     className={`navbar-collapse  clearfix ${
-                      navToggle ? "show" : ""
+                      navToggle ? "visible" : "hidden"
                     }`}
                   >
                     <Menus />
@@ -297,7 +298,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
       <header className="main-header header-two ">
         {/* Header-Top */}
         <HeaderTop />
-        {/* Header-Upper */}
+
         <div className="header-upper">
           <div className="container-fluid clearfix">
             <div className="header-inner d-flex align-items-center justify-content-between">
@@ -329,18 +330,6 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                         </a>
                       </Link>
                     </div>
-                    {/* Toggle Button */}
-                    {/* <button
-                      type="button"
-                      className="navbar-toggle"
-                      data-toggle="collapse"
-                      data-target=".navbar-collapse"
-                      onClick={() => setNavToggle(!navToggle)}
-                    >
-                      <span className="icon-bar" />
-                      <span className="icon-bar" />
-                      <span className="icon-bar" />
-                    </button> */}
                   </div>
                   <div
                     className={`navbar-collapse collapse clearfix ${
@@ -351,36 +340,12 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                     <MobileHeader />
                   </div>
                 </nav>
-                {/* Main Menu End*/}
               </div>
-              {/* Menu Button */}
-              <div className="menu-btn-sidebar d-flex align-items-center">
-                {/* <form onSubmit={(e) => e.preventDefault()} action="#">
-                  <input type="search" placeholder="Search" required="" />
-                  <button>
-                    <i className="fas fa-search" />
-                  </button>
-                </form> */}
-                {/* <button className="cart">
-                  <i className="fas fa-shopping-bag" />
-                </button>
-                <button>
-                  <i className="far fa-user-circle" />
-                </button> */}
-                {/* menu sidbar */}
-                {/* <div className="menu-sidebar" onClick={() => sidebarOnclick()}>
-                  <button>
-                    <span className="icon-bar" />
-                    <span className="icon-bar" />
-                    <span className="icon-bar" />
-                  </button>
-                </div> */}
-              </div>
+
+              <div className="menu-btn-sidebar d-flex align-items-center"></div>
             </div>
           </div>
         </div>
-
-        {/*End Header Upper*/}
       </header>
     </Fragment>
   ),
@@ -409,7 +374,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
       <li className="dropdown">
         <a>blog</a>
       </li>
-       <li className="dropdown">
+      <li className="dropdown">
         <Link legacyBehavior href="/contact">
           <a>Contact</a>
         </Link>

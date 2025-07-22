@@ -101,7 +101,7 @@ export default function Enrollment() {
   };
 
   return (
-    <Layout>
+    <Layout header={1} footer={1}>
       <PageBanner pageName={"Enrollment"} />
 
       <div className="min-h-screen bg-gray-50 py-12">

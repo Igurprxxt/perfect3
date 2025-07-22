@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Fragment } from "react";
-import Newsletters from "../components/Newsletters";
 
 const Footer = ({ footer }) => {
   const scrollTop = () => {
@@ -144,7 +143,6 @@ const FollowIcon = () => (
   DefaultFooter = ({ scrollTop }) => (
     <footer className="main-footer bg-blue">
       <div className="container">
-        {/* <Newsletters /> */}
         <div className="row justify-content-between text-white pt-75">
           <div className="col-lg-3 col-sm-4">
             <div className="footer-widget about-widget">
@@ -247,9 +245,9 @@ const FollowIcon = () => (
   Footer1 = ({ scrollTop }) => (
     <footer className="main-footer bg-blue text-white pt-20">
       <div className="px-2">
-        <div className="flex flex-col md:flex-row w-full items-start md:items-center justify-between">
+        <div className="flex flex-col md:flex-row w-full items-start  justify-between">
           {/* About Us */}
-          <div className="col-lg-4 col-sm-6 mb-6">
+          <div className="col-lg-4 col-sm-6 mt-1">
             <div className="footer-widget about-widget">
               <h5 className="footer-title">
                 About Perfect Plus Pacific Truck School
@@ -260,7 +258,7 @@ const FollowIcon = () => (
                 starting your trucking journey or need a refresher, we’re here
                 to help every step of the way.
               </p>
-              <h5 className="pt-5">Follow Us</h5>
+              <h5 className="pt-5 pb-4">Follow Us</h5>
               <div className="social-style-one">
                 <FollowIcon />
               </div>
@@ -268,7 +266,7 @@ const FollowIcon = () => (
           </div>
 
           {/* Contact Info */}
-          <div className="col-lg-4 col-sm-6 mb-6">
+          <div className="col-lg-4 col-sm-6">
             <div className="footer-widget contact-info-widget">
               <h5 className="footer-title">Contact Us</h5>
               <ul className="space-y-3">

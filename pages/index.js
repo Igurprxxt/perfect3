@@ -1,20 +1,12 @@
-import Link from "next/link";
 import Layout from "../src/layout/Layout";
-
 const NoSSRSelect = dynamic(() => import("react-select"), { ssr: false });
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
-import Index1WorkStepSlider from "../src/components/slider/Index1WorkStepSlider";
-import { index1EventWrap, index1Testimonial } from "../src/sliderProps";
+import { index1EventWrap } from "../src/sliderProps";
 import { Check, Flag, Handshake, ShieldCheck, Star, Truck } from "lucide-react";
 import z from "zod";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import priceIcon_1 from "../public/assets/images/icon/6.webp";
-import priceIcon_2 from "../public/assets/images/icon/7.webp";
-import priceIcon_3 from "../public/assets/images/icon/8.webp";
-import Image from "next/image";
-import PricingPlan from "./pricing";
 import { useState } from "react";
 import BlogSection from "../src/components/blogSection";
 import Testimonial from "../src/components/testimonials";
@@ -77,7 +69,6 @@ const schema = z.object({
   name: z.string().optional(),
   email: z.string().optional(),
   phone: z.string().min(10, "Enter a valid phone number"),
-  // inquiry: z.string().optional(),
   message: z.string().optional(),
 });
 
@@ -151,17 +142,13 @@ const Index = () => {
       <section
         className="position-relative text-white"
         style={{
-          // backgroundImage: `url('/assets/images/vehicle-move_23-2151846038.jpeg')`,
-          // backgroundImage: `url('/assets/images/imageHero.jpg')`,
-          // backgroundImage: `url('/assets/images/image6.jpeg')`,
           backgroundImage: `url('/assets/images/image3.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          minHeight: "100vh", // ensure full height
+          minHeight: "100vh",
         }}
       >
-        {/* Blue Overlay */}
         <div
           className="position-absolute top-0 start-0 w-100 h-100"
           style={{
@@ -169,8 +156,6 @@ const Index = () => {
             zIndex: 1,
           }}
         ></div>
-
-        {/* Content */}
         <div
           className="container position-relative"
           style={{ zIndex: 2, paddingTop: 150, paddingBottom: 75 }}
@@ -178,9 +163,6 @@ const Index = () => {
           <div className="row align-items-center">
             <div className="col-lg-8">
               <div className="hero-content rpt-25 rmb-75">
-                {/* <span className="sub-title style-two mb-4 wow fadeInUp delay-0-2s">
-                  Driving School
-                </span> */}
                 <h1 className="mb-4 leading-tight font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
                   Looking for a driving school?
                 </h1>
@@ -188,11 +170,9 @@ const Index = () => {
                   You’re in the perfect spot.
                 </p>
                 <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
-                  {/* <Link legacyBehavior href="/course-grid"> */}
-                  <a className="theme-btn">
+                  <a className="theme-btn" href="/enrollment">
                     Get Your Free Trial <i className="fas fa-arrow-right" />
                   </a>
-                  {/* </Link> */}
                 </div>
               </div>
             </div>
@@ -240,73 +220,7 @@ const Index = () => {
                         </div>
                       )}
                     </div>
-                    {/* <div className="mb-2">
-                      <label className="form-label mb-1">Inquiry About</label>
-                      <Controller
-                        control={control}
-                        name="inquiry"
-                        render={({ field }) => (
-                          <NoSSRSelect
-                            {...field}
-                            options={inquiryOptions}
-                            placeholder="Select a topic"
-                            styles={{
-                              control: (base, state) => ({
-                                ...base,
 
-                                backgroundColor: state.isFocused
-                                  ? "#ffffff"
-                                  : "#f7f7f7",
-                                border: state.isFocused
-                                  ? "1px solid #0d6efd"
-                                  : "1px solid #f7f7f7",
-                                boxShadow: "none",
-                                minHeight: 40,
-                                fontSize: 13,
-                                cursor: "pointer",
-                                transition: "all 0.2s ease-in-out",
-                              }),
-                              singleValue: (base) => ({
-                                ...base,
-                                color: "#333",
-                              }),
-                              placeholder: (base) => ({
-                                ...base,
-                                color: "#262d3d",
-                                fontSize: "14px",
-                                marginLeft: 20,
-                                fontWeight: 700,
-                              }),
-                              option: (base, state) => ({
-                                ...base,
-                                backgroundColor: state.isFocused
-                                  ? "#ffffff"
-                                  : "#f7f7f7",
-                                color: "#0d6efd", // Bootstrap blue
-                                cursor: "pointer",
-                                fontSize: 13,
-                              }),
-                              menu: (base) => ({
-                                ...base,
-                                backgroundColor: "#f7f7f7",
-                                border: "1px solid #ccc ",
-                                zIndex: 10,
-                              }),
-                              valueContainer: (base) => ({
-                                ...base,
-                                paddingTop: 4,
-                                paddingBottom: 4,
-                                paddingLeft: 8,
-                              }),
-                              indicatorsContainer: (base) => ({
-                                ...base,
-                                paddingRight: 6,
-                              }),
-                            }}
-                          />
-                        )}
-                      />
-                    </div> */}
                     <div className="mb-3">
                       <label className="form-label mb-1">Message</label>
                       <textarea
@@ -332,8 +246,7 @@ const Index = () => {
         </div>
         <span className="bg-text">Drive</span>
       </section>
-      {/* Hero Section End */}
-      {/* Features Section Start done */}
+
       <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
         <div className="container">
           <div className="row justify-content-center mb-10">
@@ -392,7 +305,7 @@ const Index = () => {
                   ))}
                 </ul>
                 <button className="bg-blue text-white border border-white px-4 py-2 rounded transition-all duration-300 ">
-                  Enroll Now
+                  <a href="/enrollment"> Enroll Now</a>
                 </button>
               </div>
             ))}
@@ -488,7 +401,12 @@ const Index = () => {
                 {/* Button */}
                 <div className="about-btns mt-4">
                   <button className="theme-btn style-two my-15">
-                    Learn more about us <i className="fas fa-arrow-right" />
+                    <a
+                      href="/about"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      Learn more about us <i className="fas fa-arrow-right" />
+                    </a>
                   </button>
                 </div>
               </div>
