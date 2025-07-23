@@ -5,7 +5,8 @@ const PageBanner = ({ pageTitle, pageName }) => {
     <section
       className="page-banner-area rel z-1 text-white text-center"
       style={{
-        backgroundImage: "url(/assets/images/imagehero.jpg)",
+        backgroundImage:
+          "url(https://bgchauffers.s3.ap-southeast-2.amazonaws.com/bg-chauffeur/imagehero-18648ea9-a5bc-48f4-9e7e-76da08a622c6.jpg)",
         // "url(/assets/images/image6.jpeg)",
       }}
     >
