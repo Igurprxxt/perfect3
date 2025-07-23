@@ -1,5 +1,4 @@
 import Layout from "../src/layout/Layout";
-const NoSSRSelect = dynamic(() => import("react-select"), { ssr: false });
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
 import { index1EventWrap } from "../src/sliderProps";
@@ -9,14 +8,16 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import BlogSection from "../src/components/blogSection";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+import { Input } from "../src/components/ui/input";
+import { TextArea } from "@radix-ui/themes";
 import Testimonial from "../src/components/testimonials";
+import Link from "next/link";
 
-const Index1Isotope = dynamic(
-  () => import("../src/components/isotope/Index1Isotope"),
-  {
-    ssr: false,
-  }
-);
+const SERVICE_ID = "service_uimxucn";
+const TEMPLATE_ID = "template_touimv4";
+const PUBLIC_KEY = "cj9evgivVEUn1Qkb3";
 
 export const trainingPackages = [
   {
@@ -68,16 +69,10 @@ export const trainingPackages = [
 const schema = z.object({
   name: z.string().optional(),
   email: z.string().optional(),
-  phone: z.string().min(10, "Enter a valid phone number"),
+  phone: z.string().optional(),
+  // inquiry: z.string().optional(),
   message: z.string().optional(),
 });
-
-const inquiryOptions = [
-  { value: "cdl", label: "CDL Training" },
-  { value: "pricing", label: "Pricing" },
-  { value: "schedule", label: "Class Schedule" },
-  { value: "other", label: "Other" },
-];
 
 export const reviews = [
   {
@@ -121,6 +116,7 @@ const Index = () => {
     register,
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
@@ -128,14 +124,34 @@ const Index = () => {
       name: "",
       email: "",
       phone: "",
-      inquiry: "",
       message: "",
     },
   });
+
   const [hoverId, setHoverId] = useState();
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit = async (data) => {
+    const formattedData = {
+      fullName: data.name || "--",
+      email: data.email || "--",
+      phone: data.phone || "--",
+      message: data.message || "--",
+    };
+
+    try {
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        formattedData,
+        PUBLIC_KEY
+      );
+      console.log("response", response);
+      toast("Details submitted successfully!", { type: "success" });
+      reset();
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast("Failed to send message.", { type: "error" });
+    }
   };
   return (
     <Layout header={1} footer={1}>
@@ -170,9 +186,9 @@ const Index = () => {
                   You’re in the perfect spot.
                 </p>
                 <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
-                  <a className="theme-btn" href="/enrollment">
+                  <Link className="theme-btn" href="/enrollment">
                     Get Your Free Trial <i className="fas fa-arrow-right" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -180,56 +196,58 @@ const Index = () => {
               <div className="hero-right-images  wow fadeInUp delay-0-2s">
                 <div className="bg-white p-4 rounded shadow-sm">
                   <h5 className="mb-3 text-center " style={{ color: "black" }}>
-                    Book Your First Lesson Now
+                    Book Your First Lesson Now!
                   </h5>
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-2">
-                      <label className="form-label mb-1">Full Name</label>
-                      <input
-                        type="text"
-                        placeholder="Enter name"
-                        style={{ height: 40, fontSize: "14px" }}
-                        className="form-control form-control-sm"
-                        {...register("name")}
+                      <label className="form-label mb-1 text-gray-800 text-sm">
+                        Full Name
+                      </label>
+                      <Input
+                        placeholder="Enter your full name"
+                        {...register("name", { required: "Name is required" })}
                       />
                     </div>
                     <div className="mb-2">
-                      <label className="form-label mb-1">Email</label>
-                      <input
+                      <label className="form-label mb-1 text-gray-800 text-sm">
+                        Email Address
+                      </label>
+
+                      <Input
+                        placeholder="Enter your email address"
                         type="email"
-                        placeholder="Enter email"
-                        style={{ height: 40, fontSize: "14px" }}
-                        className="form-control form-control-sm"
-                        {...register("email")}
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
                       />
                     </div>
                     <div className="mb-2">
-                      <label className="form-label mb-1">Phone Number</label>
-                      <input
-                        type="tel"
-                        placeholder="Enter phone number"
-                        style={{ height: 40, fontSize: "14px" }}
-                        className={`form-control form-control-sm ${
-                          errors.phone ? "is-invalid" : ""
-                        }`}
-                        {...register("phone")}
+                      <label className="form-label mb-1 text-gray-800 text-sm">
+                        Phone Number
+                      </label>
+                      <Input
+                        placeholder="Enter your phone number"
+                        {...register("phone", {
+                          required: "Phone Number is required",
+                        })}
                       />
-                      {errors.phone && (
-                        <div className="invalid-feedback">
-                          {errors.phone.message}
-                        </div>
-                      )}
                     </div>
 
                     <div className="mb-3">
-                      <label className="form-label mb-1">Message</label>
-                      <textarea
-                        rows={2}
-                        style={{ fontSize: "14px" }}
-                        placeholder="Enter message"
-                        className="form-control form-control-sm"
-                        {...register("message")}
-                      ></textarea>
+                      <label className="form-label mb-1 text-gray-800 text-sm">
+                        Message
+                      </label>
+
+                      <TextArea
+                        placeholder="Write Message"
+                        className={
+                          "!text-black flex w-full rounded-md border border-input bg-background text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                        }
+                        rows={5}
+                        {...register("message", {
+                          required: "Message is required",
+                        })}
+                      />
                     </div>
                     <button
                       type="submit"
@@ -304,9 +322,11 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="bg-blue text-white border border-white px-4 py-2 rounded transition-all duration-300 ">
-                  <a href="/enrollment"> Enroll Now</a>
-                </button>
+                <Link href="/enrollment">
+                  <button className="bg-blue text-white border border-white px-4 py-2 rounded transition-all duration-300 ">
+                    Enroll Now
+                  </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -401,12 +421,12 @@ const Index = () => {
                 {/* Button */}
                 <div className="about-btns mt-4">
                   <button className="theme-btn style-two my-15">
-                    <a
+                    <Link
                       href="/about"
                       style={{ textDecoration: "none", color: "white" }}
                     >
                       Learn more about us <i className="fas fa-arrow-right" />
-                    </a>
+                    </Link>
                   </button>
                 </div>
               </div>

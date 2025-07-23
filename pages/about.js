@@ -103,7 +103,7 @@ const About = () => {
                       America moving.
                     </p>
                   </div>
-                  <div className="h-[500px] w-full space-y-4">
+                  <div className="h-[400px] w-full space-y-4">
                     <img
                       src="/assets/images/truckimage1.jpg"
                       alt="Hero"

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { trainingPackages } from "../../../pages";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const TrainingPackage = () => {
   const [hoverId, setHoverId] = useState();
@@ -64,7 +65,7 @@ const TrainingPackage = () => {
                 ))}
               </ul>
               <button className="bg-blue text-white border border-white px-4 py-2 rounded transition-all duration-300 ">
-                <a href="/enrollment"> Enroll Now</a>
+                <Link href="/enrollment"> Enroll Now</Link>
               </button>
             </div>
           ))}
