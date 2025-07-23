@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { trainingPackages } from "../../../pages";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const TrainingPackage = () => {
   const [hoverId, setHoverId] = useState();
