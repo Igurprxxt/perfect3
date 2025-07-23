@@ -30,7 +30,7 @@ const BlogSection = () => {
                 </span>
                 <div className="content">
                   <h4>
-                    <Link legacyBehavior href="/blog-details">
+                    <Link legacyBehavior href="#">
                       How to Pass Your CDL Test the First Time: Top Tips from
                       Instructors
                     </Link>
@@ -38,13 +38,13 @@ const BlogSection = () => {
                   <ul className="blog-meta">
                     <li>
                       <i className="far fa-user" />
-                      <Link legacyBehavior href="/blog">
+                      <Link legacyBehavior href="#">
                         By Admin
                       </Link>
                     </li>
                     <li>
                       <i className="far fa-comments" />
-                      <Link legacyBehavior href="/blog">
+                      <Link legacyBehavior href="#">
                         Comments (12)
                       </Link>
                     </li>
@@ -88,11 +88,6 @@ const BlogSection = () => {
                     Learn the daily routine, truck simulator, and safety
                     training timeline.
                   </p>
-                  <Link legacyBehavior href="/blog-details">
-                    <a className="read-more">
-                      Read more <i className="fas fa-arrow-right" />
-                    </a>
-                  </Link>
                 </div>
               </div>
             </div>
@@ -132,24 +127,19 @@ const BlogSection = () => {
                     Stay compliant and confident on the road with these
                     essential habits.
                   </p>
-                  <Link legacyBehavior href="/blog-details">
-                    <a className="read-more">
-                      Read more <i className="fas fa-arrow-right" />
-                    </a>
-                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="blog-more-btn pt-30 pb-36 text-center">
+        {/* <div className="blog-more-btn pt-30 pb-36 text-center">
           <Link legacyBehavior href="/blog">
             <a className="theme-btn style-three">
               View More News <i className="fas fa-arrow-right" />
             </a>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );
