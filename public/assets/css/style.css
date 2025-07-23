@@ -7698,10 +7698,10 @@ h6,
   margin-left: -15px;
   margin-right: -15px;
 }
-.event-wrap .event-item {
+/* .event-wrap .event-item {
   margin-left: 15px;
   margin-right: 15px;
-}
+} */
 .event-wrap .slick-dots li:before {
   background: white;
 }
@@ -8029,7 +8029,7 @@ h6,
 }
 @media only screen and (max-width: 575px) {
   .testimonial-wrap .slick-dots {
-    top: 55px;
+    top: 15px;
     right: 20%;
     color: white;
     -webkit-transform: translate(50%);

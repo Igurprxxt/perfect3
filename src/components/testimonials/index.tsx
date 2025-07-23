@@ -53,7 +53,7 @@ const Testimonial = () => {
             </div>
           </div>
 
-          <div className="col-lg-6">
+          <div className="col-lg-6 px-20 md:px-0 mt-10 md:mt-0">
             <Slider
               {...index1Testimonial}
               className="testimonial-wrap wow fadeInRight delay-0-2s text-white"
@@ -61,7 +61,7 @@ const Testimonial = () => {
               {reviews?.map((t, idx) => (
                 <div className="testimonial-item" key={idx}>
                   <div className="testimonial-content">
-                    <div className=" flex items-center justify-start! gap-9 mb-4">
+                    <div className=" flex items-center justify-start! gap-4 md:gap-9 mb-4">
                       {t.avatar ? (
                         <img src={t.avatar} alt={t.name} />
                       ) : (
@@ -73,7 +73,6 @@ const Testimonial = () => {
                         </div>
                       )}
                       <h4>{t.name}</h4>
-                      {/* <span>{t.content}</span> */}
                     </div>
                     <p>{t.content}</p>
                     <div className="ratting">
