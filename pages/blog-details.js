@@ -1,3 +1,11 @@
+import React from "react";
+
+const BlogDetails = () => {
+  return <div></div>;
+};
+
+export default BlogDetails;
+
 // import Link from "next/link";
 // import PageBanner from "../src/components/PageBanner";
 // import Layout from "../src/layout/Layout";
