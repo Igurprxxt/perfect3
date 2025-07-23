@@ -1,30 +1,22 @@
-import Link from "next/link";
 import Layout from "../src/layout/Layout";
-
-const NoSSRSelect = dynamic(() => import("react-select"), { ssr: false });
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
-import Index1WorkStepSlider from "../src/components/slider/Index1WorkStepSlider";
-import { index1EventWrap, index1Testimonial } from "../src/sliderProps";
+import { index1EventWrap } from "../src/sliderProps";
 import { Check, Flag, Handshake, ShieldCheck, Star, Truck } from "lucide-react";
 import z from "zod";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import priceIcon_1 from "../public/assets/images/icon/6.webp";
-import priceIcon_2 from "../public/assets/images/icon/7.webp";
-import priceIcon_3 from "../public/assets/images/icon/8.webp";
-import Image from "next/image";
-import PricingPlan from "./pricing";
 import { useState } from "react";
 import BlogSection from "../src/components/blogSection";
 import Testimonial from "../src/components/testimonials";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+import { Input } from "../src/components/ui/input";
+import { TextArea } from "@radix-ui/themes";
 
-const Index1Isotope = dynamic(
-  () => import("../src/components/isotope/Index1Isotope"),
-  {
-    ssr: false,
-  }
-);
+const SERVICE_ID = "service_uimxucn";
+const TEMPLATE_ID = "template_touimv4";
+const PUBLIC_KEY = "cj9evgivVEUn1Qkb3";
 
 export const trainingPackages = [
   {
@@ -76,17 +68,10 @@ export const trainingPackages = [
 const schema = z.object({
   name: z.string().optional(),
   email: z.string().optional(),
-  phone: z.string().min(10, "Enter a valid phone number"),
+  phone: z.string().optional(),
   // inquiry: z.string().optional(),
   message: z.string().optional(),
 });
-
-const inquiryOptions = [
-  { value: "cdl", label: "CDL Training" },
-  { value: "pricing", label: "Pricing" },
-  { value: "schedule", label: "Class Schedule" },
-  { value: "other", label: "Other" },
-];
 
 export const reviews = [
   {
@@ -130,6 +115,7 @@ const Index = () => {
     register,
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
@@ -137,14 +123,34 @@ const Index = () => {
       name: "",
       email: "",
       phone: "",
-      inquiry: "",
       message: "",
     },
   });
+
   const [hoverId, setHoverId] = useState();
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit = async (data) => {
+    const formattedData = {
+      fullName: data.name || "--",
+      email: data.email || "--",
+      phone: data.phone || "--",
+      message: data.message || "--",
+    };
+
+    try {
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        formattedData,
+        PUBLIC_KEY
+      );
+      console.log("response", response);
+      toast("Details submitted successfully!", { type: "success" });
+      reset();
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast("Failed to send message.", { type: "error" });
+    }
   };
   return (
     <Layout header={1} footer={1}>
@@ -200,45 +206,41 @@ const Index = () => {
               <div className="hero-right-images  wow fadeInUp delay-0-2s">
                 <div className="bg-white p-4 rounded shadow-sm">
                   <h5 className="mb-3 text-center " style={{ color: "black" }}>
-                    Book Your First Lesson Now
+                    Book Your First Lesson Now!
                   </h5>
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-2">
-                      <label className="form-label mb-1">Full Name</label>
-                      <input
-                        type="text"
-                        placeholder="Enter name"
-                        style={{ height: 40, fontSize: "14px" }}
-                        className="form-control form-control-sm"
-                        {...register("name")}
+                      <label className="form-label mb-1 text-gray-800 text-sm">
+                        Full Name
+                      </label>
+                      <Input
+                        placeholder="Enter your full name"
+                        {...register("name", { required: "Name is required" })}
                       />
                     </div>
                     <div className="mb-2">
-                      <label className="form-label mb-1">Email</label>
-                      <input
+                      <label className="form-label mb-1 text-gray-800 text-sm">
+                        Email Address
+                      </label>
+
+                      <Input
+                        placeholder="Enter your email address"
                         type="email"
-                        placeholder="Enter email"
-                        style={{ height: 40, fontSize: "14px" }}
-                        className="form-control form-control-sm"
-                        {...register("email")}
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
                       />
                     </div>
                     <div className="mb-2">
-                      <label className="form-label mb-1">Phone Number</label>
-                      <input
-                        type="tel"
-                        placeholder="Enter phone number"
-                        style={{ height: 40, fontSize: "14px" }}
-                        className={`form-control form-control-sm ${
-                          errors.phone ? "is-invalid" : ""
-                        }`}
-                        {...register("phone")}
+                      <label className="form-label mb-1 text-gray-800 text-sm">
+                        Phone Number
+                      </label>
+                      <Input
+                        placeholder="Enter your phone number"
+                        {...register("phone", {
+                          required: "Phone Number is required",
+                        })}
                       />
-                      {errors.phone && (
-                        <div className="invalid-feedback">
-                          {errors.phone.message}
-                        </div>
-                      )}
                     </div>
                     {/* <div className="mb-2">
                       <label className="form-label mb-1">Inquiry About</label>
@@ -308,14 +310,20 @@ const Index = () => {
                       />
                     </div> */}
                     <div className="mb-3">
-                      <label className="form-label mb-1">Message</label>
-                      <textarea
-                        rows={2}
-                        style={{ fontSize: "14px" }}
-                        placeholder="Enter message"
-                        className="form-control form-control-sm"
-                        {...register("message")}
-                      ></textarea>
+                      <label className="form-label mb-1 text-gray-800 text-sm">
+                        Message
+                      </label>
+
+                      <TextArea
+                        placeholder="Write Message"
+                        className={
+                          "!text-black flex w-full rounded-md border border-input bg-background text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                        }
+                        rows={5}
+                        {...register("message", {
+                          required: "Message is required",
+                        })}
+                      />
                     </div>
                     <button
                       type="submit"
