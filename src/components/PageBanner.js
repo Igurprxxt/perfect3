@@ -18,20 +18,28 @@ const PageBanner = ({ pageTitle, pageName }) => {
   };
   return (
     <section className="relative page-banner-area rel z-1 text-white text-center">
+      {/* Background Image */}
       <Image
-        src={getImages()} // replace with your dynamic image if needed
+        src={getImages()}
         alt="Page banner"
         fill
-        priority // makes it load immediately instead of lazy-loading
+        priority
         className="object-cover z-[-1]"
       />
-      <div className="container">
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50 z-0" />
+
+      {/* Content */}
+      <div className="container relative z-10">
         <div className="banner-inner rpt-10">
           <h2 className="page-title wow fadeInUp delay-0-2s uppercase">
             {pageTitle ? pageTitle : pageName}
           </h2>
         </div>
       </div>
+
+      {/* Decorative Circles */}
       <img
         className="circle-one"
         src="assets/images/shapes/circle-one.png"
