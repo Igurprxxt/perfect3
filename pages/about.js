@@ -113,78 +113,56 @@ const About = () => {
                 </div>
 
                 {/* Core Values (Right Column) */}
-                <div className="space-y-6">
-                  <div className="inline-block rounded-md bg-[#df6b2f] px-4 py-2 text-sm font-semibold uppercase text-white mb-4">
+                <div className="space-y-8">
+                  {/* Section Badge */}
+                  <div className="inline-block rounded-md bg-[#df6b2f] px-5 py-2 text-sm font-semibold uppercase text-white shadow-md">
                     Our Core Values
                   </div>
+
+                  {/* Core Values List */}
                   <div className="space-y-6">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Truck className="h-6 w-6 text-[#4CAF50] flex-shrink-0" />{" "}
-                        {/* Green color for truck */}
-                        <h3 className="text-lg font-bold">
-                          Excellence in Training
-                        </h3>
+                    {[
+                      {
+                        icon: <Truck className="h-6 w-6 text-[#4CAF50]" />,
+                        title: "Excellence in Training",
+                        desc: "We are committed to delivering top-quality education that equips our students with the skills and confidence to succeed on the road.",
+                      },
+                      {
+                        icon: (
+                          <ShieldCheck className="h-6 w-6 text-[#F44336]" />
+                        ),
+                        title: "Safety First",
+                        desc: "Safety is at the heart of everything we do—from our curriculum to our driving practices—ensuring our graduates are responsible and road-ready.",
+                      },
+                      {
+                        icon: <Handshake className="h-6 w-6 text-[#FFC107]" />,
+                        title: "Integrity and Respect",
+                        desc: "We foster a culture of honesty, respect, and professionalism, both in the classroom and on the road.",
+                      },
+                      {
+                        icon: <Star className="h-6 w-6 text-[#FFEB3B]" />,
+                        title: "Empowerment Through Opportunity",
+                        desc: "We believe in opening doors to meaningful careers by providing accessible, supportive, and career-focused training.",
+                      },
+                      {
+                        icon: <Flag className="h-6 w-6 text-[#2196F3]" />,
+                        title: "Driving America Forward",
+                        desc: "Our mission goes beyond training drivers—we’re helping power the economy by preparing the workforce that keeps America moving.",
+                      },
+                    ].map((value, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-4 bg-white rounded-xl p-3 hover:shadow-md transition-shadow"
+                      >
+                        <div className="flex-shrink-0">{value.icon}</div>
+                        <div>
+                          <h3 className="text-lg font-bold text-[#0F256E]">
+                            {value.title}
+                          </h3>
+                          <p className="text-gray-700 mt-1">{value.desc}</p>
+                        </div>
                       </div>
-                      <p>
-                        We are committed to delivering top-quality education
-                        that equips our students with the skills and confidence
-                        to succeed on the road.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <ShieldCheck className="h-6 w-6 text-[#F44336] flex-shrink-0" />{" "}
-                        {/* Green color for truck */}
-                        <h3 className="text-lg font-bold">Safety First</h3>
-                      </div>
-                      <p>
-                        Safety is at the heart of everything we do—from our
-                        curriculum to our driving practices—ensuring our
-                        graduates are responsible and road-ready.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Handshake className="h-6 w-6 text-[#FFC107] flex-shrink-0" />{" "}
-                        {/* Green color for truck */}
-                        <h3 className="text-lg font-bold">
-                          Integrity and Respect
-                        </h3>
-                      </div>
-                      <p>
-                        We foster a culture of honesty, respect, and
-                        professionalism, both in the classroom and on the road.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Star className="h-6 w-6 text-[#FFEB3B] flex-shrink-0" />{" "}
-                        {/* Green color for truck */}
-                        <h3 className="text-lg font-bold">
-                          Empowerment Through Opportunity
-                        </h3>
-                      </div>
-                      <p>
-                        We believe in opening doors to meaningful careers by
-                        providing accessible, supportive, and career-focused
-                        training.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Flag className="h-6 w-6 text-[#2196F3] flex-shrink-0" />{" "}
-                        {/* Green color for truck */}
-                        <h3 className="text-lg font-bold">
-                          Driving America Forward
-                        </h3>
-                      </div>
-                      <p>
-                        Our mission goes beyond training drivers—we’re helping
-                        power the economy by preparing the workforce that keeps
-                        America moving.
-                      </p>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

@@ -76,12 +76,13 @@ const TrainingPackage = () => {
 
         {/* Training Packages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 justify-items-center">
-          {trainingPackages?.map((pkg) => (
+          {trainingPackages?.map((pkg, index) => (
             <div
               key={pkg.id}
-              className="relative w-full max-w-sm bg-white text-[#0F256E] p-8 rounded-2xl shadow-xl border border-transparent
-                         transition-all duration-500 ease-in-out transform hover:scale-105 hover:border-[#FF6B00]
-                         group flex flex-col justify-between"
+              className={`relative w-full max-w-sm bg-white text-[#0F256E] p-8 rounded-2xl shadow-xl border border-transparent
+        transition-all duration-500 ease-in-out transform hover:scale-105 hover:border-[#FF6B00]
+        group flex flex-col justify-between
+        ${index === 0 ? "outline outline-2 outline-[#FF6B00]" : ""}`}
             >
               <div className="flex justify-center mt-2">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#08006a] to-[#0a0080] rounded-xl flex items-center justify-center shadow-lg">
