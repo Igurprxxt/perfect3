@@ -25,14 +25,14 @@ const PageBanner = ({ pageTitle, pageName }) => {
           <h2 className="page-title wow fadeInUp delay-0-2s uppercase">
             {pageTitle ? pageTitle : pageName}
           </h2>
-          <nav aria-label="breadcrumb">
+          {/* <nav aria-label="breadcrumb">
             <ol className="breadcrumb wow fadeInUp delay-0-4s">
               <li className="breadcrumb-item">
                 <Link href="/">home</Link>
               </li>
               <li className="breadcrumb-item active">{pageName}</li>
             </ol>
-          </nav>
+          </nav> */}
         </div>
       </div>
       <img
