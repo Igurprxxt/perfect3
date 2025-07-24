@@ -13,7 +13,7 @@ const PageBanner = ({ pageTitle, pageName }) => {
     } else if (location === "/enrollment") {
       return "/assets/images/banner.jpeg";
     } else {
-      return "/assets/images/banner09.jpeg";
+      return "/assets/images/banner04.jpeg";
     }
   };
   return (
