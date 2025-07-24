@@ -7,19 +7,19 @@ const MobileHeader = ({ setNavToggle }) => {
         <Link href="/">Home</Link>
       </li>
       <li>
-        <Link href="/about">About</Link>
+        <Link href="/program">Our Packages</Link>
       </li>
       <li>
-        <Link href="/program">Our Packages</Link>
+        <Link href="/contact">Contact Us</Link>
       </li>
       <li>
         <Link href="/enrollment">Enrollment</Link>
       </li>
       <li>
-        <Link href="#">Blog</Link>
+        <Link href="/about">About Us</Link>
       </li>
       <li>
-        <Link href="/contact">Contact</Link>
+        <Link href="">Blog</Link>
       </li>
     </ul>
   );
