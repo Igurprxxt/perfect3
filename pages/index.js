@@ -188,7 +188,7 @@ const Index = () => {
                 </p>
                 <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
                   <Link className="theme-btn" href="/enrollment">
-                    Get Your Free Trial <i className="fas fa-arrow-right" />
+                    Apply Now <i className="fas fa-arrow-right" />
                   </Link>
                 </div>
               </div>
