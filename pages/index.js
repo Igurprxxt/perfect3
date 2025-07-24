@@ -183,9 +183,9 @@ const Index = () => {
                 <h1 className="mb-4 leading-tight font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
                   Looking for a driving school?
                 </h1>
-                <p className="wow fadeInUp delay-0-6s">
+                <h3 className="wow fadeInUp text-4xl  delay-0-6s">
                   You’re in the perfect spot.
-                </p>
+                </h3>
                 <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
                   <Link className="theme-btn" href="/enrollment">
                     Apply Now <i className="fas fa-arrow-right" />
