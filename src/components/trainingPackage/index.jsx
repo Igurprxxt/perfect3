@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Check, Star } from "lucide-react";
+import { Check, Star, Truck } from "lucide-react";
 import Link from "next/link";
 
 const TrainingPackage = () => {
@@ -59,6 +59,7 @@ const TrainingPackage = () => {
     <section className="min-h-screen flex items-center justify-center py-20 px-4 bg-[#0F256E] text-white font-inter">
       <div className="container mx-auto max-w-max">
         {/* Section Title */}
+
         <div className="text-center mb-16">
           <span className="sub-title mb-25">Perfect Plus Training Program</span>
           {/* <span className="text-[#FF6B00] text-lg sm:text-xl font-semibold mb-4 block animate-fade-in-down">
@@ -82,6 +83,11 @@ const TrainingPackage = () => {
                          transition-all duration-500 ease-in-out transform hover:scale-105 hover:border-[#FF6B00]
                          group flex flex-col justify-between"
             >
+              <div className="flex justify-center mt-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#08006a] to-[#0a0080] rounded-xl flex items-center justify-center shadow-lg">
+                  <Truck className="w-8 h-8 text-white" />
+                </div>
+              </div>
               <div
                 className={`absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 min-w-[220px] text-center rounded-full text-sm font-bold
     ${
