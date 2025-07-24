@@ -246,21 +246,20 @@ const FollowIcon = () => (
     <footer className="main-footer bg-blue text-white pt-20">
       <div className="px-2">
         <div className="flex flex-col md:flex-row w-full items-start  justify-between">
-          {/* About Us */}
-          <div className="col-lg-4 col-sm-6 mt-1">
-            <div className="footer-widget about-widget">
-              <h5 className="footer-title">
-                About Perfect Plus Pacific Truck School
-              </h5>
+          {/* View More or Media */}
+          <div className="col-lg-4 col-sm-12">
+            <div className="footer-widget">
+              <h5 className="footer-title">Our Training in Action</h5>
               <p>
-                Perfect Plus Pacific Truck School offers high-quality CDL
-                training programs in West Sacramento, CA. Whether you’re just
-                starting your trucking journey or need a refresher, we’re here
-                to help every step of the way.
+                Experience our hands-on training environment — designed to get
+                you road-ready and confident.
               </p>
-              <h5 className="pt-5 pb-4">Follow Us</h5>
-              <div className="social-style-one">
-                <FollowIcon />
+              <div className="h-[100px] w-[150px] mt-4 ml-12">
+                <img
+                  src="assets/images/logo-white.png"
+                  alt="Training"
+                  className="rounded-md"
+                />
               </div>
             </div>
           </div>
@@ -306,21 +305,21 @@ const FollowIcon = () => (
               </ul>
             </div>
           </div>
-
-          {/* View More or Media */}
-          <div className="col-lg-4 col-sm-12">
-            <div className="footer-widget">
-              <h5 className="footer-title">Our Training in Action</h5>
+          {/* About Us */}
+          <div className="col-lg-4 col-sm-6 mt-1">
+            <div className="footer-widget about-widget">
+              <h5 className="footer-title">
+                About Perfect Plus Pacific Truck School
+              </h5>
               <p>
-                Experience our hands-on training environment — designed to get
-                you road-ready and confident.
+                Perfect Plus Pacific Truck School offers high-quality CDL
+                training programs in West Sacramento, CA. Whether you’re just
+                starting your trucking journey or need a refresher, we’re here
+                to help every step of the way.
               </p>
-              <div className="h-[100px] w-[150px] mt-4 ml-12">
-                <img
-                  src="assets/images/logos/logo.png"
-                  alt="Training"
-                  className="rounded-md"
-                />
+              <h5 className="pt-5 pb-4">Follow Us</h5>
+              <div className="social-style-one">
+                <FollowIcon />
               </div>
             </div>
           </div>

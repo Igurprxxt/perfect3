@@ -5493,7 +5493,7 @@ h6,
   }
 }
 .page-banner-area:before {
-  mix-blend-mode: darken;
+  mix-blend-mode: multiply;
 }
 .page-banner-area .circle-one,
 .page-banner-area .circle-two {

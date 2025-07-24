@@ -3,8 +3,10 @@ import { Fragment, useEffect, useState } from "react";
 import { sidebarOnclick, stickyNav } from "../utils";
 import { Blog, Courses, Home, Pages } from "./Menu";
 import MobileHeader from "./MobileHeader";
+import { usePathname } from "next/navigation";
 
 const Header = ({ header }) => {
+  const location = usePathname();
   useEffect(() => {
     stickyNav();
   }, []);
@@ -356,14 +358,14 @@ const Header1 = ({ navToggle, setNavToggle }) => (
           <a>home</a>
         </Link>
       </li>
-      <li>
-        <Link legacyBehavior href="/about">
-          <a>About</a>
-        </Link>
-      </li>
       <li className="dropdown">
         <Link legacyBehavior href="/program">
           <a>Our Packages</a>
+        </Link>
+      </li>
+      <li className="dropdown">
+        <Link legacyBehavior href="/contact">
+          <a>Contact Us</a>
         </Link>
       </li>
       <li className="dropdown">
@@ -371,13 +373,13 @@ const Header1 = ({ navToggle, setNavToggle }) => (
           <a>Enrollment</a>
         </Link>
       </li>
-      <li className="dropdown">
-        <a>blog</a>
+      <li>
+        <Link legacyBehavior href="/about">
+          <a>About Us</a>
+        </Link>
       </li>
       <li className="dropdown">
-        <Link legacyBehavior href="/contact">
-          <a>Contact</a>
-        </Link>
+        <a>Blog</a>
       </li>
     </ul>
   ),

@@ -1,18 +1,28 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const PageBanner = ({ pageTitle, pageName }) => {
+  const location = usePathname();
+
+  const getImages = () => {
+    if (location === "/about") {
+      return "url(/assets/images/banner04.jpeg)";
+    } else if (location === "/contact") {
+      return "url(/assets/images/1319.jpg)";
+    } else {
+      return "url(/assets/images/banner04.jpeg)";
+    }
+  };
   return (
     <section
       className="page-banner-area rel z-1 text-white text-center"
       style={{
-        backgroundImage:
-          "url(https://bgchauffers.s3.ap-southeast-2.amazonaws.com/bg-chauffeur/imagehero-18648ea9-a5bc-48f4-9e7e-76da08a622c6.jpg)",
-        // "url(/assets/images/image6.jpeg)",
+        backgroundImage: getImages(),
       }}
     >
       <div className="container">
         <div className="banner-inner rpt-10">
-          <h2 className="page-title wow fadeInUp delay-0-2s">
+          <h2 className="page-title wow fadeInUp delay-0-2s uppercase">
             {pageTitle ? pageTitle : pageName}
           </h2>
           <nav aria-label="breadcrumb">
