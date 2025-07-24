@@ -7,13 +7,13 @@ const PageBanner = ({ pageTitle, pageName }) => {
 
   const getImages = () => {
     if (location === "/about") {
-      return "/assets/images/imagehero.jpg";
+      return "/assets/images/banner09.jpeg";
     } else if (location === "/contact") {
       return "/assets/images/banner06.jpg";
     } else if (location === "/enrollment") {
       return "/assets/images/banner.jpeg";
     } else {
-      return "/assets/images/banner04.jpeg";
+      return "/assets/images/banner09.jpeg";
     }
   };
   return (
