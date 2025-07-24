@@ -14,6 +14,7 @@ import { Input } from "../src/components/ui/input";
 import { TextArea } from "@radix-ui/themes";
 import Testimonial from "../src/components/testimonials";
 import Link from "next/link";
+import TrainingPackage from "../src/components/trainingPackage";
 
 const SERVICE_ID = "service_uimxucn";
 const TEMPLATE_ID = "template_touimv4";
@@ -264,8 +265,9 @@ const Index = () => {
         </div>
         <span className="bg-text">Drive</span>
       </section>
+      <TrainingPackage />
 
-      <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
+      {/* <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
         <div className="container">
           <div className="row justify-content-center mb-10">
             <div className="col-lg-8 text-center">
@@ -341,7 +343,7 @@ const Index = () => {
           src="assets/images/shapes/circle-dots.png"
           alt="Shape"
         />
-      </section>
+      </section> */}
       {/* Features Section End */}
       {/* About Section Start */}
       <section className="about-section pt-130 rpt-100">

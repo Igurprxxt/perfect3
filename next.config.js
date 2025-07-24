@@ -1,5 +1,5 @@
-
-//#DF6B2F// next.config.js
+// orange-#DF6B2F
+// blue-08006a
 const path = require("path");
 
 module.exports = {

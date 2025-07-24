@@ -6,9 +6,11 @@ const PageBanner = ({ pageTitle, pageName }) => {
 
   const getImages = () => {
     if (location === "/about") {
-      return "url(/assets/images/banner04.jpeg)";
+      return "url(/assets/images/imagehero.jpg)";
     } else if (location === "/contact") {
-      return "url(/assets/images/1319.jpg)";
+      return "url(/assets/images/banner06.jpg)";
+    } else if (location === "/enrollment") {
+      return "url(/assets/images/banner.jpeg)";
     } else {
       return "url(/assets/images/banner04.jpeg)";
     }
