@@ -15,6 +15,7 @@ import { TextArea } from "@radix-ui/themes";
 import Testimonial from "../src/components/testimonials";
 import Link from "next/link";
 import TrainingPackage from "../src/components/trainingPackage";
+import Image from "next/image";
 
 const SERVICE_ID = "service_uimxucn";
 const TEMPLATE_ID = "template_touimv4";
@@ -156,115 +157,121 @@ const Index = () => {
   };
   return (
     <Layout header={1} footer={1}>
-      <section
-        className="position-relative text-white"
-        style={{
-          backgroundImage: `url('/assets/images/image3.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          minHeight: "100vh",
-        }}
-      >
-        <div
-          className="position-absolute top-0 start-0 w-100 h-100"
-          style={{
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            zIndex: 1,
-          }}
-        ></div>
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2, paddingTop: 150, paddingBottom: 75 }}
-        >
+      <div className="relative min-h-screen text-white">
+        {/* Background Image */}
+        <Image
+          src="/assets/images/image3.png"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover object-center -z-10"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60 z-0" />
+
+        {/* Content */}
+        <div className="relative z-10 container py-[10px] pb-[25px]">
           <div className="row align-items-center">
-            <div className="col-lg-8">
-              <div className="hero-content rpt-25 rmb-75">
-                <h1 className="mb-4 leading-tight font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
-                  Looking for a driving school?
-                </h1>
-                <h3 className="wow fadeInUp text-4xl  delay-0-6s">
-                  You’re in the perfect spot.
-                </h3>
-                <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
-                  <Link className="theme-btn" href="/enrollment">
-                    Apply Now <i className="fas fa-arrow-right" />
-                  </Link>
+            <div
+              className="container position-relative"
+              style={{ zIndex: 2, paddingTop: 150, paddingBottom: 75 }}
+            >
+              <div className="row align-items-center">
+                <div className="col-lg-8">
+                  <div className="hero-content rpt-25 rmb-75">
+                    <h1 className="mb-4 leading-tight font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
+                      Looking for a driving school?
+                    </h1>
+                    <h3 className="wow fadeInUp text-4xl  delay-0-6s">
+                      You’re in the perfect spot.
+                    </h3>
+                    <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
+                      <Link className="theme-btn" href="/enrollment">
+                        Apply Now <i className="fas fa-arrow-right" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="hero-right-images  wow fadeInUp delay-0-2s">
-                <div className="bg-white p-4 rounded shadow-sm">
-                  <h5 className="mb-3 text-center " style={{ color: "black" }}>
-                    Book Your First Lesson Now!
-                  </h5>
-                  <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mb-2">
-                      <label className="form-label mb-1 text-gray-800 text-sm">
-                        Full Name
-                      </label>
-                      <Input
-                        placeholder="Enter your full name"
-                        {...register("name", { required: "Name is required" })}
-                      />
-                    </div>
-                    <div className="mb-2">
-                      <label className="form-label mb-1 text-gray-800 text-sm">
-                        Email Address
-                      </label>
+                <div className="col-lg-4">
+                  <div className="hero-right-images  wow fadeInUp delay-0-2s">
+                    <div className="bg-white p-4 rounded shadow-sm">
+                      <h5
+                        className="mb-3 text-center "
+                        style={{ color: "black" }}
+                      >
+                        Book Your First Lesson Now!
+                      </h5>
+                      <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="mb-2">
+                          <label className="form-label mb-1 text-gray-800 text-sm">
+                            Full Name
+                          </label>
+                          <Input
+                            placeholder="Enter your full name"
+                            {...register("name", {
+                              required: "Name is required",
+                            })}
+                          />
+                        </div>
+                        <div className="mb-2">
+                          <label className="form-label mb-1 text-gray-800 text-sm">
+                            Email Address
+                          </label>
 
-                      <Input
-                        placeholder="Enter your email address"
-                        type="email"
-                        {...register("email", {
-                          required: "Email is required",
-                        })}
-                      />
-                    </div>
-                    <div className="mb-2">
-                      <label className="form-label mb-1 text-gray-800 text-sm">
-                        Phone Number
-                      </label>
-                      <Input
-                        placeholder="Enter your phone number"
-                        {...register("phone", {
-                          required: "Phone Number is required",
-                        })}
-                      />
-                    </div>
+                          <Input
+                            placeholder="Enter your email address"
+                            type="email"
+                            {...register("email", {
+                              required: "Email is required",
+                            })}
+                          />
+                        </div>
+                        <div className="mb-2">
+                          <label className="form-label mb-1 text-gray-800 text-sm">
+                            Phone Number
+                          </label>
+                          <Input
+                            placeholder="Enter your phone number"
+                            {...register("phone", {
+                              required: "Phone Number is required",
+                            })}
+                          />
+                        </div>
 
-                    <div className="mb-3">
-                      <label className="form-label mb-1 text-gray-800 text-sm">
-                        Message
-                      </label>
+                        <div className="mb-3">
+                          <label className="form-label mb-1 text-gray-800 text-sm">
+                            Message
+                          </label>
 
-                      <TextArea
-                        placeholder="Write Message"
-                        className={
-                          "!text-black flex w-full rounded-md border border-input bg-background text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-                        }
-                        rows={5}
-                        {...register("message", {
-                          required: "Message is required",
-                        })}
-                      />
+                          <TextArea
+                            placeholder="Write Message"
+                            className={
+                              "!text-black flex w-full rounded-md border border-input bg-background text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                            }
+                            rows={5}
+                            {...register("message", {
+                              required: "Message is required",
+                            })}
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          className="btn  btn-md w-100"
+                          style={{ backgroundColor: "#DF6B2F", color: "white" }}
+                        >
+                          Submit Request
+                        </button>
+                      </form>
                     </div>
-                    <button
-                      type="submit"
-                      className="btn  btn-md w-100"
-                      style={{ backgroundColor: "#DF6B2F", color: "white" }}
-                    >
-                      Submit Request
-                    </button>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <span className="bg-text">Drive</span>
-      </section>
+      </div>
+
       <TrainingPackage />
 
       {/* <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
