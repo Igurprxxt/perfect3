@@ -160,7 +160,7 @@ const Index = () => {
       <div className="relative min-h-screen text-white">
         {/* Background Image */}
         <Image
-          src="/assets/images/image3.png"
+          src="/assets/images/image3.jpeg"
           alt="Hero Background"
           fill
           priority
