@@ -66,13 +66,11 @@ export const trainingPackages = [
     ],
   },
 ];
-
 const schema = z.object({
-  name: z.string().optional(),
-  email: z.string().optional(),
-  phone: z.string().optional(),
-  // inquiry: z.string().optional(),
-  message: z.string().optional(),
+  name: z.string().min(1, "Enter your name"), // ✅ Required
+  email: z.string().min(1, "Enter your email"), // ✅ Required
+  phone: z.string().min(1, "Enter your phone"), // ✅ Required
+  message: z.string().optional(), // ✅ Optional
 });
 
 export const reviews = [
@@ -212,12 +210,17 @@ const Index = () => {
                               required: "Name is required",
                             })}
                           />
+                          {errors.name && (
+                            <p className="text-red-500 text-sm mt-1">
+                              {errors.name.message}
+                            </p>
+                          )}
                         </div>
+
                         <div className="mb-2">
                           <label className="form-label mb-1 text-gray-800 text-sm">
                             Email Address
                           </label>
-
                           <Input
                             placeholder="Enter your email address"
                             type="email"
@@ -225,7 +228,13 @@ const Index = () => {
                               required: "Email is required",
                             })}
                           />
+                          {errors.email && (
+                            <p className="text-red-500 text-sm mt-1">
+                              {errors.email.message}
+                            </p>
+                          )}
                         </div>
+
                         <div className="mb-2">
                           <label className="form-label mb-1 text-gray-800 text-sm">
                             Phone Number
@@ -236,30 +245,29 @@ const Index = () => {
                               required: "Phone Number is required",
                             })}
                           />
+                          {errors.phone && (
+                            <p className="text-red-500 text-sm mt-1">
+                              {errors.phone.message}
+                            </p>
+                          )}
                         </div>
 
                         <div className="mb-3">
                           <label className="form-label mb-1 text-gray-800 text-sm">
                             Message
                           </label>
-
                           <textarea
                             placeholder="Write Message"
-                            className={
-                              "flex w-full rounded-md p-2  text-black  file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-                            }
-                            style={{
-                              color: "black",
-                            }}
+                            className="flex w-full rounded-md p-2 text-black placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                             rows={5}
-                            {...register("message", {
-                              required: "Message is required",
-                            })}
+                            {...register("message")} // No 'required' here
                           />
+                          {/* No error message for message */}
                         </div>
+
                         <button
                           type="submit"
-                          className="btn  btn-md w-100"
+                          className="btn btn-md w-100"
                           style={{ backgroundColor: "#DF6B2F", color: "white" }}
                         >
                           Submit Request
