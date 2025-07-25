@@ -11,7 +11,6 @@ import BlogSection from "../src/components/blogSection";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { Input } from "../src/components/ui/input";
-import { TextArea } from "@radix-ui/themes";
 import Testimonial from "../src/components/testimonials";
 import Link from "next/link";
 import TrainingPackage from "../src/components/trainingPackage";
@@ -244,11 +243,14 @@ const Index = () => {
                             Message
                           </label>
 
-                          <TextArea
+                          <textarea
                             placeholder="Write Message"
                             className={
-                              "text-black flex w-full rounded-md border border-input bg-background ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                              "flex w-full rounded-md p-2  text-black  file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                             }
+                            style={{
+                              color: "black",
+                            }}
                             rows={5}
                             {...register("message", {
                               required: "Message is required",
