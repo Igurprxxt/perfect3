@@ -147,6 +147,7 @@ const Index = () => {
       console.log("response", response);
       toast("Details submitted successfully!", { type: "success" });
       reset();
+      setLoading(false);
     } catch (error) {
       console.error("Failed to send email:", error);
       setLoading(false);

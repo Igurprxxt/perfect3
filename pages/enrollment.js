@@ -116,6 +116,7 @@ export default function Enrollment() {
         toast("Details submitted successfully!", { type: "success" });
         reset();
         signatureRef.current?.clear();
+        setLoading(false);
       } catch (error) {
         setLoading(false);
         console.error("Failed to send email:", error);

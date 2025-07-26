@@ -40,6 +40,7 @@ const ContactUs = () => {
 
       toast("Details submitted successfully!", { type: "success" });
       reset();
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       console.error("Failed to send email:", error);
