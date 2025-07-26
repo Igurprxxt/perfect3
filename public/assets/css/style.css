@@ -3894,6 +3894,7 @@ h6,
 @media only screen and (max-width: 575px) {
   .top-inner .top-left {
     display: none;
+    /* font-size: 12px; */
   }
 }
 .top-inner .top-left p {
@@ -3971,7 +3972,7 @@ h6,
   .main-menu .navbar-collapse {
     left: 0;
     width: 100%;
-    padding: 0 15px;
+    /* padding: 0 15px; */
     position: absolute;
   }
 }
