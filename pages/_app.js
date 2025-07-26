@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import "../styles/globals.css";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Fragment>
-       <ToastContainer />
+      <ToastContainer />
       <Head>
         <title>Perfect Plus - Best Driving School</title>
         {/*====== Favicon Icon ======*/}
@@ -45,11 +46,10 @@ function MyApp({ Component, pageProps }) {
         <link rel="stylesheet" href="assets/css/slick.min.css" />
         {/*====== Main Style ======*/}
         <link rel="stylesheet" href="assets/css/style.css" />
-
       </Head>
       {loading && <div className="preloader" />}
       <Component {...pageProps} />
-       {/* <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> */}
+      {/* <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> */}
     </Fragment>
   );
 }

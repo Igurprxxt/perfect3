@@ -127,7 +127,7 @@ const Index = () => {
     },
   });
 
-  const [hoverId, setHoverId] = useState();
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
     const formattedData = {
@@ -136,7 +136,7 @@ const Index = () => {
       phone: data.phone || "--",
       message: data.message || "--",
     };
-
+    setLoading(true);
     try {
       const response = await emailjs.send(
         SERVICE_ID,
@@ -149,6 +149,7 @@ const Index = () => {
       reset();
     } catch (error) {
       console.error("Failed to send email:", error);
+      setLoading(false);
       toast("Failed to send message.", { type: "error" });
     }
   };
@@ -270,7 +271,17 @@ const Index = () => {
                           className="btn btn-md w-100"
                           style={{ backgroundColor: "#DF6B2F", color: "white" }}
                         >
-                          Submit Request
+                          {loading ? (
+                            <>
+                              <span
+                                className="spinner-border spinner-border-sm me-2"
+                                role="status"
+                              />
+                              Submitting...
+                            </>
+                          ) : (
+                            "Submit Request"
+                          )}
                         </button>
                       </form>
                     </div>

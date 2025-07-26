@@ -17,8 +17,8 @@ import { toast } from "react-toastify";
 import Layout from "../src/layout/Layout";
 import PageBanner from "../src/components/PageBanner";
 import emailjs from "@emailjs/browser";
-const SERVICE_ID = "service_uimxucn"; // e.g., 'service_xxxxxx'
-const TEMPLATE_ID = "template_wy7cadp"; // e.g., 'template_xxxxxx'
+const SERVICE_ID = "service_uimxucn";
+const TEMPLATE_ID = "template_wy7cadp";
 const PUBLIC_KEY = "cj9evgivVEUn1Qkb3";
 
 export default function Enrollment() {
@@ -33,6 +33,7 @@ export default function Enrollment() {
 
   const signatureRef = useRef(null);
   const [sameAsPhysical, setSameAsPhysical] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const physicalAddress = watch([
     "physical.line1",
@@ -55,6 +56,28 @@ export default function Enrollment() {
     if (!signatureRef.current?.isEmpty()) {
       const signatureData = signatureRef.current.toDataURL();
       const formData = { ...data, signature: signatureData };
+      setLoading(true);
+      // const pdfDoc = await PDFDocument.create();
+      // const page = pdfDoc.addPage([595, 842]);
+
+      // const pngImage = await pdfDoc.embedPng(signatureData);
+      // const pngDims = pngImage.scale(0.5);
+
+      // page.drawImage(pngImage, {
+      //   x: 50,
+      //   y: 700,
+      //   width: pngDims.width,
+      //   height: pngDims.height,
+      // });
+
+      // const pdfBytes = await pdfDoc.save();
+
+      // // Download the PDF
+      // const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      // const link = document.createElement("a");
+      // link.href = URL.createObjectURL(blob);
+      // link.download = "signature.pdf";
+      // link.click();
       const templateParams = {
         to_email: "gurpreetramgarhia0808@gmail.com",
         from_name: formData.firstName + " " + formData.lastName,
@@ -80,6 +103,7 @@ export default function Enrollment() {
         physical_state: formData.physical.state,
         physical_zip: formData.physical.zip,
         signature_data: formData.signature.split(",")[1],
+        attachment: signatureData,
       };
       try {
         const response = await emailjs.send(
@@ -93,9 +117,11 @@ export default function Enrollment() {
         reset();
         signatureRef.current?.clear();
       } catch (error) {
+        setLoading(false);
         console.error("Failed to send email:", error);
       }
     } else {
+      setLoading(false);
       toast("Please provide your signature", { type: "error" });
     }
   };
@@ -611,7 +637,17 @@ export default function Enrollment() {
                 size="lg"
                 className="px-10 py-3 mb-3 bg-[#DF6B2F] text-white rounded-md"
               >
-                Submit Application
+                {loading ? (
+                  <>
+                    <span
+                      className="spinner-border spinner-border-sm me-2"
+                      role="status"
+                    />
+                    Submitting...
+                  </>
+                ) : (
+                  "Submit Application"
+                )}
               </Button>
             </div>
           </form>

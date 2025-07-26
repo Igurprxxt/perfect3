@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { Input } from "../src/components/ui/input";
 import { TextArea } from "@radix-ui/themes";
+import { useState } from "react";
 
 const SERVICE_ID = "service_uimxucn";
 const TEMPLATE_ID = "template_touimv4";
@@ -18,7 +19,10 @@ const ContactUs = () => {
     formState: { errors, isSubmitting },
   } = useForm();
 
+  const [loading, setLoading] = useState(false);
+
   const onSubmit = async (data) => {
+    setLoading(true);
     const formattedData = {
       fullName: data.fullName || "--",
       email: data.email || "--",
@@ -33,10 +37,11 @@ const ContactUs = () => {
         formattedData,
         PUBLIC_KEY
       );
-      console.log("response", response);
+
       toast("Details submitted successfully!", { type: "success" });
       reset();
     } catch (error) {
+      setLoading(false);
       console.error("Failed to send email:", error);
       toast("Failed to send message.", { type: "error" });
     }
@@ -91,7 +96,19 @@ const ContactUs = () => {
             <div className="col-md-12">
               <div className="form-group text-center mb-0">
                 <button type="submit" className="theme-btn cursor-pointer">
-                  send Message <i className="fas fa-arrow-right" />
+                  {loading ? (
+                    <>
+                      <span
+                        className="spinner-border spinner-border-sm me-2"
+                        role="status"
+                      />
+                      Submitting...
+                    </>
+                  ) : (
+                    <div>
+                      send Message <i className="fas fa-arrow-right" />
+                    </div>
+                  )}
                 </button>
               </div>
             </div>
