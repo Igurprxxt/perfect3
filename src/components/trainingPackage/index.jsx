@@ -56,12 +56,12 @@ const TrainingPackage = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 px-4 bg-[#0F256E] text-white font-inter">
+    <section className="min-h-screen flex items-center justify-center py-10 px-4 bg-[#0F256E] text-white font-inter">
       <div className="container mx-auto max-w-max">
         {/* Section Title */}
 
         <div className="text-center mb-16">
-          <span className="sub-title mb-25">Perfect Plus Training Program</span>
+          <span className="sub-title mb-25">Pacific Truck School Programs</span>
           {/* <span className="text-[#FF6B00] text-lg sm:text-xl font-semibold mb-4 block animate-fade-in-down">
             Perfect Plus Training Program
           </span> */}

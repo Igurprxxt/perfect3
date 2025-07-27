@@ -5,7 +5,7 @@ import { reviews } from "../../../pages";
 
 const Testimonial = () => {
   return (
-    <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
+    <section className="features-section rel z-1 py-16 rpt-100  bg-blue text-white">
       <div className="container">
         <div className="row align-items-center justify-content-between">
           <div className="col-lg-5">

@@ -3,7 +3,7 @@ import React from "react";
 
 const BlogSection = () => {
   return (
-    <section className="blog-section py-130 rpy-100 ">
+    <section className="blog-section py-8 rpy-100 ">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-6 col-lg-7 col-md-8">
@@ -108,7 +108,7 @@ const BlogSection = () => {
                     <li>
                       <i className="far fa-user" />
                       <Link legacyBehavior href="/blog">
-                        By Perfect Plus
+                        By Pacific Truck School
                       </Link>
                     </li>
                     <li>

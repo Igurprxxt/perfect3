@@ -19,7 +19,10 @@ const Footer = ({ footer }) => {
 export default Footer;
 const FollowIcon = () => (
     <Fragment>
-      <Link legacyBehavior href="https://www.facebook.com/share/18fv6icuto/">
+      <Link
+        legacyBehavior
+        href="https://www.facebook.com/people/Perfect-Plus-By-Pacific-Truck-School/61573949159593/"
+      >
         <a>
           <i className="fab fa-facebook-f" />
         </a>
@@ -135,7 +138,7 @@ const FollowIcon = () => (
     <p>
       © {new Date().getFullYear()}.{" "}
       <Link legacyBehavior href="/">
-        PERFECT PLUS
+        PACIFIC TRUCK SCHOOL
       </Link>{" "}
       All rights reserved.
     </p>
@@ -271,13 +274,21 @@ const FollowIcon = () => (
               <ul className="space-y-3">
                 <li>
                   <i className="fas fa-map-marker-alt mr-2" />
-                  Pacific Truck School
-                  <br />
-                  532 Houston Street, West Sacramento, CA 95691
+                  <a
+                    href="https://www.google.com/maps?q=Pacific+Truck+School,+532+Houston+Street,+West+Sacramento,+CA+95691"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    Pacific Truck School
+                    <br />
+                    532 Houston Street, West Sacramento, CA 95691
+                  </a>
                 </li>
+
                 <li>
                   <i className="far fa-clock mr-2" />
-                  Office Hours: Monday – Sunday, 8 AM – 5 PM
+                  Office Hours: Monday – Friday, 8 AM – 5 PM PT
                 </li>
                 <li>
                   <i className="fas fa-phone mr-2" />
@@ -295,27 +306,18 @@ const FollowIcon = () => (
                     contact@getcdlready.com
                   </a>
                 </li>
-
-                <li>
-                  <i className="far fa-envelope mr-2" />
-                  <a href="mailto:admissions@getcdlready.com">
-                    admissions@getcdlready.com
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
           {/* About Us */}
           <div className="col-lg-4 col-sm-6 mt-1">
             <div className="footer-widget about-widget">
-              <h5 className="footer-title">
-                About Perfect Plus Pacific Truck School
-              </h5>
+              <h5 className="footer-title">About Pacific Truck School</h5>
               <p>
-                Perfect Plus Pacific Truck School offers high-quality CDL
-                training programs in West Sacramento, CA. Whether you’re just
-                starting your trucking journey or need a refresher, we’re here
-                to help every step of the way.
+                Pacific Truck School offers high-quality CDL training programs
+                in West Sacramento, CA. Whether you’re just starting your
+                trucking journey or need a refresher, we’re here to help every
+                step of the way.
               </p>
               <h5 className="pt-5 pb-4">Follow Us</h5>
               <div className="social-style-one">

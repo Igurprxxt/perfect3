@@ -28,7 +28,6 @@ const Header = ({ header }) => {
 export default Header;
 const Header1 = ({ navToggle, setNavToggle }) => (
     <Fragment>
-      {console.log("navToggle", navToggle)}
       <header className="main-header">
         <HeaderTop />
         <div className="header-upper">
@@ -172,7 +171,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
           <div className="top-inner">
             <div className="top-left">
               <p>
-                <i className="far fa-clock" /> <b>Working Hours</b> : Manday -
+                <i className="far fa-clock" /> <b>Working Hours</b> : Monday -
                 Friday, 08am - 05pm
               </p>
               <p>
@@ -370,7 +369,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
       </li>
       <li className="dropdown">
         <Link legacyBehavior href="/enrollment">
-          <a>Enrollment</a>
+          <a>Enroll Now</a>
         </Link>
       </li>
       <li>
@@ -384,50 +383,107 @@ const Header1 = ({ navToggle, setNavToggle }) => (
     </ul>
   ),
   HeaderTop = () => (
-    <div className="header-top bg-light-blue text-white">
-      <div className="container-fluid">
-        <div className="top-inner">
-          <div className="top-left">
-            <p>
-              <i className="far fa-clock" /> <b>Working Hours</b> : Monday -
-              Friday, 08am - 05pm
-            </p>
-          </div>
-          <div
-            className="top-center d-flex align-items-center"
-            style={{ marginRight: 120 }}
+    <div className="bg-[#08006a] text-white text-xs">
+      <div className="container mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+        {/* Left - Timings */}
+        <div className="text-center md:text-left">
+          Timings <span className="text-[#DF6B2F] font-semibold">Mon–Fri</span>{" "}
+          8am–5pm PT
+        </div>
+
+        {/* Center - Call / Text */}
+        <div className="text-center md:text-left space-x-4">
+          <span>
+            Call us at{" "}
+            <a href="tel:9165959200" className="underline" title="Call Us">
+              916-595-9200
+            </a>
+          </span>
+        </div>
+
+        {/* Right - Email + Social */}
+        <div className="flex items-center space-x-4">
+          <a
+            href="mailto:contact@getcdlready.com"
+            className="flex items-center space-x-1"
           >
-            <div className="social-style-two">
-              <Link legacyBehavior target="_blank" href="">
-                <a
-                  href="https://www.instagram.com/perfect_plus_cdl_school?igsh=ZXd0dGVjNHlrcmFh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-instagram" />
-                </a>
-              </Link>
-              <Link href={""} target="_blank" legacyBehavior>
-                <a
-                  href="https://www.facebook.com/share/18fv6icuto/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-facebook-f" />
-                </a>
-              </Link>
-              <Link target="_blank" legacyBehavior href="">
-                <a
-                  href="https://g.co/kgs/ecLPxQ1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-google" />
-                </a>
-              </Link>
-            </div>
+            <i className="fas fa-envelope" />
+            <span>contact@getcdlready.com</span>
+          </a>
+          <div className="flex space-x-3">
+            <a
+              href="https://www.facebook.com/people/Perfect-Plus-By-Pacific-Truck-School/61573949159593/"
+              target="_blank"
+              rel="noreferrer"
+              title="Facebook"
+            >
+              <i className="fab fa-facebook-f" />
+            </a>
+            <a
+              href="https://g.co/kgs/ecLPxQ1"
+              target="_blank"
+              rel="noreferrer"
+              title="Google"
+            >
+              <i className="fab fa-google" />
+            </a>
+            <a
+              href="https://www.instagram.com/perfect_plus_cdl_school?igsh=ZXd0dGVjNHlrcmFh"
+              target="_blank"
+              rel="noreferrer"
+              title="Instagram"
+            >
+              <i className="fab fa-instagram" />
+            </a>
           </div>
         </div>
       </div>
     </div>
+
+    // <div className="header-top bg-light-blue text-white">
+    //   <div className="container-fluid">
+    //     <div className="top-inner">
+    //       <div className="top-left">
+    //         <p>
+    //           <i className="far fa-clock" /> <b>Working Hours</b> : Monday -
+    //           Friday, 08am - 05pm
+    //         </p>
+    //       </div>
+    //       <div
+    //         className="top-center d-flex align-items-center"
+    //         style={{ marginRight: 120 }}
+    //       >
+    //         <div className="social-style-two">
+    //           <Link legacyBehavior target="_blank" href="">
+    //             <a
+    //               href="https://www.instagram.com/perfect_plus_cdl_school?igsh=ZXd0dGVjNHlrcmFh"
+    //               target="_blank"
+    //               rel="noopener noreferrer"
+    //             >
+    //               <i className="fab fa-instagram" />
+    //             </a>
+    //           </Link>
+    //           <Link href={""} target="_blank" legacyBehavior>
+    //             <a
+    //               href="https://www.facebook.com/share/18fv6icuto/"
+    //               target="_blank"
+    //               rel="noopener noreferrer"
+    //             >
+    //               <i className="fab fa-facebook-f" />
+    //             </a>
+    //           </Link>
+    //           <Link target="_blank" legacyBehavior href="">
+    //             <a
+    //               href="https://g.co/kgs/ecLPxQ1"
+    //               target="_blank"
+    //               rel="noopener noreferrer"
+    //             >
+    //               <i className="fab fa-google" />
+    //             </a>
+    //           </Link>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );

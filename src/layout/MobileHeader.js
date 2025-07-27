@@ -13,7 +13,7 @@ const MobileHeader = ({ setNavToggle }) => {
         <Link href="/contact">Contact Us</Link>
       </li>
       <li>
-        <Link href="/enrollment">Enrollment</Link>
+        <Link href="/enrollment">Enroll Now</Link>
       </li>
       <li>
         <Link href="/about">About Us</Link>

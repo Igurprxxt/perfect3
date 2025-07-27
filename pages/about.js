@@ -21,8 +21,6 @@ import {
   Users,
 } from "lucide-react";
 import TrainingPackage from "../src/components/trainingPackage";
-import BlogSection from "../src/components/blogSection";
-import Testimonial from "../src/components/testimonials";
 const About = () => {
   return (
     <Layout header={1} footer={1}>
@@ -32,40 +30,102 @@ const About = () => {
       <div className="flex flex-col min-h-[100dvh] bg-white">
         <main className="flex-1">
           {/* About Us Section */}
-          <section className="w-full pt-130 rpt-100">
+          <section className="w-full pt-16 rpt-100">
             <div className="container px-4 md:px-6">
-              <div className="grid gap-8 lg:grid-cols-2 lg:gap-12  items-center">
-                <div className="space-y-4">
+              <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+                {/* Text Content */}
+                <div className="space-y-1">
                   <div className="section-title mb-10">
-                    <span className="sub-title mb-25">About Us</span>
-                    <h2>We Provide Life Coach From Expert Advisors</h2>
+                    <span className="sub-title mb-4">About Us</span>
+                    <h2 className="text-3xl font-bold text-gray-900">
+                      We Provide Life Coach From Expert Advisors
+                    </h2>
                   </div>
-                  <p>
+                  <p className="mb-2">
                     Founded in January 2025, our PCDL School was created with a
                     clear purpose: to train and prepare professional drivers who
                     are ready to hit the road and help drive America&apos;s
                     economy forward.
                   </p>
-                  <p>
+                  <p className="mb-2">
                     With over 25 years of experience in the trucking industry,
                     our founder brings deep industry knowledge, real-world
                     insight, and a passion for excellence to every aspect of our
-                    training program. We believe that skilled, safety-conscious
-                    drivers are the backbone of the transportation sector—and
-                    we’re here to help shape the next generation.
+                    training program.
                   </p>
-                  <p>
+                  <p className="mb-2">
                     At our school, we’re not just teaching people how to
                     drive—we’re building careers, strengthening communities, and
                     fueling progress across the nation.
                   </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16">
+                    <div className="flex items-start gap-4">
+                      <div className="text-[#DF6B2F] text-2xl">
+                        <i className="fas fa-chalkboard-teacher"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-900">
+                          Experienced Instructors
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                          Learn from professionals with 25+ years of experience
+                          in the trucking industry.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="text-[#DF6B2F] text-2xl">
+                        <i className="fas fa-truck-moving"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-900">
+                          Modern Fleet
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                          Hands-on training with well-maintained, modern
+                          commercial trucks.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="text-[#DF6B2F] text-2xl">
+                        <i className="fas fa-book-open"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-900">
+                          Comprehensive Curriculum
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                          Master both theory and road safety with structured CDL
+                          classes.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="text-[#DF6B2F] text-2xl">
+                        <i className="fas fa-map-marker-alt"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-900">
+                          Easy to Locate
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                          Conveniently located near major freeways and public
+                          transport — making your commute hassle-free.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
+                {/* Image */}
                 <div className="flex justify-center">
                   <div className="h-full w-full">
                     <img
                       src="/assets/images/truckimage2.jpg"
                       alt="Hero"
-                      className=" w-full h-[100%] md:w-full md:h-[80%] object-cover rounded"
+                      className="w-full md:w-full object-cover rounded"
                     />
                   </div>
                 </div>
@@ -74,12 +134,12 @@ const About = () => {
           </section>
 
           {/* Mission, Vision, and Core Values Section */}
-          <section className="w-full pt-130 rpt-100 bg-white">
+          <section className="w-full pt-20 rpt-100 bg-white">
             <div className="container px-4 md:px-6">
               <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
                 {/* Mission and Vision (Left Column) */}
                 <div className="space-y-10">
-                  <div className="space-y-4">
+                  <div className="space-y-1">
                     <div className="inline-flex items-center gap-2 rounded-md bg-[#df6b2f] px-4 py-2 text-sm font-semibold uppercase text-white mb-4">
                       <ClipboardList className="h-5 w-5" />
                       Our Mission
@@ -91,7 +151,7 @@ const About = () => {
                       integrity, and service.
                     </p>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-1">
                     <div className="inline-flex items-center gap-2 rounded-md bg-[#df6b2f] px-4 py-2 text-sm font-semibold uppercase text-white mb-4">
                       <Eye className="h-5 w-5" />
                       Our Vision
@@ -103,7 +163,7 @@ const About = () => {
                       America moving.
                     </p>
                   </div>
-                  <div className="h-[400px] w-full space-y-4">
+                  <div className="h-[400px] w-full space-y-1">
                     <img
                       src="/assets/images/truckimage1.jpg"
                       alt="Hero"
@@ -152,7 +212,7 @@ const About = () => {
                     ].map((value, index) => (
                       <div
                         key={index}
-                        className="flex items-start gap-4 bg-white rounded-xl p-3 hover:shadow-md transition-shadow"
+                        className="flex items-start gap-4 bg-white rounded-xl p-1 hover:shadow-md transition-shadow"
                       >
                         <div className="flex-shrink-0">{value.icon}</div>
                         <div>
@@ -253,7 +313,7 @@ const About = () => {
       {/* Features Section End */}
       {/* Team Section Start */}
 
-      <section className="features-section-three rel z-1 pt-110 rpt-85 pb-100 rpb-70">
+      <section className="features-section-three rel z-1 pt-20 rpt-85 pb-100 rpb-70">
         <TrainingPackage />
       </section>
       <section className="why-learn-area pb-120 rpb-100">

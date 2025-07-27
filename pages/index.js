@@ -2,7 +2,15 @@ import Layout from "../src/layout/Layout";
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
 import { index1EventWrap } from "../src/sliderProps";
-import { Check, Flag, Handshake, ShieldCheck, Star, Truck } from "lucide-react";
+import {
+  Check,
+  Flag,
+  Handshake,
+  PhoneCall,
+  ShieldCheck,
+  Star,
+  Truck,
+} from "lucide-react";
 import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,6 +23,10 @@ import Testimonial from "../src/components/testimonials";
 import Link from "next/link";
 import TrainingPackage from "../src/components/trainingPackage";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const SERVICE_ID = "service_uimxucn";
 const TEMPLATE_ID = "template_touimv4";
@@ -196,10 +208,10 @@ const Index = () => {
                   <div className="hero-right-images  wow fadeInUp delay-0-2s">
                     <div className="bg-white p-4 rounded shadow-sm">
                       <h5
-                        className="mb-3 text-center "
+                        className="mb-3 text-center"
                         style={{ color: "black" }}
                       >
-                        Book Your First Lesson Now!
+                        CONTACT US
                       </h5>
                       <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-2">
@@ -294,7 +306,37 @@ const Index = () => {
         </div>
       </div>
 
-      <TrainingPackage />
+      {/* <div className="bg-gradient-to-r from-[#1F1F1F] to-gray-800 text-white py-8 px-4"> */}
+      <div className="bg-gradient-to-r from-white to-gray-100 text-gray-900 py-8 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          {/* Left Content */}
+          <div>
+            <h2 className="text-2xl md:text-2xl font-bold tracking-wide">
+              CALL US AT{" "}
+              <a
+                href="tel:+1916-595-9200"
+                className="hover:underline text-orange-600"
+                title="+1 916-595-9200"
+              >
+                916-595-9200
+              </a>
+            </h2>
+            <p className="text-sm md:text-base text-gray-700 mt-1">
+              We speak English, Russian, and Spanish — available 7 days a week!
+            </p>
+          </div>
+
+          {/* Right Button */}
+          <div>
+            <a
+              href="/contact"
+              className="inline-block bg-orange-500 text-white hover:bg-orange-600 transition-colors px-5 py-2 text-sm md:text-base font-semibold rounded-md shadow"
+            >
+              Request Info
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
         <div className="container">
@@ -375,30 +417,52 @@ const Index = () => {
       </section> */}
       {/* Features Section End */}
       {/* About Section Start */}
-      <section className="about-section pt-130 rpt-100">
+      <TrainingPackage />
+
+      {/* <section className="about-section pt-20 rpt-100">
         <div className="container">
           <div className="row">
-            {/* 🔽 Image Column */}
             <div className="col-lg-5 align-self-stretch">
               <div className="h-full w-full">
-                <img
-                  src="/assets/images/about2.jpeg"
-                  alt="Hero"
-                  className=" w-full h-[100%] md:w-full md:h-[80%] object-cover rounded"
-                />
+                <Swiper
+                  modules={[Autoplay, Pagination]}
+                  autoplay={{ delay: 3000 }}
+                  pagination={{ clickable: true }}
+                  loop={true}
+                  className="rounded overflow-hidden"
+                >
+                  <SwiperSlide>
+                    <img
+                      src="/assets/images/truckimage2.jpg"
+                      alt="Slide 1"
+                      className="w-full h-[250px] md:h-[650px] object-cover"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src="/assets/images/image5.jpg"
+                      alt="Slide 2"
+                      className="w-full h-[250px] md:h-[650px] object-cover"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src="/assets/images/male-worker-with-bulldozer-sand-quarry_1303-28112.jpeg"
+                      alt="Slide 3"
+                      className="w-full h-[250px] md:h-[650px] object-cover"
+                    />
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </div>
 
-            {/* 🔽 Content Column */}
             <div className="col-lg-7 mt-12 md:mt-0">
-              <div className="about-content rel z-2 pb-115 rpb-85 wow fadeInRight delay-0-2s h-full">
-                {/* Title */}
+              <div className="about-content rel z-2 pb-30 rpb-85 wow fadeInRight delay-0-2s h-full">
                 <div className="section-title mb-10">
                   <span className="sub-title mb-25">About Us</span>
                   <h2>We Provide Life Coach From Expert Advisors</h2>
                 </div>
 
-                {/* Description */}
                 <div className="mb-4">
                   <p className="mb-3">
                     Founded in January 2025, our PCDL School was created with a
@@ -421,7 +485,6 @@ const Index = () => {
                   </p>
                 </div>
 
-                {/* Mission & Vision */}
                 <div className="about-features">
                   <div className="row">
                     {[
@@ -449,8 +512,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Button */}
-                <div className="about-btns mt-4">
+                <div className="about-btns mt-0">
                   <button className="theme-btn style-two my-15">
                     <Link
                       href="/about"
@@ -464,22 +526,40 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Events Section Start */}
-      <section className="events-section rel z-1 py-130 rpy-100 bg-blue text-white">
+      </section> */}
+      <section className="events-section rel z-1 pt-12 pb-4 rpy-100 bg-white text-blue">
         <div className="container">
           <div className="row justify-center">
             <div className="col-xl-7 col-lg-8 col-md-9">
-              <div className="section-title text-center mb-55">
-                <span className="sub-title mb-25">Events & Programs</span>
-                <h2>Driving Dreams, Building Community</h2>
+              <div className="section-title text-center mb-12">
+                <span className="sub-title mb-25">About Us</span>
+                <h2>We Provide Life Coach From Expert Advisors</h2>
               </div>
+            </div>
+            <div className="mb-1 md:mb-3 mx-3 text-justify md:text-center">
+              <p className="mb-3">
+                Founded in January 2025, our PCDL School was created with a
+                clear purpose: to train and prepare professional drivers who are
+                ready to hit the road and help drive America’s economy forward.
+              </p>
+              <p className="mb-3">
+                With over 25 years of experience in the trucking industry, our
+                founder brings deep industry knowledge, real-world insight, and
+                a passion for excellence to every aspect of our training
+                program. We believe that skilled, safety-conscious drivers are
+                the backbone of the transportation sector—and we’re here to help
+                shape the next generation.
+              </p>
+              <p>
+                At our school, we’re not just teaching people how to drive—we’re
+                building careers, strengthening communities, and fueling
+                progress across the nation.
+              </p>
             </div>
           </div>
 
           <Slider {...index1EventWrap} className="event-wrap">
-            <div className="event-item wow fadeInUp delay-0-2s">
+            <div className="event-item wow fadeInUp delay-0-2s border border-[#08006a] rounded-sm">
               <div className="image">
                 <img src="/assets/images/1319.jpg" alt="Graduation Ceremony" />
                 <span className="date">June 22, 2025</span>
@@ -493,7 +573,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="event-item wow fadeInUp delay-0-4s">
+            <div className="event-item wow fadeInUp delay-0-4s border border-[#08006a] rounded-sm">
               <div className="image">
                 <img
                   src="/assets/images/2149426492.jpg"
@@ -510,7 +590,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="event-item wow fadeInUp delay-0-6s">
+            <div className="event-item wow fadeInUp delay-0-6s border border-[#08006a] rounded-sm">
               <div className="image">
                 <img
                   src="/assets/images/comrades-achievement-employee-appreciation-photo_960396-53771.jpeg"
@@ -527,7 +607,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="event-item wow fadeInUp delay-0-2s">
+            <div className="event-item wow fadeInUp delay-0-2s border border-[#08006a] rounded-sm">
               <div className="image">
                 <img src="/assets/images/46521.jpg" alt="Skills Challenge" />
                 <span className="date">September 14, 2025</span>
@@ -540,9 +620,15 @@ const Index = () => {
               </div>
             </div>
           </Slider>
+          <div className="flex justify-center">
+            <div className="inline-block  bg-[#DF6B2F] mb-12 wow fadeInUp delay-0-8s rounded-lg">
+              <Link className="theme-btn" href="/enrollment">
+                Apply Now <i className="fas fa-arrow-right" />
+              </Link>
+            </div>
+          </div>
         </div>
 
-        <span className="bg-text">Drive</span>
         <img
           className="rectangle-dots"
           src="assets/images/shapes/rectangle-dots.png"
@@ -555,9 +641,8 @@ const Index = () => {
         />
       </section>
 
-      {/* Events Section End */}
-
-      <section className="core-values-section py-130 rpy-100 wow fadeInUp delay-0-2s">
+      <Testimonial />
+      <section className="core-values-section pt-10 rpt-100 wow fadeInUp delay-0-2s">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -570,11 +655,11 @@ const Index = () => {
               </div>
             </div>
             <div className="col-lg-6">
-              <div className="core-values-content p-6">
+              <div className="core-values-content p-3 md:p-4">
                 <div className="section-title mb-6">
                   <span className="sub-title ">Our Core Values</span>
                 </div>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {[
                     {
                       icon: <Truck className="h-6 w-6 text-[#4CAF50]" />,
@@ -604,14 +689,16 @@ const Index = () => {
                   ].map((value, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-4 bg-white rounded-xl p-3 hover:shadow-md transition-shadow"
+                      className="flex items-start gap-4 bg-white rounded-xl md:px-3 hover:shadow-md transition-shadow"
                     >
                       <div className="flex-shrink-0">{value.icon}</div>
                       <div>
                         <h3 className="text-lg font-bold text-[#0F256E]">
                           {value.title}
                         </h3>
-                        <p className="text-gray-700 mt-1">{value.desc}</p>
+                        <p className="text-gray-700 mt-1 text-justify md:text-start">
+                          {value.desc}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -621,15 +708,33 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Newsletter Section End */}
-
-      {/* Testimonials Section Start */}
-
-      <Testimonial />
+      {/* Events Section Start */}
 
       {/* Testimonials Section End */}
       {/* Blog Section Start */}
+      <section
+        className="relative h-[300px] md:h-[450px] my-16 bg-cover bg-center text-white flex items-center"
+        style={{ backgroundImage: "url('/assets/images/banner07.jpg')" }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/70 z-0" />
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+            Start Your CDL Journey With Confidence
+          </h2>
+          <p className="text-base md:text-lg mb-5">
+            Our certified instructors and modern fleet help you get on the road
+            fast — safely and professionally.
+          </p>
+          <div className="inline-block bg-[#DF6B2F] mt-30 wow fadeInUp delay-0-8s rounded-lg">
+            <Link className="theme-btn" href="/contact">
+              Contact Us <i className="fas fa-arrow-right" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <BlogSection />
     </Layout>
