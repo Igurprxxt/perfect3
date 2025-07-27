@@ -307,7 +307,7 @@ const Index = () => {
       </div>
 
       {/* <div className="bg-gradient-to-r from-[#1F1F1F] to-gray-800 text-white py-8 px-4"> */}
-      <div className="bg-gradient-to-r from-white to-gray-100 text-gray-900 py-8 px-4">
+      <div className="bg-gradient-to-r from-white to-gray-200 text-gray-900 py-8 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           {/* Left Content */}
           <div>
