@@ -138,7 +138,7 @@ export default function Enrollment() {
               Enroll Now & Hit the Road
             </h3>
             <p className="text-lg text-gray-600">
-              Perfect Plus CDL School Truck Training Program
+              Pacific Truck School Training Program
             </p>
           </div>
 

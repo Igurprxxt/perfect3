@@ -19,8 +19,10 @@ import {
   BookOpenText,
   CheckCircle,
   Users,
+  MapPin,
 } from "lucide-react";
 import TrainingPackage from "../src/components/trainingPackage";
+import Testimonial from "../src/components/testimonials";
 const About = () => {
   return (
     <Layout header={1} footer={1}>
@@ -59,7 +61,7 @@ const About = () => {
                     fueling progress across the nation.
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
                     <div className="flex items-start gap-4">
                       <div className="text-[#DF6B2F] text-2xl">
                         <i className="fas fa-chalkboard-teacher"></i>
@@ -129,6 +131,38 @@ const About = () => {
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+          <section
+            className="relative h-[300px] md:h-[400px] my-16 bg-cover bg-center text-white flex items-center"
+            style={{ backgroundImage: "url('/assets/images/banner07.jpg')" }} // Replace with your preferred background
+          >
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/70 z-0" />
+
+            {/* Content */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Get in Touch With Us
+              </h2>
+              <div className="space-y-2 text-base md:text-lg">
+                <p>
+                  📞{" "}
+                  <a href="tel:9165959200" className="hover:underline">
+                    916-595-9200
+                  </a>
+                </p>
+                <p>
+                  📧{" "}
+                  <a
+                    href="mailto:info@pcdlschool.com"
+                    className="hover:underline"
+                  >
+                    contact@getcdlready.com
+                  </a>
+                </p>
+                <p>📍 532 Houston Street, West Sacramento, CA 95691</p>
               </div>
             </div>
           </section>
@@ -313,10 +347,8 @@ const About = () => {
       {/* Features Section End */}
       {/* Team Section Start */}
 
-      <section className="features-section-three rel z-1 pt-20 rpt-85 pb-100 rpb-70">
-        <TrainingPackage />
-      </section>
-      <section className="why-learn-area pb-120 rpb-100">
+      <Testimonial />
+      <section className="why-learn-area pb-12 pt-4 rpb-100">
         <div className="container">
           <div className="row align-items-center large-gap wow fadeInLeft delay-0-2s">
             <div className="col-lg-6">
@@ -376,13 +408,13 @@ const About = () => {
                     <div className="">
                       <div className="feature-three-item">
                         <div className="icon">
-                          <Users color="#DF6B2F" size={50} />
+                          <MapPin color="#DF6B2F" size={50} />
                         </div>
-                        <h4>Career Support</h4>
+                        <h4>Prime Location</h4>
                         <p>
-                          Get ongoing help with job placement, resume building,
-                          and interview preparation from our dedicated career
-                          services team.
+                          Strategically located in West Sacramento, our school
+                          is easy to reach and surrounded by key trucking routes
+                          and support services.
                         </p>
                       </div>
                     </div>

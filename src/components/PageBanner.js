@@ -1,6 +1,7 @@
+import { Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const PageBanner = ({ pageTitle, pageName }) => {
   const location = usePathname();
@@ -36,6 +37,15 @@ const PageBanner = ({ pageTitle, pageName }) => {
           <h2 className="page-title wow fadeInUp delay-0-2s uppercase">
             {pageTitle ? pageTitle : pageName}
           </h2>
+
+          {/* {location == "/contact" && (
+            <p className="mt-2 text-xl font-semibold">
+              <Phone />
+              <a href="tel:8184390094" className="">
+                818-439-0094
+              </a>
+            </p>
+          )} */}
         </div>
       </div>
 

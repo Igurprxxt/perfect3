@@ -4,16 +4,24 @@ import { sidebarOnclick, stickyNav } from "../utils";
 import { Blog, Courses, Home, Pages } from "./Menu";
 import MobileHeader from "./MobileHeader";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 
 const Header = ({ header }) => {
   const location = usePathname();
+  const router = useRouter();
   useEffect(() => {
     stickyNav();
   }, []);
   const [navToggle, setNavToggle] = useState(false);
   switch (header) {
     case 1:
-      return <Header1 navToggle={navToggle} setNavToggle={setNavToggle} />;
+      return (
+        <Header1
+          navToggle={navToggle}
+          setNavToggle={setNavToggle}
+          router={router}
+        />
+      );
     case 3:
       return <Header3 navToggle={navToggle} setNavToggle={setNavToggle} />;
     case 4:
@@ -26,7 +34,7 @@ const Header = ({ header }) => {
   }
 };
 export default Header;
-const Header1 = ({ navToggle, setNavToggle }) => (
+const Header1 = ({ navToggle, setNavToggle, router }) => (
     <Fragment>
       <header className="main-header">
         <HeaderTop />
@@ -78,7 +86,7 @@ const Header1 = ({ navToggle, setNavToggle }) => (
                       navToggle ? "visible" : "hidden"
                     }`}
                   >
-                    <Menus />
+                    <Menus router={router} />
                     <MobileHeader />
                   </div>
                 </nav>
@@ -350,38 +358,90 @@ const Header1 = ({ navToggle, setNavToggle }) => (
       </header>
     </Fragment>
   ),
-  Menus = () => (
-    <ul className="navigation clearfix d-none d-lg-flex">
-      <li className="dropdown">
-        <Link legacyBehavior href="/">
-          <a>home</a>
-        </Link>
-      </li>
-      <li className="dropdown">
-        <Link legacyBehavior href="/program">
-          <a>Our Packages</a>
-        </Link>
-      </li>
-      <li className="dropdown">
-        <Link legacyBehavior href="/contact">
-          <a>Contact Us</a>
-        </Link>
-      </li>
-      <li className="dropdown">
-        <Link legacyBehavior href="/enrollment">
-          <a>Enroll Now</a>
-        </Link>
-      </li>
-      <li>
-        <Link legacyBehavior href="/about">
-          <a>About Us</a>
-        </Link>
-      </li>
-      <li className="dropdown">
-        <a>Blog</a>
-      </li>
-    </ul>
-  ),
+  Menus = ({ router }) => {
+    console.log("router.pathnassme", router.pathname);
+
+    return (
+      <ul className="navigation clearfix d-none d-lg-flex">
+        <li className="dropdown">
+          <Link legacyBehavior href="/">
+            <span
+              className={
+                router.pathname === "/"
+                  ? "text-[#DF6B2F] font-semibold cursor-pointer"
+                  : "font-semibold cursor-pointer"
+              }
+            >
+              Home
+            </span>
+          </Link>
+        </li>
+        <li className="dropdown">
+          <Link legacyBehavior href="/program">
+            <span
+              className={
+                router.pathname === "/program"
+                  ? "text-[#DF6B2F] font-semibold cursor-pointer"
+                  : "font-semibold cursor-pointer"
+              }
+            >
+              Our Packages
+            </span>
+          </Link>
+        </li>
+        <li className="dropdown">
+          <Link legacyBehavior href="/contact">
+            <span
+              className={
+                router.pathname === "/contact"
+                  ? "text-[#DF6B2F] font-semibold cursor-pointer"
+                  : "font-semibold cursor-pointer"
+              }
+            >
+              Contact Us
+            </span>
+          </Link>
+        </li>
+        <li className="dropdown">
+          <Link legacyBehavior href="/enrollment">
+            <span
+              className={
+                router.pathname === "/enrollment"
+                  ? "text-[#DF6B2F] font-semibold cursor-pointer"
+                  : "font-semibold cursor-pointer"
+              }
+            >
+              Enroll Now
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link legacyBehavior href="/about">
+            <span
+              className={
+                router.pathname === "/about"
+                  ? "text-[#DF6B2F] font-semibold cursor-pointer"
+                  : "font-semibold cursor-pointer"
+              }
+            >
+              About Us
+            </span>
+          </Link>
+        </li>
+        <li className="dropdown">
+          <span
+            className={
+              router.pathname.startsWith("/blog")
+                ? "text-[#DF6B2F] font-semibold cursor-pointer"
+                : "font-semibold cursor-pointer"
+            }
+          >
+            Blog
+          </span>
+        </li>
+      </ul>
+    );
+  },
   HeaderTop = () => (
     <div className="bg-[#08006a] text-white text-xs">
       <div className="container mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
