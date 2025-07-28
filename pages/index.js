@@ -193,10 +193,11 @@ const Index = () => {
                 <div className="col-lg-8">
                   <div className="hero-content rpt-25 rmb-75">
                     <h1 className="mb-4 leading-tight font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
-                      Looking for a driving school?
+                      Your Journey to Driving Starts Here
                     </h1>
-                    <h3 className="wow fadeInUp text-4xl  delay-0-6s">
-                      You’re in the perfect spot.
+                    <h3 className="wow fadeInUp text-xl  delay-0-6s">
+                      Our step-by-step, confidence-building training guarantees
+                      you’ll be ready.
                     </h3>
                     <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
                       <Link className="theme-btn" href="/enrollment">

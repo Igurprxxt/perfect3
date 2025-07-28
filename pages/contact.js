@@ -59,10 +59,10 @@ const ContactUs = () => {
             className="bg-white p-10 shadow-lg rounded-lg"
           >
             <div className="text-center mb-10">
-              <p className="text-blue-800 font-medium uppercase">
+              <p className="text-[#08006a] font-semibold uppercase">
                 Need Assistance? Get in Touch
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="text-2xl md:text-3xl font-semibold">
                 Reach Out Anytime
               </h2>
             </div>
