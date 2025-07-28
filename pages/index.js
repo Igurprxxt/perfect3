@@ -328,12 +328,12 @@ const Index = () => {
 
           {/* Right Button */}
           <div>
-            <a
+            <Link
               href="/contact"
               className="inline-block bg-orange-500 text-white hover:bg-orange-600 transition-colors px-5 py-2 text-sm md:text-base font-semibold rounded-md shadow"
             >
               Request Info
-            </a>
+            </Link>
           </div>
         </div>
       </div>
