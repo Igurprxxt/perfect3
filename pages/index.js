@@ -729,6 +729,22 @@ const Index = () => {
             Our certified instructors and modern fleet help you get on the road
             fast — safely and professionally.
           </p>
+
+          <div className="space-y-2 text-base md:text-lg">
+            <p>
+              📞{" "}
+              <a href="tel:9165959200" className="hover:underline">
+                916-595-9200
+              </a>
+            </p>
+            <p>
+              📧{" "}
+              <a href="mailto:info@pcdlschool.com" className="hover:underline">
+                contact@getcdlready.com
+              </a>
+            </p>
+            <p>📍 532 Houston Street, West Sacramento, CA 95691</p>
+          </div>
           <div className="inline-block bg-[#DF6B2F] mt-30 wow fadeInUp delay-0-8s rounded-lg">
             <Link className="theme-btn" href="/contact">
               Contact Us <i className="fas fa-arrow-right" />
