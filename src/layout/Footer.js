@@ -135,7 +135,7 @@ const FollowIcon = () => (
     </Fragment>
   ),
   CopyRight = () => (
-    <p>
+    <p className="text-sm">
       © {new Date().getFullYear()}.{" "}
       <Link legacyBehavior href="/">
         PACIFIC TRUCK SCHOOL

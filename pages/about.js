@@ -1,11 +1,5 @@
-import Link from "next/link";
-import Slider from "react-slick";
-import Advertise from "../src/components/Advertise";
-import Counter from "../src/components/Counter";
 import PageBanner from "../src/components/PageBanner";
 import Layout from "../src/layout/Layout";
-import { testimonialtwoSlider } from "../src/sliderProps";
-import Image from "next/image";
 
 import {
   Truck,
@@ -23,6 +17,7 @@ import {
 } from "lucide-react";
 import TrainingPackage from "../src/components/trainingPackage";
 import Testimonial from "../src/components/testimonials";
+import Gallery from "../src/components/gallerySection";
 const About = () => {
   return (
     <Layout header={1} footer={1}>
@@ -264,88 +259,6 @@ const About = () => {
           </section>
         </main>
       </div>
-      {/* About Section End */}
-      {/* Features Section Start */}
-      {/* <section className="features-section-three rel z-1 pt-110 rpt-85 pb-100 rpb-70">
-        <div className="container">
-          <div className="section-title text-center mb-55">
-            <span className="sub-title-two">How About Learn Us</span>
-            <h2>Opportunity for Online Learning</h2>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-lg-3 col-sm-6">
-              <div className="feature-three-item wow fadeInUp delay-0-2s">
-                <div className="icon">
-                  <i className="flaticon-reading-book" />
-                </div>
-                <h4>Experts Minds</h4>
-                <p>
-                  Sed ut persiciatis omnis natus voluptate accsantie doloreue
-                  laudantium
-                </p>
-                <Link legacyBehavior href="/about">
-                  <a className="details-btn">
-                    <i className="fas fa-long-arrow-alt-right" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="feature-three-item wow fadeInUp delay-0-4s">
-                <div className="icon">
-                  <img src="assets/images/features/icon7.png" alt="Icon" />
-                </div>
-                <h4>Multiple Courses</h4>
-                <p>
-                  Sed ut persiciatis omnis natus voluptate accsantie doloreue
-                  laudantium
-                </p>
-                <Link legacyBehavior href="/about">
-                  <a className="details-btn">
-                    <i className="fas fa-long-arrow-alt-right" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="feature-three-item wow fadeInUp delay-0-6s">
-                <div className="icon">
-                  <img src="assets/images/features/icon8.png" alt="Icon" />
-                </div>
-                <h4>Hire Quickly</h4>
-                <p>
-                  Sed ut persiciatis omnis natus voluptate accsantie doloreue
-                  laudantium
-                </p>
-                <Link legacyBehavior href="/about">
-                  <a className="details-btn">
-                    <i className="fas fa-long-arrow-alt-right" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <div className="feature-three-item wow fadeInUp delay-0-8s">
-                <div className="icon">
-                  <img src="assets/images/features/icon9.png" alt="Icon" />
-                </div>
-                <h4>Video Tutorials</h4>
-                <p>
-                  Sed ut persiciatis omnis natus voluptate accsantie doloreue
-                  laudantium
-                </p>
-                <Link legacyBehavior href="/about">
-                  <a className="details-btn">
-                    <i className="fas fa-long-arrow-alt-right" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* Features Section End */}
-      {/* Team Section Start */}
 
       <Testimonial />
       <section className="why-learn-area pb-12 pt-4 rpb-100">
@@ -430,7 +343,7 @@ const About = () => {
           </div>
         </div>
       </section>
-
+      <Gallery />
       {/* <Testimonial /> */}
 
       {/* <BlogSection /> */}
