@@ -1,17 +1,24 @@
+"use client";
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 import { sidebarOnclick, stickyNav } from "../utils";
 import { Blog, Courses, Home, Pages } from "./Menu";
 import MobileHeader from "./MobileHeader";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 
 const Header = ({ header }) => {
-  const location = usePathname();
   const router = useRouter();
   useEffect(() => {
     stickyNav();
   }, []);
+  const [path, setPath] = useState("");
+
+  useEffect(() => {
+    if (router && router.pathname) {
+      setPath(router.pathname);
+    }
+  }, [router]);
+
   const [navToggle, setNavToggle] = useState(false);
   switch (header) {
     case 1:
@@ -19,7 +26,7 @@ const Header = ({ header }) => {
         <Header1
           navToggle={navToggle}
           setNavToggle={setNavToggle}
-          router={router}
+          router={path}
         />
       );
     case 3:
@@ -359,15 +366,13 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
     </Fragment>
   ),
   Menus = ({ router }) => {
-    console.log("router.pathnassme", router.pathname);
-
     return (
       <ul className="navigation clearfix d-none d-lg-flex">
         <li className="dropdown">
           <Link legacyBehavior href="/">
             <span
               className={
-                router.pathname === "/"
+                router === "/"
                   ? "text-[#DF6B2F] font-semibold cursor-pointer"
                   : "font-semibold cursor-pointer"
               }
@@ -380,7 +385,7 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
           <Link legacyBehavior href="/program">
             <span
               className={
-                router.pathname === "/program"
+                router === "/program"
                   ? "text-[#DF6B2F] font-semibold cursor-pointer"
                   : "font-semibold cursor-pointer"
               }
@@ -393,7 +398,7 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
           <Link legacyBehavior href="/contact">
             <span
               className={
-                router.pathname === "/contact"
+                router === "/contact"
                   ? "text-[#DF6B2F] font-semibold cursor-pointer"
                   : "font-semibold cursor-pointer"
               }
@@ -406,7 +411,7 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
           <Link legacyBehavior href="/enrollment">
             <span
               className={
-                router.pathname === "/enrollment"
+                router === "/enrollment"
                   ? "text-[#DF6B2F] font-semibold cursor-pointer"
                   : "font-semibold cursor-pointer"
               }
@@ -419,7 +424,7 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
           <Link legacyBehavior href="/about">
             <span
               className={
-                router.pathname === "/about"
+                router === "/about"
                   ? "text-[#DF6B2F] font-semibold cursor-pointer"
                   : "font-semibold cursor-pointer"
               }
@@ -431,7 +436,7 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
         <li className="dropdown">
           <span
             className={
-              router.pathname.startsWith("/blog")
+              router === "/blog"
                 ? "text-[#DF6B2F] font-semibold cursor-pointer"
                 : "font-semibold cursor-pointer"
             }
