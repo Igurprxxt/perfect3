@@ -246,7 +246,7 @@ const FollowIcon = () => (
     </footer>
   ),
   Footer1 = ({ scrollTop }) => (
-    <footer className="main-footer bg-blue text-white pt-20">
+    <footer className="main-footer bg-blue text-white pt-12">
       <div className="px-2">
         <div className="flex flex-col md:flex-row w-full items-start  justify-between">
           {/* View More or Media */}
