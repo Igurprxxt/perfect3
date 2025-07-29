@@ -163,7 +163,7 @@ const About = () => {
           </section>
 
           {/* Mission, Vision, and Core Values Section */}
-          <section className="w-full pt-20 rpt-100 bg-white">
+          <section className="w-full pt-2 rpt-100 bg-white">
             <div className="container px-4 md:px-6">
               <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
                 {/* Mission and Vision (Left Column) */}
@@ -278,11 +278,11 @@ const About = () => {
                 </p>
 
                 <div className="why-learn-feature pt-30">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     <div className="">
                       <div className="feature-three-item">
                         <div className="icon">
-                          <Sparkles color="#DF6B2F" size={50} />
+                          <Sparkles color="#DF6B2F" size={40} />
                         </div>
                         <h4>Expert Advisors</h4>
                         <p>
@@ -295,7 +295,7 @@ const About = () => {
                     <div className="">
                       <div className="feature-three-item">
                         <div className="icon">
-                          <BookOpenText color="#DF6B2F" size={50} />
+                          <BookOpenText color="#DF6B2F" size={40} />
                         </div>
                         <h4>Popular CDL Programs</h4>
                         <p>
@@ -308,7 +308,7 @@ const About = () => {
                     <div className="">
                       <div className="feature-three-item">
                         <div className="icon">
-                          <CheckCircle color="#DF6B2F" size={50} />
+                          <CheckCircle color="#DF6B2F" size={40} />
                         </div>
                         <h4>Flexible Scheduling</h4>
                         <p>
@@ -321,7 +321,7 @@ const About = () => {
                     <div className="">
                       <div className="feature-three-item">
                         <div className="icon">
-                          <MapPin color="#DF6B2F" size={50} />
+                          <MapPin color="#DF6B2F" size={40} />
                         </div>
                         <h4>Prime Location</h4>
                         <p>

@@ -5667,7 +5667,7 @@ h6,
 
 /* Feature Three */
 .feature-three-item {
-  padding: 30px;
+  padding: 15px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -5680,7 +5680,7 @@ h6,
   box-shadow: 10px 0 60px rgba(76, 76, 76, 0.1);
 }
 .feature-three-item .icon {
-  height: 50px;
+  height: 40px;
   margin-bottom: 30px;
   color: #df6b2f;
 }
@@ -5689,7 +5689,7 @@ h6,
   font-size: 50px;
 }
 .feature-three-item h4 {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 .feature-three-item .details-btn {
   line-height: 1;

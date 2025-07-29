@@ -56,7 +56,7 @@ const TrainingPackage = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-10 px-4 bg-[#0F256E] text-white font-inter">
+    <section className="min-h-screen flex items-center justify-center py-10 px-0 md:px-4 bg-[#0F256E] text-white font-inter">
       <div className="container mx-auto max-w-max">
         {/* Section Title */}
 
@@ -65,7 +65,7 @@ const TrainingPackage = () => {
           {/* <span className="text-[#FF6B00] text-lg sm:text-xl font-semibold mb-4 block animate-fade-in-down">
             Perfect Plus Training Program
           </span> */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+          <h2 className="text-2xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
             Best Value Program
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
@@ -79,7 +79,7 @@ const TrainingPackage = () => {
           {trainingPackages?.map((pkg, index) => (
             <div
               key={pkg.id}
-              className={`relative w-full max-w-sm bg-white text-[#0F256E] p-8 rounded-2xl shadow-xl border border-transparent
+              className={`relative w-full max-w-sm bg-white text-[#0F256E] p-4 md:p-8 rounded-2xl shadow-xl border border-transparent
         transition-all duration-500 ease-in-out transform hover:scale-105 hover:border-[#FF6B00]
         group flex flex-col justify-between
         ${index === 0 ? "outline outline-2 outline-[#FF6B00]" : ""}`}
@@ -101,11 +101,11 @@ const TrainingPackage = () => {
                 {pkg.tag}
               </div>
 
-              <h4 className="text-2xl font-bold mt-8 mb-4 !text-[#0F256E] group-hover:text-[#FF6B00] transition-colors duration-300">
+              <h4 className="text-xl md:text-2xl font-bold mt-4 md:t-8 mb-4 !text-[#0F256E] group-hover:text-[#FF6B00] transition-colors duration-300">
                 {pkg.title}
               </h4>
 
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-3 mb-6 md:mb-8 flex-grow">
                 {pkg.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <Check
