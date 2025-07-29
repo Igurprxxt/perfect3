@@ -715,7 +715,7 @@ const Index = () => {
       {/* Testimonials Section End */}
       {/* Blog Section Start */}
       <section
-        className="relative h-[300px] md:h-[450px] my-16 bg-cover bg-center text-white flex items-center"
+        className="relative h-[450px] my-16 bg-cover bg-center text-white flex items-center"
         style={{ backgroundImage: "url('/assets/images/banner07.jpg')" }}
       >
         {/* Overlay */}
@@ -723,7 +723,7 @@ const Index = () => {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+          <h2 className="text-2xl md:text-4xl font-bold mb-3">
             Start Your CDL Journey With Confidence
           </h2>
           <p className="text-base md:text-lg mb-5">
