@@ -82,6 +82,40 @@ const Program = () => {
       });
     }
   };
+
+  const iconList = [
+    { icon: CheckCheck, label: "Conventional" },
+    { icon: Clock3, label: "Realistic" },
+    { icon: UsersRound, label: "Social" },
+  ];
+  const details = [
+    {
+      icon: CheckCheck,
+      label: "Type:",
+      value: "Short-term training 0-6 months",
+    },
+    {
+      icon: Laptop,
+      label: "Format:",
+      value: "Online",
+    },
+    {
+      icon: CalendarClock,
+      label: "Hours:",
+      value: "Part-time",
+    },
+    {
+      icon: UsersRound,
+      label: "Age:",
+      value: "18 and up",
+    },
+    {
+      icon: GraduationCap,
+      label: "Requirements:",
+      value: "High school diploma or equivalency",
+    },
+  ];
+
   if (!pkg) return E404();
 
   return (
@@ -196,16 +230,12 @@ const Program = () => {
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-3 mb-4 md:mb-6">
-                      {[
-                        [<CheckCheck />, "Conventional"],
-                        [<Clock3 />, "Realistic"],
-                        [<UsersRound />, "Social"],
-                      ].map(([icon, label], idx) => (
+                      {iconList.map(({ icon: Icon, label }, idx) => (
                         <span
-                          key={idx}
+                          key={label} // safe and unique
                           className="bg-[#df6b2f] text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-sm font-medium flex items-center gap-2"
                         >
-                          <span className="text-xs">{icon}</span>
+                          <Icon className="text-xs" />
                           {label}
                         </span>
                       ))}
@@ -314,25 +344,12 @@ const Program = () => {
               <div className="w-full lg:w-80">
                 <div className="bg-white border border-gray-200 rounded-lg p-6 mb-6 shadow-sm">
                   <h3 className="text-lg font-semibold mb-4">Quick Facts</h3>
+
                   <div className="space-y-4">
-                    {[
-                      [
-                        <CheckCheck size={16} />,
-                        "Type:",
-                        "Short-term training 0-6 months",
-                      ],
-                      [<Laptop size={16} />, "Format:", "Online"],
-                      [<CalendarClock size={16} />, "Hours:", "Part-time"],
-                      [<UsersRound size={16} />, "Age:", "18 and up"],
-                      [
-                        <GraduationCap size={16} />,
-                        "Requirements:",
-                        "High school diploma or equivalency",
-                      ],
-                    ].map(([icon, label, value], i) => (
-                      <div key={i} className="flex items-start gap-3">
+                    {details.map(({ icon: Icon, label, value }, i) => (
+                      <div key={label} className="flex items-start gap-3">
                         <div className="w-8 h-8 bg-[#df6b2f] rounded-full flex items-center justify-center mt-0.5">
-                          <span className="text-white text-xs">{icon}</span>
+                          <Icon size={16} className="text-white" />
                         </div>
                         <div>
                           <p className="font-medium">{label}</p>
