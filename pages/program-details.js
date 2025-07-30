@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,8 +36,6 @@ const Program = () => {
   const otherPackages = trainingPackages?.filter((p) => p.id != id);
 
   console.log("otherPackages", otherPackages);
-
-  if (!pkg) return E404();
 
   console.log("pkg", pkg);
   const [active, setActive] = useState(`collapse1`);
@@ -83,6 +82,7 @@ const Program = () => {
       });
     }
   };
+  if (!pkg) return E404();
 
   return (
     <>
@@ -157,22 +157,21 @@ const Program = () => {
                   <div className="relative z-10">
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                       {/* Each stat card */}
-                      <div className="bg-blue-900 rounded-lg p-4 border border-slate-600/30">
+                      <div className="bg-blue-900 rounded-lg p-2 md:p-4 border border-slate-600/30">
                         <p className="text-gray-300 text-sm mb-1">Leads to</p>
-                        <p className="text-green-400 text-3xl font-bold">
-                          $46.5k
+                        <p className="text-green-400 text-2xl md:text-3xl font-bold">
+                          $46.5k Carrers
                         </p>
-                        <p className="text-green-400 text-lg">careers</p>
                       </div>
-                      <div className="bg-blue-900 rounded-lg p-4 border border-slate-600/30">
+                      <div className="bg-blue-900 rounded-lg p-2 md:p-4 border border-slate-600/30">
                         <p className="text-gray-300 text-sm mb-1">Costs</p>
-                        <p className="text-yellow-400 text-3xl font-bold">
+                        <p className="text-yellow-400 text-2xl md:text-3xl font-bold">
                           $4k
                         </p>
                       </div>
-                      <div className="bg-blue-900 rounded-lg p-4 border border-slate-600/30">
+                      <div className="bg-blue-900 rounded-lg p-2 md:p-4 border border-slate-600/30">
                         <p className="text-gray-300 text-sm mb-1">Takes</p>
-                        <p className="text-cyan-400 text-3xl font-bold">
+                        <p className="text-cyan-400 text-2xl md:text-3xl font-bold">
                           14 Weeks
                         </p>
                       </div>
@@ -196,7 +195,7 @@ const Program = () => {
                     </div>
 
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-3 mb-6">
+                    <div className="flex flex-wrap gap-3 mb-4 md:mb-6">
                       {[
                         [<CheckCheck />, "Conventional"],
                         [<Clock3 />, "Realistic"],
@@ -204,7 +203,7 @@ const Program = () => {
                       ].map(([icon, label], idx) => (
                         <span
                           key={idx}
-                          className="bg-[#df6b2f] text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2"
+                          className="bg-[#df6b2f] text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-sm font-medium flex items-center gap-2"
                         >
                           <span className="text-xs">{icon}</span>
                           {label}
@@ -263,7 +262,7 @@ const Program = () => {
                           </tr>
                         </tbody>
                       </table>
-                      <button className="w-full mt-6 bg-[#df6b2f] text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200">
+                      <button className="w-full text-sm md:text-lg mt-4 md:mt-6 bg-[#df6b2f] text-white py-1 px-3 md:py-3 md:px-6 rounded-lg font-semibold transition-colors duration-200">
                         Show Salaries for my Area
                       </button>
                     </div>
@@ -360,20 +359,20 @@ const Program = () => {
               </div>
             </div>
 
-            <div className=" border my-6 rounded-md px-4 py-4 md:px-6 lg:px-8">
-              <section className="mb-12">
-                <h2 className="text-3xl font-bold text-[#df6b2f] mb-6">
+            <div className=" border my-6 rounded-md px-2 py-4 md:px-6 lg:px-8">
+              <section className="mb-6 md:mb-12">
+                <h2 className="text-xl md:text-3xl font-bold text-[#df6b2f] mb-2 md:mb-6">
                   Admissions
                 </h2>
-                <div className="flex items-center gap-2 text-lg text-gray-700">
+                <div className="flex items-center gap-2 text-md md:text-lg text-gray-700">
                   <Check className="w-5 h-5 text-[#df6b2f]" />
                   <span>High school diploma or equivalency</span>
                 </div>
               </section>
 
-              <section className="grid md:grid-cols-2 gap-12 mb-12 border p-4 rounded-md">
+              <section className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 border p-3 md:p-4 rounded-md">
                 <div>
-                  <h2 className="text-3xl font-bold text-[#df6b2f] mb-6">
+                  <h2 className="text-xl md:text-3xl font-bold text-[#df6b2f] mb-6">
                     Who do I Contact?
                   </h2>
                   <div className="grid gap-6">
@@ -383,7 +382,7 @@ const Program = () => {
                       </div>
                       <Link
                         href="#"
-                        className="text-lg text-[#df6b2f] hover:underline"
+                        className="text-sm md:text-lg text-[#df6b2f] hover:underline"
                       >
                         Email: contact@getcdlready.com
                       </Link>
@@ -394,7 +393,7 @@ const Program = () => {
                       </div>
                       <Link
                         href="#"
-                        className="text-lg text-[#df6b2f] hover:underline"
+                        className="text-sm md:text-lg text-[#df6b2f] hover:underline"
                       >
                         Call: 916-595-9200
                       </Link>
@@ -405,7 +404,7 @@ const Program = () => {
                       </div>
                       <Link
                         href="#"
-                        className="text-lg text-[#df6b2f] hover:underline"
+                        className="text-sm md:text-lg text-[#df6b2f] hover:underline"
                       >
                         WhatsApp: 916-595-9200
                       </Link>
@@ -429,9 +428,9 @@ const Program = () => {
                 </div>
               </section>
 
-              <section className=" border p-4 rounded-md">
+              <section className="border p-2 md:p-4 rounded-md">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-3xl font-bold text-[#df6b2f]">
+                  <h2 className="text-lg md:text-3xl font-bold text-[#df6b2f]">
                     Other Programs You Might Like
                   </h2>
                   <div className="flex gap-2">
@@ -454,8 +453,9 @@ const Program = () => {
                   ref={scrollContainerRef}
                   className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory"
                 >
-                  {otherPackages?.map((ele) => (
+                  {otherPackages?.map((ele, idx) => (
                     <div
+                      key={idx}
                       onClick={() => {
                         router.push({
                           pathname: "/program-details/",
@@ -465,7 +465,7 @@ const Program = () => {
                           },
                         });
                       }}
-                      className="min-w-[300px] cursor-pointer max-w-[300px] rounded-lg overflow-hidden shadow-md snap-center bg-white"
+                      className="min-w-[260px] md:min-w-[300px] cursor-pointer max-w-[300px] rounded-lg overflow-hidden shadow-md snap-center bg-white"
                     >
                       <div className="relative w-full h-[180px]">
                         <Image
@@ -487,8 +487,11 @@ const Program = () => {
                           {ele?.shortDesc}
                         </h3>
 
-                        {ele?.features?.map((ite) => (
-                          <div className="flex flex-wrap gap-2 text-sm text-gray-700">
+                        {ele?.features?.map((ite, idx) => (
+                          <div
+                            key={idx}
+                            className="flex flex-wrap gap-2 text-sm text-gray-700"
+                          >
                             <span className="font-medium text-[#df6b2f]">
                               {ite?.label}
                             </span>
