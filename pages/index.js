@@ -28,6 +28,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Gallery from "../src/components/gallerySection";
+import { useRouter } from "next/router";
 
 const SERVICE_ID = "service_uimxucn";
 const TEMPLATE_ID = "template_touimv4";
@@ -167,6 +168,8 @@ const Index = () => {
       toast("Failed to send message.", { type: "error" });
     }
   };
+
+  const router = useRouter();
   return (
     <Layout header={1} footer={1}>
       <div className="relative min-h-screen text-white">
@@ -419,7 +422,7 @@ const Index = () => {
       </section> */}
       {/* Features Section End */}
       {/* About Section Start */}
-      <TrainingPackage />
+      <TrainingPackage router={router} />
 
       {/* <section className="about-section pt-20 rpt-100">
         <div className="container">
