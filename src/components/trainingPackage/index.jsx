@@ -2,64 +2,84 @@ import React, { useState } from "react";
 import { Check, Star, Truck } from "lucide-react";
 import Link from "next/link";
 
-const TrainingPackage = () => {
+export const trainingPackages = [
+  {
+    id: 1,
+    tag: "Top Choice",
+    image: "/assets/images/2151846035.jpg",
+    title: "Perfect Plus Training Program",
+    icon: <Star className="w-6 h-6 text-[#FF6B00]" />,
+    shortDesc:
+      "A balanced CDL Class A training with classroom and hands-on practice.",
+    fullDesc:
+      "This program includes comprehensive classroom instruction along with behind-the-wheel training, helping you prepare for the CDL Class A license. You'll learn inspection procedures and practice for road tests in a real-world setting.",
+    features: [
+      { label: "4–6 Weeks Duration" },
+      { label: "Classroom + Behind-the-Wheel Training" },
+      { label: "Pre-Trip Inspection & Road Test Prep" },
+      { label: "CDL Class A License" },
+    ],
+  },
+  {
+    id: 2,
+    tag: "Accelerated Option",
+    image: "/assets/images/image3.jpeg",
+    title: "CDL Class A – Fast Track Package",
+    icon: null,
+
+    shortDesc: "Get your CDL in 3 weeks with extended daily classes.",
+    fullDesc:
+      "This fast-paced program includes all the benefits of the Perfect Plus package but in an accelerated format. Weekend and evening classes make it accessible for busy individuals looking to start their careers quickly.",
+    features: [
+      { label: "3 Weeks Intensive Training" },
+      { label: "Extended Daily Training Hours" },
+      { label: "Weekend & Evening Classes Available" },
+      { label: "Includes All Perfect Plus Features" },
+    ],
+  },
+  {
+    id: 3,
+    tag: "For Returning Drivers",
+    title: "CDL Refresher Course",
+    image: "/assets/images/image6.jpeg",
+    icon: null,
+
+    shortDesc:
+      "Refresh your CDL skills and return to the road with confidence.",
+    fullDesc:
+      "Designed for drivers who have been off the road, this refresher course offers skills assessment, safety updates, and guided road training to ensure you're ready to re-enter the field.",
+    features: [
+      { label: "1–2 Weeks Duration" },
+      { label: "Skills Assessment + Safety Updates" },
+      { label: "Road Training Included" },
+      { label: "24/7 Premium Support" },
+    ],
+  },
+  {
+    id: 4,
+    tag: "Bus & Delivery Focused",
+    title: "CDL Class B Training",
+    icon: null,
+    image: "/assets/images/vehicle-move_23-2151846038.jpeg",
+
+    shortDesc: "Ideal for school bus or delivery careers.",
+    fullDesc:
+      "Train with straight trucks and buses for CDL Class B jobs. Get classroom education and hands-on experience tailored for entry into school bus, delivery, or similar careers.",
+    features: [
+      { label: "2–4 Weeks Duration" },
+      { label: "Straight Truck & Bus Training" },
+      { label: "Classroom + Hands-On Instruction" },
+      { label: "Ideal for School Bus & Delivery Jobs" },
+    ],
+  },
+];
+
+const TrainingPackage = ({ router }) => {
   const [hoverId, setHoverId] = useState();
-  const trainingPackages = [
-    {
-      id: 1,
-      tag: "Top Choice",
-      title: "Perfect Plus Training Program",
-      icon: <Star className="w-6 h-6 text-[#FF6B00]" />,
-      features: [
-        { label: "4–6 Weeks Duration" },
-        { label: "Classroom + Behind-the-Wheel Training" },
-        { label: "Pre-Trip Inspection & Road Test Prep" },
-        { label: "CDL Class A License" },
-      ],
-    },
-    {
-      id: 2,
-      tag: "Accelerated Option",
-      title: "CDL Class A – Fast Track Package",
-      icon: null,
-      features: [
-        { label: "3 Weeks Intensive Training" },
-        { label: "Extended Daily Training Hours" },
-        { label: "Weekend & Evening Classes Available" },
-        { label: "Includes All Perfect Plus Features" },
-      ],
-    },
-    {
-      id: 3,
-      tag: "For Returning Drivers",
-      title: "CDL Refresher Course",
-      icon: null,
-      features: [
-        { label: "1–2 Weeks Duration" },
-        { label: "Skills Assessment + Safety Updates" },
-        { label: "Road Training Included" },
-        { label: "24/7 Premium Support" },
-      ],
-    },
-    {
-      id: 4,
-      tag: "Bus & Delivery Focused",
-      title: "CDL Class B Training",
-      icon: null,
-      features: [
-        { label: "2–4 Weeks Duration" },
-        { label: "Straight Truck & Bus Training" },
-        { label: "Classroom + Hands-On Instruction" },
-        { label: "Ideal for School Bus & Delivery Jobs" },
-      ],
-    },
-  ];
 
   return (
     <section className="min-h-screen flex items-center justify-center py-10 px-0 md:px-4 bg-[#0F256E] text-white font-inter">
       <div className="container mx-auto max-w-max">
-        {/* Section Title */}
-
         <div className="text-center mb-16">
           <span className="sub-title mb-25">Pacific Truck School Programs</span>
           {/* <span className="text-[#FF6B00] text-lg sm:text-xl font-semibold mb-4 block animate-fade-in-down">
@@ -78,6 +98,15 @@ const TrainingPackage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 gap-y-10 justify-items-center">
           {trainingPackages?.map((pkg, index) => (
             <div
+              onClick={() => {
+                router.push({
+                  pathname: "/program-details/",
+                  query: {
+                    title: pkg.title,
+                    id: pkg?.id,
+                  },
+                });
+              }}
               key={pkg.id}
               className={`relative w-full max-w-sm bg-white text-[#0F256E] p-4 md:p-8 rounded-2xl shadow-xl border border-transparent
         transition-all duration-500 ease-in-out transform hover:scale-105 hover:border-[#FF6B00]
@@ -120,6 +149,15 @@ const TrainingPackage = () => {
               </ul>
 
               <button
+                onClick={() => {
+                  router.push({
+                    pathname: "/program-details/",
+                    query: {
+                      title: pkg.title,
+                      id: pkg?.id,
+                    },
+                  });
+                }}
                 className="w-full py-3 mt-auto rounded-lg font-semibold text-white bg-[#0F256E] border border-[#0F256E]
                            transition-all duration-300 ease-in-out
                            hover:bg-[#FF6B00] hover:border-[#FF6B00] hover:shadow-lg"
@@ -131,81 +169,6 @@ const TrainingPackage = () => {
         </div>
       </div>
     </section>
-    // <section className="features-section rel z-1 py-130 rpy-100  bg-blue text-white">
-    //   <div className="container">
-    //     <div className="row justify-content-center mb-10">
-    //       <div className="col-lg-8 text-center">
-    //         <div className="section-title text-center mb-10">
-    //           <span className="sub-title mb-25">
-    //             Perfect Plus Training Program
-    //           </span>
-    //           <h2>Best Value Program</h2>
-    //         </div>
-    //       </div>{" "}
-    //     </div>{" "}
-    //     <div className="flex flex-wrap justify-center gap-6 w-full">
-    //       {trainingPackages?.map((pkg, i) => (
-    //         <div
-    //           key={i}
-    //           className="w-full cursor-pointer sm:w-[350px] border border-white text-white p-4 rounded-lg shadow-md transition-all duration-300 hover:bg-white hover:text-[#0F256E] hover:border-[#0F256E]"
-    //           onMouseEnter={() => {
-    //             setHoverId(i);
-    //           }}
-    //           onMouseLeave={() => {
-    //             setHoverId();
-    //           }}
-    //         >
-    //           {pkg.tag && (
-    //             <span className="text-sm text-white bg-blue px-2 py-1 rounded-full inline-block mb-2 transition-all duration-300  ">
-    //               {pkg.tag}
-    //             </span>
-    //           )}
-    //           <h4
-    //             className="text-lg font-semibold mb-3"
-    //             style={{
-    //               color: hoverId == i ? "#0F256E" : "",
-    //             }}
-    //           >
-    //             {pkg.title}
-    //           </h4>
-    //           <ul className="space-y-2 mb-4">
-    //             {pkg.features.map((feature, idx) => (
-    //               <li key={idx} className="flex items-center gap-2">
-    //                 {hoverId === i ? (
-    //                   <Check className="w-4 h-4 stroke-[#0F256E]" />
-    //                 ) : (
-    //                   <Check className="w-4 h-4 stroke-white" />
-    //                 )}
-
-    //                 <span
-    //                   style={{
-    //                     color: hoverId == i ? "#0F256E" : "",
-    //                   }}
-    //                   className="hover:text-[#0F256E]"
-    //                 >
-    //                   {feature.label}
-    //                 </span>
-    //               </li>
-    //             ))}
-    //           </ul>
-    //           <button className="bg-blue text-white border border-white px-4 py-2 rounded transition-all duration-300 ">
-    //             <Link href="/enrollment"> Enroll Now</Link>
-    //           </button>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    //   <img
-    //     className="rectangle-dots"
-    //     src="assets/images/shapes/rectangle-dots.png"
-    //     alt="Shape"
-    //   />
-    //   <img
-    //     className="circle-dots"
-    //     src="assets/images/shapes/circle-dots.png"
-    //     alt="Shape"
-    //   />
-    // </section>
   );
 };
 
