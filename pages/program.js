@@ -14,10 +14,11 @@ const Program = () => {
 
   return (
     <Layout header={1} footer={1}>
-      <PageBanner pageName={"Training Program"} />
+      {/* <PageBanner pageName={"Training Program"} /> */}
 
-      <TrainingPackage router={router} />
-
+      <section className="core-values-section py-130 rpy-100 wow fadeInUp delay-0-2s">
+        <TrainingPackage router={router} />
+      </section>
       <section className="core-values-section py-130 rpy-100 wow fadeInUp delay-0-2s">
         <div className="container">
           <div className="row align-items-center">

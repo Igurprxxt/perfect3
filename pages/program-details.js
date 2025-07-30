@@ -167,7 +167,7 @@ const Program = () => {
               {/* Left Column */}
               <div className="flex-1">
                 {/* Career Stats Dashboard */}
-                <div className="bg-blue-900 border text-white rounded-lg p-6 relative overflow-hidden">
+                <div className="bg-[#0F256E] border text-white rounded-lg p-6 relative overflow-hidden">
                   {/* Pattern */}
                   <div className="absolute inset-0 opacity-10">
                     <svg
@@ -307,7 +307,7 @@ const Program = () => {
                         <div key={index}>
                           <button
                             onClick={() => toggleFaq(index)}
-                            className="w-full text-left text-white hover:bg-blue-700 p-4 rounded-lg flex justify-between items-center transition-colors duration-200 font-medium"
+                            className="w-full text-left text-white hover:bg-blue-900 p-4 rounded-lg flex justify-between items-center transition-colors duration-200 font-medium"
                           >
                             {question}
                             <svg
@@ -327,7 +327,7 @@ const Program = () => {
                             </svg>
                           </button>
                           {expandedFaq === index && (
-                            <div className="bg-blue-700 p-4 rounded-lg mt-1 text-gray-300 border-l-4 border-orange-500">
+                            <div className="bg-blue-900/50 p-4 rounded-lg mt-1 text-gray-300 border-l-4 border-orange-500">
                               <p>
                                 Additional information about{" "}
                                 {question.toLowerCase()}
