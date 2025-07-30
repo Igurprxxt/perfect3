@@ -376,9 +376,9 @@ const Program = () => {
               </div>
             </div>
 
-            <div className=" border my-6 rounded-md px-2 py-4 md:px-6 lg:px-8">
+            <div className=" border my-6 rounded-md px-3 py-4 md:px-6 lg:px-8">
               <section className="mb-6 md:mb-12">
-                <h2 className="text-xl md:text-3xl font-bold text-[#df6b2f] mb-2 md:mb-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-6">
                   Admissions
                 </h2>
                 <div className="flex items-center gap-2 text-md md:text-lg text-gray-700">
@@ -387,9 +387,9 @@ const Program = () => {
                 </div>
               </section>
 
-              <section className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 border p-3 md:p-4 rounded-md">
+              <section className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 border p-3 md:p-5 rounded-md">
                 <div>
-                  <h2 className="text-xl md:text-3xl font-bold text-[#df6b2f] mb-6">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900  mb-6">
                     Who do I Contact?
                   </h2>
                   <div className="grid gap-6">
@@ -445,9 +445,9 @@ const Program = () => {
                 </div>
               </section>
 
-              <section className="border p-2 md:p-4 rounded-md">
+              <section className="border p-2 md:p-5 rounded-md">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-lg md:text-3xl font-bold text-[#df6b2f]">
+                  <h2 className="text-lg md:text-3xl font-bold text-gray-900">
                     Other Programs You Might Like
                   </h2>
                   <div className="flex gap-2">
