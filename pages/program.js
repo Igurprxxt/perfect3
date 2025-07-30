@@ -1,21 +1,22 @@
 import PageBanner from "../src/components/PageBanner";
 import Layout from "../src/layout/Layout";
-import { reviews, trainingPackages } from ".";
+import { reviews } from ".";
 import { useState } from "react";
-import { Check, Flag, Handshake, ShieldCheck, Star, Truck } from "lucide-react";
-import Link from "next/link";
+import { Flag, Handshake, ShieldCheck, Star, Truck } from "lucide-react";
 import Slider from "react-slick";
 import { index1Testimonial } from "../src/sliderProps";
 import TrainingPackage from "../src/components/trainingPackage";
 import BlogSection from "../src/components/blogSection";
+import { useRouter } from "next/router";
 const Program = () => {
   const [hoverId, setHoverId] = useState();
+  const router = useRouter();
 
   return (
     <Layout header={1} footer={1}>
       <PageBanner pageName={"Training Program"} />
 
-      <TrainingPackage />
+      <TrainingPackage router={router} />
 
       <section className="core-values-section py-130 rpy-100 wow fadeInUp delay-0-2s">
         <div className="container">
@@ -63,6 +64,7 @@ const Program = () => {
                     },
                   ].map((value, index) => (
                     <div
+                      onClick={() => {}}
                       key={index}
                       className="flex items-start gap-4 bg-white rounded-xl p-3 hover:shadow-md transition-shadow"
                     >
