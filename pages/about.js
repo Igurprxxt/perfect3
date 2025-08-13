@@ -129,14 +129,12 @@ const About = () => {
               </div>
             </div>
           </section>
-          <section
+          {/* <section
             className="relative h-[300px] md:h-[400px] my-16 bg-cover bg-center text-white flex items-center"
-            style={{ backgroundImage: "url('/assets/images/banner07.jpg')" }} // Replace with your preferred background
+            style={{ backgroundImage: "url('/assets/images/banner07.jpg')" }} 
           >
-            {/* Overlay */}
             <div className="absolute inset-0 bg-black/70 z-0" />
 
-            {/* Content */}
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Get in Touch With Us
@@ -160,7 +158,7 @@ const About = () => {
                 <p>📍 532 Houston Street, West Sacramento, CA 95691</p>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Mission, Vision, and Core Values Section */}
           <section className="w-full pt-2 rpt-100 bg-white">

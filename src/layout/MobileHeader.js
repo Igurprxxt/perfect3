@@ -18,9 +18,9 @@ const MobileHeader = ({ setNavToggle }) => {
       <li>
         <Link href="/about">About Us</Link>
       </li>
-      <li>
+      {/* <li>
         <Link href="">Blog</Link>
-      </li>
+      </li> */}
     </ul>
   );
 };

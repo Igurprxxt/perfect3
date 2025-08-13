@@ -50,9 +50,9 @@ const ContactUs = () => {
 
   return (
     <Layout footer={1} header={1}>
-      <PageBanner pageName={"Contact Us"} />
+      {/* <PageBanner pageName={"Contact Us"} /> */}
 
-      <section className="py-14 bg-gray-50">
+      <section className="py-14 mt-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <form
             onSubmit={handleSubmit(onSubmit)}

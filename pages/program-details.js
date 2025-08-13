@@ -6,23 +6,18 @@ import {
   Check,
   Mail,
   Phone,
-  Heart,
   ArrowLeft,
   ArrowRight,
   MapPin,
   UsersRound,
   CheckCheck,
   Clock3,
-  Laptop,
-  CalendarClock,
-  GraduationCap,
   LibraryBig,
 } from "lucide-react";
 import { useRef } from "react";
 import { useRouter } from "next/router";
 import Layout from "../src/layout/Layout";
 import { trainingPackages } from "../src/components/trainingPackage";
-import { notFound } from "next/navigation";
 import E404 from "./404";
 
 const Program = () => {
@@ -35,9 +30,6 @@ const Program = () => {
 
   const otherPackages = trainingPackages?.filter((p) => p.id != id);
 
-  console.log("otherPackages", otherPackages);
-
-  console.log("pkg", pkg);
   const [active, setActive] = useState(`collapse1`);
   const onClick = (value) => {
     console.log(value);
@@ -87,33 +79,6 @@ const Program = () => {
     { icon: CheckCheck, label: "Conventional" },
     { icon: Clock3, label: "Realistic" },
     { icon: UsersRound, label: "Social" },
-  ];
-  const details = [
-    {
-      icon: CheckCheck,
-      label: "Type:",
-      value: "Short-term training 0-6 months",
-    },
-    {
-      icon: Laptop,
-      label: "Format:",
-      value: "Online",
-    },
-    {
-      icon: CalendarClock,
-      label: "Hours:",
-      value: "Part-time",
-    },
-    {
-      icon: UsersRound,
-      label: "Age:",
-      value: "18 and up",
-    },
-    {
-      icon: GraduationCap,
-      label: "Requirements:",
-      value: "High school diploma or equivalency",
-    },
   ];
 
   if (!pkg) return E404();
@@ -190,25 +155,29 @@ const Program = () => {
 
                   <div className="relative z-10">
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                      {/* Each stat card */}
-                      <div className="bg-blue-900 rounded-lg p-2 md:p-4 border border-slate-600/30">
-                        <p className="text-gray-300 text-sm mb-1">Leads to</p>
-                        <p className="text-green-400 text-2xl md:text-3xl font-bold">
-                          $46.5k Carrers
-                        </p>
-                      </div>
-                      <div className="bg-blue-900 rounded-lg p-2 md:p-4 border border-slate-600/30">
-                        <p className="text-gray-300 text-sm mb-1">Costs</p>
-                        <p className="text-yellow-400 text-2xl md:text-3xl font-bold">
-                          $4k
-                        </p>
-                      </div>
-                      <div className="bg-blue-900 rounded-lg p-2 md:p-4 border border-slate-600/30">
-                        <p className="text-gray-300 text-sm mb-1">Takes</p>
-                        <p className="text-cyan-400 text-2xl md:text-3xl font-bold">
-                          14 Weeks
-                        </p>
-                      </div>
+                      {pkg?.extras?.map((ite, idx) => {
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-blue-900 rounded-lg p-2 md:p-4 border border-slate-600/30"
+                          >
+                            <p className="text-gray-300 text-sm mb-1">
+                              {ite?.label}
+                            </p>
+                            <p
+                              className={`${
+                                idx == 0
+                                  ? "text-green-400"
+                                  : idx == 1
+                                  ? "text-yellow-400"
+                                  : "text-cyan-400"
+                              } text-xl md:text-2xl font-semibold`}
+                            >
+                              {ite?.value}
+                            </p>
+                          </div>
+                        );
+                      })}
                     </div>
 
                     {/* Career Example */}
@@ -223,16 +192,21 @@ const Program = () => {
                           EXAMPLE CAREER
                         </p>
                         <p className="text-white font-bold text-lg">
-                          Dental Assistants
+                          {pkg?.id === 1
+                            ? pkg?.roles?.[0]?.label
+                            : pkg?.id === 2
+                            ? pkg?.roles?.[1]?.label
+                            : pkg?.id === 3
+                            ? pkg?.roles?.[2]?.label
+                            : pkg?.roles?.[3]?.label}
                         </p>
                       </div>
                     </div>
 
-                    {/* Tags */}
                     <div className="flex flex-wrap gap-3 mb-4 md:mb-6">
                       {iconList.map(({ icon: Icon, label }, idx) => (
                         <span
-                          key={label} // safe and unique
+                          key={label}
                           className="bg-[#df6b2f] text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-sm font-medium flex items-center gap-2"
                         >
                           <Icon className="text-xs" />
@@ -292,9 +266,9 @@ const Program = () => {
                           </tr>
                         </tbody>
                       </table>
-                      <button className="w-full text-sm md:text-lg mt-4 md:mt-6 bg-[#df6b2f] text-white py-1 px-3 md:py-3 md:px-6 rounded-lg font-semibold transition-colors duration-200">
+                      {/* <button className="w-full text-sm md:text-lg mt-4 md:mt-6 bg-[#df6b2f] text-white py-1 px-3 md:py-3 md:px-6 rounded-lg font-semibold transition-colors duration-200">
                         Show Salaries for my Area
-                      </button>
+                      </button> */}
                     </div>
 
                     {/* FAQs */}
@@ -346,12 +320,12 @@ const Program = () => {
                   <h3 className="text-lg font-semibold mb-4">Quick Facts</h3>
 
                   <div className="space-y-4">
-                    {details.map(({ icon: Icon, label, value }, i) => (
+                    {pkg?.details.map(({ icon: Icon, label, value }, i) => (
                       <div key={label} className="flex items-start gap-3">
                         <div className="w-8 h-8 bg-[#df6b2f] rounded-full flex items-center justify-center mt-0.5">
                           <Icon size={16} className="text-white" />
                         </div>
-                        <div>
+                        <div className="max-w-[80%]">
                           <p className="font-medium">{label}</p>
                           <p className="text-sm text-gray-600">{value}</p>
                         </div>
@@ -474,11 +448,12 @@ const Program = () => {
                     <div
                       key={idx}
                       onClick={() => {
-                        router.push({
-                          pathname: "/program-details/",
+                        router.replace({
+                          pathname: "/program-details",
                           query: {
-                            title: pkg.title,
-                            id: pkg?.id,
+                            title: ele.title,
+                            id: ele.id,
+                            t: Date.now(),
                           },
                         });
                       }}
@@ -492,9 +467,6 @@ const Program = () => {
                           objectFit="cover"
                           className="rounded-t-lg"
                         />
-                        <button className="absolute top-3 right-3 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center">
-                          <Heart className="w-5 h-5 text-gray-500" />
-                        </button>
                       </div>
                       <div className="p-4">
                         <span className="inline-flex items-center rounded-md bg-[#df6b2f] px-2 py-1 text-xs font-medium text-white mb-2">

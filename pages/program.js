@@ -8,6 +8,7 @@ import { index1Testimonial } from "../src/sliderProps";
 import TrainingPackage from "../src/components/trainingPackage";
 import BlogSection from "../src/components/blogSection";
 import { useRouter } from "next/router";
+import Gallery from "../src/components/gallerySection";
 const Program = () => {
   const [hoverId, setHoverId] = useState();
   const router = useRouter();
@@ -16,10 +17,10 @@ const Program = () => {
     <Layout header={1} footer={1}>
       {/* <PageBanner pageName={"Training Program"} /> */}
 
-      <section className="core-values-section py-130 rpy-100 wow fadeInUp delay-0-2s">
+      <section className="core-values-section py-12 pt-24 rpy-100 wow fadeInUp delay-0-2s">
         <TrainingPackage router={router} />
       </section>
-      <section className="core-values-section py-130 rpy-100 wow fadeInUp delay-0-2s">
+      <section className="core-values-section py-8 rpy-100 wow fadeInUp delay-0-2s">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -180,7 +181,8 @@ const Program = () => {
         />
       </section>
 
-      <BlogSection />
+      {/* <BlogSection /> */}
+      <Gallery />
     </Layout>
   );
 };

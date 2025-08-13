@@ -1,6 +1,14 @@
 import React, { useState } from "react";
-import { Check, Star, Truck } from "lucide-react";
-import Link from "next/link";
+import {
+  CalendarClock,
+  Check,
+  CheckCheck,
+  GraduationCap,
+  Laptop,
+  Star,
+  Truck,
+  UsersRound,
+} from "lucide-react";
 
 export const trainingPackages = [
   {
@@ -10,14 +18,74 @@ export const trainingPackages = [
     title: "Perfect Plus Training Program",
     icon: <Star className="w-6 h-6 text-[#FF6B00]" />,
     shortDesc:
-      "A balanced CDL Class A training with classroom and hands-on practice.",
+      "A complete CDL Class A training program with classroom instruction and real-world driving practice.",
     fullDesc:
-      "This program includes comprehensive classroom instruction along with behind-the-wheel training, helping you prepare for the CDL Class A license. You'll learn inspection procedures and practice for road tests in a real-world setting.",
+      "The Perfect Plus Training Program offers a balanced approach to CDL Class A preparation, combining classroom lessons with behind-the-wheel training. Over 4–6 weeks, students gain the knowledge and hands-on experience required to pass the CDL Class A road test with confidence. From pre-trip inspections to real traffic driving, our instructors guide you every step of the way to help you launch a successful career in trucking.",
     features: [
       { label: "4–6 Weeks Duration" },
       { label: "Classroom + Behind-the-Wheel Training" },
       { label: "Pre-Trip Inspection & Road Test Prep" },
       { label: "CDL Class A License" },
+    ],
+    roles: [
+      {
+        id: 1,
+        label: "Over-the-Road (OTR) Truck Driver",
+      },
+      {
+        id: 2,
+        label: "Regional Truck Driver",
+      },
+      {
+        id: 3,
+        label: "Local Delivery Driver",
+      },
+      {
+        id: 4,
+        label: "Specialized Freight Operator",
+      },
+    ],
+    extras: [
+      {
+        label: "Jobs in Trucking:",
+        value: "500k+ openings nationwide",
+      },
+      {
+        label: "Takes:",
+        value: "4–6 Weeks",
+      },
+      {
+        label: "Cost:",
+        value: "From $4,000",
+      },
+    ],
+    details: [
+      {
+        icon: CheckCheck,
+        label: "Type:",
+        value: "Short-term CDL training (0–2 months)",
+      },
+      {
+        icon: Laptop,
+        label: "Format:",
+        value: "In-person (Classroom + Driving)",
+      },
+      {
+        icon: CalendarClock,
+        label: "Hours:",
+        value: "Full-time or Part-time options",
+      },
+      {
+        icon: UsersRound,
+        label: "Age:",
+        value: "18 and older",
+      },
+      {
+        icon: GraduationCap,
+        label: "Requirements:",
+        value:
+          "Valid driver’s license, DOT medical card, and ability to pass a drug test",
+      },
     ],
   },
   {
@@ -27,14 +95,75 @@ export const trainingPackages = [
     title: "CDL Class A – Fast Track Package",
     icon: null,
 
-    shortDesc: "Get your CDL in 3 weeks with extended daily classes.",
+    shortDesc:
+      "Accelerated training designed to get you licensed and on the road in record time.",
     fullDesc:
-      "This fast-paced program includes all the benefits of the Perfect Plus package but in an accelerated format. Weekend and evening classes make it accessible for busy individuals looking to start their careers quickly.",
+      "Our CDL Class A Fast Track Package is built for motivated students who want to enter the trucking industry quickly without sacrificing quality training. This program condenses classroom learning and behind-the-wheel practice into an intensive schedule, so you can pass your CDL Class A road test in just a few weeks and start earning faster. Perfect for career changers and those ready to hit the road with confidence.",
     features: [
       { label: "3 Weeks Intensive Training" },
       { label: "Extended Daily Training Hours" },
       { label: "Weekend & Evening Classes Available" },
       { label: "Includes All Perfect Plus Features" },
+    ],
+    roles: [
+      {
+        id: 1,
+        label: "Over-the-Road (OTR) Truck Driver",
+      },
+      {
+        id: 2,
+        label: "Regional Truck Driver",
+      },
+      {
+        id: 3,
+        label: "Local Delivery Driver",
+      },
+      {
+        id: 4,
+        label: "Specialized Freight Operator",
+      },
+    ],
+    extras: [
+      {
+        label: "Jobs in Trucking:",
+        value: "500k+ openings nationwide",
+      },
+      {
+        label: "Takes:",
+        value: "3–4 Weeks",
+      },
+      {
+        label: "Cost:",
+        value: "From $3,500",
+      },
+    ],
+    details: [
+      {
+        icon: CheckCheck,
+        label: "Type:",
+        value: "Accelerated CDL training (Under 1 month)",
+      },
+      {
+        icon: Laptop,
+        label: "Format:",
+        value: "In-person (Classroom + Driving)",
+      },
+      {
+        icon: CalendarClock,
+        label: "Hours:",
+        value: "Intensive full-time schedule",
+      },
+      {
+        icon: UsersRound,
+        label: "Age:",
+        value: "18 and older",
+      },
+      {
+        icon: GraduationCap,
+        label: "Requirements:",
+        value:
+          "Valid driver’s license, DOT medical card, and ability to pass a drug test",
+      },
     ],
   },
   {
@@ -43,33 +172,151 @@ export const trainingPackages = [
     title: "CDL Refresher Course",
     image: "/assets/images/image6.jpeg",
     icon: null,
-
-    shortDesc:
-      "Refresh your CDL skills and return to the road with confidence.",
+    shortDesc: "Sharpen your skills and get back on the road with confidence.",
     fullDesc:
-      "Designed for drivers who have been off the road, this refresher course offers skills assessment, safety updates, and guided road training to ensure you're ready to re-enter the field.",
+      "The CDL Class A Refresher Course is designed for licensed drivers who have been out of the industry for a while or want to brush up on their skills before returning to work. This short, focused program refreshes your knowledge of safety regulations, pre-trip inspections, and on-road driving techniques so you’re fully prepared for any trucking job opportunity.",
     features: [
       { label: "1–2 Weeks Duration" },
       { label: "Skills Assessment + Safety Updates" },
       { label: "Road Training Included" },
       { label: "24/7 Premium Support" },
     ],
+    roles: [
+      {
+        id: 1,
+        label: "Over-the-Road (OTR) Truck Driver",
+      },
+      {
+        id: 2,
+        label: "Regional Truck Driver",
+      },
+      {
+        id: 3,
+        label: "Local Delivery Driver",
+      },
+      {
+        id: 4,
+        label: "Specialized Freight Operator",
+      },
+    ],
+    extras: [
+      {
+        label: "Jobs in Trucking:",
+        value: "500k+ openings nationwide",
+      },
+      {
+        label: "Takes:",
+        value: "1–2 Weeks",
+      },
+      {
+        label: "Cost:",
+        value: "From $1,500",
+      },
+    ],
+    details: [
+      {
+        icon: CheckCheck,
+        label: "Type:",
+        value: "Short-term refresher training",
+      },
+      {
+        icon: Laptop,
+        label: "Format:",
+        value: "In-person (Classroom + Driving)",
+      },
+      {
+        icon: CalendarClock,
+        label: "Hours:",
+        value: "Flexible scheduling available",
+      },
+      {
+        icon: UsersRound,
+        label: "Age:",
+        value: "18 and older",
+      },
+      {
+        icon: GraduationCap,
+        label: "Requirements:",
+        value:
+          "Valid driver’s license, DOT medical card, and ability to pass a drug test",
+      },
+    ],
   },
   {
     id: 4,
     tag: "Bus & Delivery Focused",
-    title: "CDL Class B Training",
+    title: "CDL Class A – Road Test Only Package",
     icon: null,
     image: "/assets/images/vehicle-move_23-2151846038.jpeg",
 
-    shortDesc: "Ideal for school bus or delivery careers.",
+    shortDesc: "Skip the full training — just take the test and get licensed.",
     fullDesc:
-      "Train with straight trucks and buses for CDL Class B jobs. Get classroom education and hands-on experience tailored for entry into school bus, delivery, or similar careers.",
+      "The CDL Class A Road Test Only Package is perfect for experienced drivers who already have the necessary skills but need to complete their official road test to earn their license. We provide the truck, schedule your test, and guide you through the process so you can focus on passing and getting certified quickly.",
     features: [
       { label: "2–4 Weeks Duration" },
       { label: "Straight Truck & Bus Training" },
       { label: "Classroom + Hands-On Instruction" },
       { label: "Ideal for School Bus & Delivery Jobs" },
+    ],
+    roles: [
+      {
+        id: 1,
+        label: "Over-the-Road (OTR) Truck Driver",
+      },
+      {
+        id: 2,
+        label: "Regional Truck Driver",
+      },
+      {
+        id: 3,
+        label: "Local Delivery Driver",
+      },
+      {
+        id: 4,
+        label: "Specialized Freight Operator",
+      },
+    ],
+    extras: [
+      {
+        label: "Jobs in Trucking:",
+        value: "500k+ openings nationwide",
+      },
+      {
+        label: "Takes:",
+        value: "1-3 Days",
+      },
+      {
+        label: "Cost:",
+        value: "From $800",
+      },
+    ],
+    details: [
+      {
+        icon: CheckCheck,
+        label: "Type:",
+        value: "CDL road test package",
+      },
+      {
+        icon: Laptop,
+        label: "Format:",
+        value: "In-person (Testing only)",
+      },
+      {
+        icon: CalendarClock,
+        label: "Hours:",
+        value: "Based on test appointment",
+      },
+      {
+        icon: UsersRound,
+        label: "Age:",
+        value: "18 and older",
+      },
+      {
+        icon: GraduationCap,
+        label: "Requirements:",
+        value:
+          "Valid driver’s license, CDL learner’s permit, DOT medical card, and ability to pass a drug test",
+      },
     ],
   },
 ];

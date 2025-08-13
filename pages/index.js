@@ -196,11 +196,11 @@ const Index = () => {
                 <div className="col-lg-8">
                   <div className="hero-content rpt-25 rmb-75">
                     <h1 className="mb-4 leading-tight font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
-                      Your Journey to Driving Starts Here
+                      Your Road to a CDL <br /> Starts Here
                     </h1>
                     <h3 className="wow fadeInUp text-xl  delay-0-6s">
-                      Our step-by-step, confidence-building training guarantees
-                      you’ll be ready.
+                      Step-by-step training with classroom and behind-the-wheel
+                      practice.
                     </h3>
                     <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
                       <Link className="theme-btn" href="/enrollment">
@@ -717,14 +717,11 @@ const Index = () => {
 
       {/* Testimonials Section End */}
       {/* Blog Section Start */}
-      <section
+      {/* <section
         className="relative h-[450px] my-16 bg-cover bg-center text-white flex items-center"
         style={{ backgroundImage: "url('/assets/images/banner07.jpg')" }}
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/70 z-0" />
-
-        {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-4xl font-bold mb-3">
             Start Your CDL Journey With Confidence
@@ -755,7 +752,7 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <BlogSection /> */}
       <Gallery />

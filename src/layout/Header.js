@@ -433,7 +433,7 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
             </span>
           </Link>
         </li>
-        <li className="dropdown">
+        {/* <li className="dropdown">
           <span
             className={
               router === "/blog"
@@ -443,7 +443,7 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
           >
             Blog
           </span>
-        </li>
+        </li> */}
       </ul>
     );
   },
