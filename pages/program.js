@@ -17,7 +17,7 @@ const Program = () => {
     <Layout header={1} footer={1}>
       {/* <PageBanner pageName={"Training Program"} /> */}
 
-      <section className="core-values-section py-12 pt-24 rpy-100 wow fadeInUp delay-0-2s">
+      <section className="core-values-section py-12 md:pt-24 rpy-100 wow fadeInUp delay-0-2s">
         <TrainingPackage router={router} />
       </section>
       <section className="core-values-section py-8 rpy-100 wow fadeInUp delay-0-2s">
@@ -156,7 +156,7 @@ const Program = () => {
                         <h4>{t.name}</h4>
                         {/* <span>{t.content}</span> */}
                       </div>
-                      <p>{t.content}</p>
+                      <p className="max-w-screen-sm">{t.content}</p>
                       <div className="ratting">
                         {[...Array(5)].map((_, i) => (
                           <i className="fas fa-star" key={i} />

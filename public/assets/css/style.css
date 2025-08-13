@@ -8061,16 +8061,17 @@ h6,
   -webkit-box-shadow: 10px 0 60px rgba(38, 45, 61, 0.07);
   box-shadow: 10px 0 60px rgba(38, 45, 61, 0.07);
 }
+/* //earlier it was 25-15 */
 @media only screen and (max-width: 575px) {
   .testimonial-content {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 @media only screen and (max-width: 375px) {
   .testimonial-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 .testimonial-content:after {
