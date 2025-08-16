@@ -272,7 +272,7 @@ const Program = () => {
                     </div>
 
                     {/* FAQs */}
-                    <div className="space-y-1">
+                    {/* <div className="space-y-1">
                       {[
                         "What skills and credentials will I gain?",
                         "What types of costs and discounts are involved?",
@@ -310,7 +310,7 @@ const Program = () => {
                           )}
                         </div>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

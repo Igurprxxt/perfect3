@@ -563,7 +563,7 @@ const Index = () => {
             </div>
           </div>
 
-          <Slider {...index1EventWrap} className="event-wrap">
+          {/* <Slider {...index1EventWrap} className="event-wrap">
             <div className="event-item wow fadeInUp delay-0-2s border border-[#08006a] rounded-sm">
               <div className="image">
                 <img src="/assets/images/1319.jpg" alt="Graduation Ceremony" />
@@ -624,8 +624,8 @@ const Index = () => {
                 </span>
               </div>
             </div>
-          </Slider>
-          <div className="flex justify-center">
+          </Slider> */}
+          <div className="flex justify-center mt-2">
             <div className="inline-block  bg-[#DF6B2F] mb-12 wow fadeInUp delay-0-8s rounded-lg">
               <Link className="theme-btn" href="/enrollment">
                 Apply Now <i className="fas fa-arrow-right" />
