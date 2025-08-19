@@ -309,9 +309,9 @@ const About = () => {
                         </div>
                         <h4>Learn on Your Time</h4>
                         <p>
-                          Whether you're working, parenting, or transitioning
-                          careers — our flexible schedules make CDL training
-                          accessible.
+                          Whether you&apos;re working, parenting, or
+                          transitioning careers — our flexible schedules make
+                          CDL training accessible.
                         </p>
                       </div>
                     </div>
