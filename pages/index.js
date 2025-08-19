@@ -41,7 +41,7 @@ export const trainingPackages = [
     // price: "$3,499",
     features: [
       { label: "4–6 Weeks Duration", icon: "Check" },
-      { label: "Classroom + Behind-the-Wheel Training", icon: "Check" },
+      { label: "Behind-the-Wheel Training", icon: "Check" },
       { label: "Pre-Trip Inspection & Road Test Prep", icon: "Check" },
       { label: "CDL Class A License", icon: "Check" },
     ],
@@ -75,7 +75,7 @@ export const trainingPackages = [
     features: [
       { label: "2–4 Weeks Duration", icon: "Check" },
       { label: "Straight Truck & Bus Training", icon: "Check" },
-      { label: "Classroom + Hands-On Instruction", icon: "Check" },
+      { label: "Hands-On Instruction", icon: "Check" },
       { label: "Ideal for School Bus & Delivery Jobs", icon: "Check" },
     ],
   },
@@ -196,11 +196,11 @@ const Index = () => {
                 <div className="col-lg-8">
                   <div className="hero-content rpt-25 rmb-75">
                     <h1 className="mb-4 leading-tight font-bold text-6xl wow fadeInUp delay-0-4s text-blue ">
-                      Your Road to a CDL <br /> Starts Here
+                      Get CDL Ready - Drive Your Future Forward
                     </h1>
                     <h3 className="wow fadeInUp text-xl  delay-0-6s">
-                      Step-by-step training with classroom and behind-the-wheel
-                      practice.
+                      Accelerated CDL Programs Designed to Launch Your Career
+                      Fast
                     </h3>
                     <div className="hero-btn mt-30 wow fadeInUp delay-0-8s">
                       <Link className="theme-btn" href="/enrollment">
@@ -538,14 +538,15 @@ const Index = () => {
             <div className="col-xl-7 col-lg-8 col-md-9">
               <div className="section-title text-center mb-12">
                 <span className="sub-title mb-25">About Us</span>
-                <h2>We Provide Life Coach From Expert Advisors</h2>
+                <h2>Driven by Excellence. Committed to Your Success.</h2>
               </div>
             </div>
             <div className="mb-1 md:mb-3 mx-3 text-justify md:text-center">
               <p className="mb-3">
-                Founded in January 2025, our PCDL School was created with a
-                clear purpose: to train and prepare professional drivers who are
-                ready to hit the road and help drive America’s economy forward.
+                Founded in January 2025, our Pacific Truck School was created
+                with a clear purpose: to train and prepare professional drivers
+                who are ready to hit the road and help drive America’s economy
+                forward.
               </p>
               <p className="mb-3">
                 With over 25 years of experience in the trucking industry, our
@@ -679,7 +680,7 @@ const Index = () => {
                     {
                       icon: <Handshake className="h-6 w-6 text-[#FFC107]" />,
                       title: "Integrity and Respect",
-                      desc: "We foster a culture of honesty, respect, and professionalism, both in the classroom and on the road.",
+                      desc: "We foster a culture of honesty, respect, and professionalism  on the road.",
                     },
                     {
                       icon: <Star className="h-6 w-6 text-[#FFEB3B]" />,

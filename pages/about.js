@@ -35,14 +35,14 @@ const About = () => {
                   <div className="section-title mb-10">
                     <span className="sub-title mb-4">About Us</span>
                     <h2 className="text-3xl font-bold text-gray-900">
-                      We Provide Life Coach From Expert Advisors
+                      Driven by Excellence. Committed to Your Success.
                     </h2>
                   </div>
                   <p className="mb-2">
-                    Founded in January 2025, our PCDL School was created with a
-                    clear purpose: to train and prepare professional drivers who
-                    are ready to hit the road and help drive America&apos;s
-                    economy forward.
+                    Founded in January 2025, our Pacific Truck School was
+                    created with a clear purpose: to train and prepare
+                    professional drivers who are ready to hit the road and help
+                    drive America&apos;s economy forward.
                   </p>
                   <p className="mb-2">
                     With over 25 years of experience in the trucking industry,
@@ -91,11 +91,11 @@ const About = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-lg text-gray-900">
-                          Comprehensive Curriculum
+                          Road-Ready Training
                         </h4>
                         <p className="text-sm text-gray-600">
-                          Master both theory and road safety with structured CDL
-                          classes.
+                          Master essential driving theory and road safety
+                          through structured, hands-on CDL training.
                         </p>
                       </div>
                     </div>
@@ -224,7 +224,7 @@ const About = () => {
                       {
                         icon: <Handshake className="h-6 w-6 text-[#FFC107]" />,
                         title: "Integrity and Respect",
-                        desc: "We foster a culture of honesty, respect, and professionalism, both in the classroom and on the road.",
+                        desc: "We foster a culture of honesty, respect, and professionalism on the road.",
                       },
                       {
                         icon: <Star className="h-6 w-6 text-[#FFEB3B]" />,
@@ -265,14 +265,14 @@ const About = () => {
             <div className="col-lg-6">
               <div className="why-learn-content rmb-35">
                 <div className="section-title mb-30">
-                  <span className="sub-title-two">Why Learn With Us</span>
-                  <h2>Practical, Career-Focused CDL Training Programs</h2>
+                  <span className="sub-title-two">Why Train With Us</span>
+                  <h2>Career-Focused CDL Programs Designed for Your Success</h2>
                 </div>
                 <p>
-                  At Perfect Plus Pacific Truck School, we go beyond theory. Our
-                  goal is to prepare you for real-world trucking with hands-on
-                  training, expert guidance, and flexible learning options
-                  designed for your success.
+                  At Pacific Truck School, we go beyond theory. Our goal is to
+                  prepare you for real-world trucking with hands-on training,
+                  expert guidance, and flexible learning options designed for
+                  your success.
                 </p>
 
                 <div className="why-learn-feature pt-30">
@@ -282,11 +282,10 @@ const About = () => {
                         <div className="icon">
                           <Sparkles color="#DF6B2F" size={40} />
                         </div>
-                        <h4>Expert Advisors</h4>
+                        <h4>Real-World Driving Experts</h4>
                         <p>
-                          Our certified instructors bring real-world experience
-                          to the classroom, helping you build the confidence and
-                          skills needed for the road ahead.
+                          Our instructors bring years of on-the-road expertise
+                          to help you build confidence and master CDL skills.
                         </p>
                       </div>
                     </div>
@@ -295,11 +294,11 @@ const About = () => {
                         <div className="icon">
                           <BookOpenText color="#DF6B2F" size={40} />
                         </div>
-                        <h4>Popular CDL Programs</h4>
+                        <h4>CDL Courses Tailored to You</h4>
                         <p>
-                          From Class A to Fast Track and Refresher Courses, our
-                          programs are designed to fit different goals,
-                          schedules, and experience levels.
+                          From Refresher to Fast Track Courses, we offer
+                          flexible programs for every experience level and
+                          schedule
                         </p>
                       </div>
                     </div>
@@ -308,11 +307,11 @@ const About = () => {
                         <div className="icon">
                           <CheckCircle color="#DF6B2F" size={40} />
                         </div>
-                        <h4>Flexible Scheduling</h4>
+                        <h4>Learn on Your Time</h4>
                         <p>
-                          Choose full-time or part-time classes, including
-                          evenings and weekends, to fit training into your
-                          lifestyle.
+                          Whether you're working, parenting, or transitioning
+                          careers — our flexible schedules make CDL training
+                          accessible.
                         </p>
                       </div>
                     </div>
@@ -323,9 +322,9 @@ const About = () => {
                         </div>
                         <h4>Prime Location</h4>
                         <p>
-                          Strategically located in West Sacramento, our school
-                          is easy to reach and surrounded by key trucking routes
-                          and support services.
+                          Conveniently situated in West Sacramento, our campus
+                          offers easy access to major highways and trucking
+                          hubs.
                         </p>
                       </div>
                     </div>

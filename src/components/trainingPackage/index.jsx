@@ -18,12 +18,12 @@ export const trainingPackages = [
     title: "Perfect Plus Training Program",
     icon: <Star className="w-6 h-6 text-[#FF6B00]" />,
     shortDesc:
-      "A complete CDL Class A training program with classroom instruction and real-world driving practice.",
+      "A complete CDL Class A training program with real-world driving practice.",
     fullDesc:
-      "The Perfect Plus Training Program offers a balanced approach to CDL Class A preparation, combining classroom lessons with behind-the-wheel training. Over 4–6 weeks, students gain the knowledge and hands-on experience required to pass the CDL Class A road test with confidence. From pre-trip inspections to real traffic driving, our instructors guide you every step of the way to help you launch a successful career in trucking.",
+      "The Perfect Plus Training Program offers a balanced approach to CDL Class A preparation with behind-the-wheel training. Over 4–6 weeks, students gain the knowledge and hands-on experience required to pass the CDL Class A road test with confidence. From pre-trip inspections to real traffic driving, our instructors guide you every step of the way to help you launch a successful career in trucking.",
     features: [
       { label: "4–6 Weeks Duration" },
-      { label: "Classroom + Behind-the-Wheel Training" },
+      { label: "Behind-the-Wheel Training" },
       { label: "Pre-Trip Inspection & Road Test Prep" },
       { label: "CDL Class A License" },
     ],
@@ -56,7 +56,7 @@ export const trainingPackages = [
       },
       {
         label: "Cost:",
-        value: "From $4,000",
+        value: "From $2,500",
       },
     ],
     details: [
@@ -68,7 +68,7 @@ export const trainingPackages = [
       {
         icon: Laptop,
         label: "Format:",
-        value: "In-person (Classroom + Driving)",
+        value: "In-person",
       },
       {
         icon: CalendarClock,
@@ -98,7 +98,7 @@ export const trainingPackages = [
     shortDesc:
       "Accelerated training designed to get you licensed and on the road in record time.",
     fullDesc:
-      "Our CDL Class A Fast Track Package is built for motivated students who want to enter the trucking industry quickly without sacrificing quality training. This program condenses classroom learning and behind-the-wheel practice into an intensive schedule, so you can pass your CDL Class A road test in just a few weeks and start earning faster. Perfect for career changers and those ready to hit the road with confidence.",
+      "Our CDL Class A Fast Track Package is built for motivated students who want to enter the trucking industry quickly without sacrificing quality training. This program condenses behind-the-wheel practice into an intensive schedule, so you can pass your CDL Class A road test in just a few weeks and start earning faster. Perfect for career changers and those ready to hit the road with confidence.",
     features: [
       { label: "3 Weeks Intensive Training" },
       { label: "Extended Daily Training Hours" },
@@ -134,7 +134,7 @@ export const trainingPackages = [
       },
       {
         label: "Cost:",
-        value: "From $3,500",
+        value: "From $3,200",
       },
     ],
     details: [
@@ -146,7 +146,7 @@ export const trainingPackages = [
       {
         icon: Laptop,
         label: "Format:",
-        value: "In-person (Classroom + Driving)",
+        value: "In-person",
       },
       {
         icon: CalendarClock,
@@ -210,7 +210,7 @@ export const trainingPackages = [
       },
       {
         label: "Cost:",
-        value: "From $1,500",
+        value: "From $1,800",
       },
     ],
     details: [
@@ -222,7 +222,7 @@ export const trainingPackages = [
       {
         icon: Laptop,
         label: "Format:",
-        value: "In-person (Classroom + Driving)",
+        value: "In-person",
       },
       {
         icon: CalendarClock,
@@ -255,7 +255,7 @@ export const trainingPackages = [
     features: [
       { label: "2–4 Weeks Duration" },
       { label: "Straight Truck & Bus Training" },
-      { label: "Classroom + Hands-On Instruction" },
+      { label: "Hands-On Instruction" },
       { label: "Ideal for School Bus & Delivery Jobs" },
     ],
     roles: [
@@ -287,7 +287,7 @@ export const trainingPackages = [
       },
       {
         label: "Cost:",
-        value: "From $800",
+        value: "From $700",
       },
     ],
     details: [

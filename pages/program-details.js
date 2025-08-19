@@ -127,13 +127,89 @@ const Program = () => {
                 </div>
               </div>
             </div>
+            <div className="flex flex-col gap-6">
+              {/* Career Stats Dashboard */}
+              <div className="bg-[#0F256E] border text-white rounded-lg p-6 relative overflow-hidden shadow-lg">
+                {/* Pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <svg
+                    className="w-full h-full"
+                    viewBox="0 0 400 300"
+                    fill="none"
+                  >
+                    <path
+                      d="M50 50L150 150M150 50L50 150M200 50L300 150M300 50L200 150M350 50L450 150"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                    />
+                    <path
+                      d="M0 100L100 200M100 100L0 200M150 100L250 200M250 100L150 200"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                    />
+                  </svg>
+                </div>
 
-            <div className="flex flex-col lg:flex-row gap-6">
-              {/* Left Column */}
+                <div className="relative z-10">
+                  {/* Top Stats (2 boxes) */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    {pkg?.extras?.slice(1, 3).map((ite, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-blue-900 rounded-lg p-4 border border-slate-600/30"
+                      >
+                        <p className="text-gray-300 text-sm mb-1">
+                          {ite?.label}
+                        </p>
+                        <p
+                          className={`${
+                            idx === 0 ? "text-yellow-400" : "text-cyan-400"
+                          } text-2xl font-semibold`}
+                        >
+                          {ite?.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Quick Facts horizontally */}
+                  <div className="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <div className="flex flex-wrap gap-6">
+                      {pkg?.details.map(({ icon: Icon, label, value }, i) => (
+                        <div
+                          key={label}
+                          className="flex items-center gap-3 min-w-[200px] flex-1"
+                        >
+                          <div className="w-8 h-8 bg-[#df6b2f] rounded-full flex items-center justify-center">
+                            <Icon size={16} className="text-white" />
+                          </div>
+                          <div className="max-w-[80%] md:max-w-full">
+                            <p className="font-medium text-gray-800">{label}</p>
+                            <p className="text-sm text-gray-600 ">{value}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Enroll CTA */}
+                  <div className="text-center">
+                    <button
+                      className="px-6 py-3 bg-[#df6b2f] text-white rounded-lg font-semibold text-lg shadow-md hover:shadow-lg hover:bg-[#c85c24] transition-all duration-200"
+                      onClick={() => {
+                        router.push({ pathname: "/enrollment" });
+                      }}
+                    >
+                      Enroll Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* <div className="flex flex-col lg:flex-row gap-6">
               <div className="flex-1">
-                {/* Career Stats Dashboard */}
                 <div className="bg-[#0F256E] border text-white rounded-lg p-6 relative overflow-hidden">
-                  {/* Pattern */}
                   <div className="absolute inset-0 opacity-10">
                     <svg
                       className="w-full h-full"
@@ -180,8 +256,7 @@ const Program = () => {
                       })}
                     </div>
 
-                    {/* Career Example */}
-                    <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-6">
                       <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                         <span className="text-[#df6b2f] text-xs">
                           <LibraryBig color="#df6b2f" />
@@ -201,7 +276,7 @@ const Program = () => {
                             : pkg?.roles?.[3]?.label}
                         </p>
                       </div>
-                    </div>
+                    </div> 
 
                     <div className="flex flex-wrap gap-3 mb-4 md:mb-6">
                       {iconList.map(({ icon: Icon, label }, idx) => (
@@ -215,7 +290,6 @@ const Program = () => {
                       ))}
                     </div>
 
-                    {/* Salary Table */}
                     <div className="bg-white text-gray-900 rounded-xl p-6 mb-6 shadow-lg overflow-x-auto">
                       <p className="text-xs text-gray-500 mb-4 font-medium tracking-wider">
                         SHOWING WAGE DATA FOR:
@@ -266,51 +340,7 @@ const Program = () => {
                           </tr>
                         </tbody>
                       </table>
-                      {/* <button className="w-full text-sm md:text-lg mt-4 md:mt-6 bg-[#df6b2f] text-white py-1 px-3 md:py-3 md:px-6 rounded-lg font-semibold transition-colors duration-200">
-                        Show Salaries for my Area
-                      </button> */}
                     </div>
-
-                    {/* FAQs */}
-                    {/* <div className="space-y-1">
-                      {[
-                        "What skills and credentials will I gain?",
-                        "What types of costs and discounts are involved?",
-                        "Does it provide the support I need?",
-                      ].map((question, index) => (
-                        <div key={index}>
-                          <button
-                            onClick={() => toggleFaq(index)}
-                            className="w-full text-left text-white hover:bg-blue-900 p-4 rounded-lg flex justify-between items-center transition-colors duration-200 font-medium"
-                          >
-                            {question}
-                            <svg
-                              className={`w-5 h-5 transform transition-transform duration-200 ${
-                                expandedFaq === index ? "rotate-180" : ""
-                              }`}
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          </button>
-                          {expandedFaq === index && (
-                            <div className="bg-blue-900/50 p-4 rounded-lg mt-1 text-gray-300 border-l-4 border-orange-500">
-                              <p>
-                                Additional information about{" "}
-                                {question.toLowerCase()}
-                              </p>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div> */}
                   </div>
                 </div>
               </div>
@@ -348,10 +378,10 @@ const Program = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className=" border my-6 rounded-md px-3 py-4 md:px-6 lg:px-8">
-              <section className="mb-6 md:mb-12">
+            {/* <div className=" border my-6 rounded-md px-3 py-4 md:px-6 lg:px-8"> */}
+            {/* <section className="mb-6 md:mb-12">
                 <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-6">
                   Admissions
                 </h2>
@@ -359,139 +389,139 @@ const Program = () => {
                   <Check className="w-5 h-5 text-[#df6b2f]" />
                   <span>High school diploma or equivalency</span>
                 </div>
-              </section>
+              </section> */}
 
-              <section className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 border p-3 md:p-5 rounded-md">
-                <div>
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900  mb-6">
-                    Who do I Contact?
-                  </h2>
-                  <div className="grid gap-6">
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100">
-                        <Mail className="w-5 h-5 text-[#df6b2f]" />
-                      </div>
-                      <Link
-                        href="#"
-                        className="text-sm md:text-lg text-[#df6b2f] hover:underline"
-                      >
-                        Email: contact@getcdlready.com
-                      </Link>
+            <section className="grid mt-3 md:grid-cols-2 gap-6 md:gap-12 mb-4 border p-3 rounded-md">
+              <div>
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900  mb-3">
+                  Who do I Contact?
+                </h2>
+                <div className="grid gap-6">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100">
+                      <Mail className="w-5 h-5 text-[#df6b2f]" />
                     </div>
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100">
-                        <Phone className="w-5 h-5 text-[#df6b2f]" />
-                      </div>
-                      <Link
-                        href="#"
-                        className="text-sm md:text-lg text-[#df6b2f] hover:underline"
-                      >
-                        Call: 916-595-9200
-                      </Link>
+                    <Link
+                      href="#"
+                      className="text-sm md:text-lg text-[#df6b2f] hover:underline"
+                    >
+                      Email: contact@getcdlready.com
+                    </Link>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100">
+                      <Phone className="w-5 h-5 text-[#df6b2f]" />
                     </div>
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100">
-                        <MapPin className="w-5 h-5 text-[#df6b2f]" />
-                      </div>
-                      <Link
-                        href="#"
-                        className="text-sm md:text-lg text-[#df6b2f] hover:underline"
-                      >
-                        WhatsApp: 916-595-9200
-                      </Link>
+                    <Link
+                      href="#"
+                      className="text-sm md:text-lg text-[#df6b2f] hover:underline"
+                    >
+                      Call: 916-595-9200
+                    </Link>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100">
+                      <MapPin className="w-5 h-5 text-[#df6b2f]" />
                     </div>
+                    <Link
+                      href="#"
+                      className="text-sm md:text-lg text-[#df6b2f] hover:underline"
+                    >
+                      WhatsApp: 916-595-9200
+                    </Link>
                   </div>
                 </div>
+              </div>
 
-                {/* Map */}
-                <div className="relative w-full h-[300px] rounded-lg overflow-hidden shadow-md">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14564.03187527638!2d-121.56258197067827!3d38.58378865234521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ad4171d24dd55%3A0x7f990eef29745109!2s532%20Houston%20St%2C%20West%20Sacramento%2C%20CA%2095691%2C%20USA!5e0!3m2!1sen!2sin!4v1753203962274!5m2!1sen!2sin"
-                    height={900}
-                    style={{ border: 0, width: "100%" }}
-                    allowFullScreen=""
-                    loading="lazy"
-                  />
-                  <div className="text-xs text-gray-600">
-                    <p>Google</p>
-                    <p>Map data {"\u00A9"}2025 Terms</p>
-                  </div>
+              {/* Map */}
+              <div className="relative w-full h-[270px] rounded-lg overflow-hidden shadow-md">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14564.03187527638!2d-121.56258197067827!3d38.58378865234521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ad4171d24dd55%3A0x7f990eef29745109!2s532%20Houston%20St%2C%20West%20Sacramento%2C%20CA%2095691%2C%20USA!5e0!3m2!1sen!2sin!4v1753203962274!5m2!1sen!2sin"
+                  height={900}
+                  style={{ border: 0, width: "100%" }}
+                  allowFullScreen=""
+                  loading="lazy"
+                />
+                <div className="text-xs text-gray-600">
+                  <p>Google</p>
+                  <p>Map data {"\u00A9"}2025 Terms</p>
                 </div>
-              </section>
+              </div>
+            </section>
 
-              <section className="border p-2 md:p-5 rounded-md">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-lg md:text-3xl font-bold text-gray-900">
-                    Other Programs You Might Like
-                  </h2>
-                  <div className="flex gap-2">
-                    <button
-                      className="flex items-center justify-center rounded-full w-10 h-10 border border-[#df6b2f] text-[#df6b2f] hover:bg-[#e0f2f7] bg-transparent"
-                      onClick={scrollLeft}
-                    >
-                      <ArrowLeft className="w-5 h-5" />
-                    </button>
-                    <button
-                      className="flex items-center justify-center rounded-full w-10 h-10 border border-[#df6b2f] text-[#df6b2f] hover:bg-[#e0f2f7] bg-transparent"
-                      onClick={scrollRight}
-                    >
-                      <ArrowRight className="w-5 h-5" />
-                    </button>
-                  </div>
+            <section className="border p-2 md:p-5 rounded-md">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-lg md:text-3xl font-bold text-gray-900">
+                  Other Programs You Might Like
+                </h2>
+                <div className="flex gap-2">
+                  <button
+                    className="flex items-center justify-center rounded-full w-10 h-10 border border-[#df6b2f] text-[#df6b2f] hover:bg-[#e0f2f7] bg-transparent"
+                    onClick={scrollLeft}
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    className="flex items-center justify-center rounded-full w-10 h-10 border border-[#df6b2f] text-[#df6b2f] hover:bg-[#e0f2f7] bg-transparent"
+                    onClick={scrollRight}
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
                 </div>
+              </div>
 
-                <div
-                  ref={scrollContainerRef}
-                  className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory"
-                >
-                  {otherPackages?.map((ele, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => {
-                        router.replace({
-                          pathname: "/program-details",
-                          query: {
-                            title: ele.title,
-                            id: ele.id,
-                            t: Date.now(),
-                          },
-                        });
-                      }}
-                      className="min-w-[260px] md:min-w-[300px] cursor-pointer max-w-[300px] rounded-lg overflow-hidden shadow-md snap-center bg-white"
-                    >
-                      <div className="relative w-full h-[180px]">
-                        <Image
-                          src={ele?.image}
-                          alt="Electronic Medical Records"
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-t-lg"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <span className="inline-flex items-center rounded-md bg-[#df6b2f] px-2 py-1 text-xs font-medium text-white mb-2">
-                          {ele?.title}
-                        </span>
-                        <h3 className="text-sm font-semibold text-gray-800 mb-2">
-                          {ele?.shortDesc}
-                        </h3>
-
-                        {ele?.features?.map((ite, idx) => (
-                          <div
-                            key={idx}
-                            className="flex flex-wrap gap-2 text-sm text-gray-700"
-                          >
-                            <span className="font-medium text-[#df6b2f]">
-                              {ite?.label}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
+              <div
+                ref={scrollContainerRef}
+                className="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory"
+              >
+                {otherPackages?.map((ele, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => {
+                      router.replace({
+                        pathname: "/program-details",
+                        query: {
+                          title: ele.title,
+                          id: ele.id,
+                          t: Date.now(),
+                        },
+                      });
+                    }}
+                    className="min-w-[260px] md:min-w-[300px] cursor-pointer max-w-[300px] rounded-lg overflow-hidden shadow-md snap-center bg-white"
+                  >
+                    <div className="relative w-full h-[180px]">
+                      <Image
+                        src={ele?.image}
+                        alt="Electronic Medical Records"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-t-lg"
+                      />
                     </div>
-                  ))}
-                </div>
-              </section>
-            </div>
+                    <div className="p-4">
+                      <span className="inline-flex items-center rounded-md bg-[#df6b2f] px-2 py-1 text-xs font-medium text-white mb-2">
+                        {ele?.title}
+                      </span>
+                      <h3 className="text-sm font-semibold text-gray-800 mb-2">
+                        {ele?.shortDesc}
+                      </h3>
+
+                      {ele?.features?.map((ite, idx) => (
+                        <div
+                          key={idx}
+                          className="flex flex-wrap gap-2 text-sm text-gray-700"
+                        >
+                          <span className="font-medium text-[#df6b2f]">
+                            {ite?.label}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+            {/* </div> */}
           </div>
         </section>
       </Layout>

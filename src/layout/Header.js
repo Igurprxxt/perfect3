@@ -5,6 +5,7 @@ import { sidebarOnclick, stickyNav } from "../utils";
 import { Blog, Courses, Home, Pages } from "./Menu";
 import MobileHeader from "./MobileHeader";
 import { useRouter } from "next/router";
+import { Clock, Phone } from "lucide-react";
 
 const Header = ({ header }) => {
   const router = useRouter();
@@ -449,22 +450,25 @@ const Header1 = ({ navToggle, setNavToggle, router }) => (
   },
   HeaderTop = () => (
     <div className="bg-[#08006a] text-white text-xs">
-      <div className="container mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+      <div className="mx-auto px-3 md:px-12 py-2 flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
         {/* Left - Timings */}
-        <div className="text-center md:text-left">
-          Timings <span className="text-[#DF6B2F] font-semibold">Mon–Fri</span>{" "}
-          8am–5pm PT
-        </div>
-
-        {/* Center - Call / Text */}
-        <div className="text-center md:text-left space-x-4">
-          <span>
-            Call us at{" "}
+        <div className="text-center md:text-left flex items-center gap-x-2">
+          <div className=" flex items-center gap-x-1">
+            <Clock size={16} />
+            <span className="text-[#DF6B2F] font-semibold">Mon–Fri</span>{" "}
+            8am–5pm PT
+          </div>
+          <div className="h-4 border-l border-white"></div>
+          <div className=" flex items-center gap-x-1">
+            <Phone size={16} />
             <a href="tel:9165959200" className="underline" title="Call Us">
               916-595-9200
             </a>
-          </span>
+          </div>
         </div>
+
+        {/* Center - Call / Text */}
+        {/* <div className="text-center md:text-left space-x-4"></div> */}
 
         {/* Right - Email + Social */}
         <div className="flex items-center space-x-4">

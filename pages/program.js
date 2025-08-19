@@ -52,7 +52,7 @@ const Program = () => {
                     {
                       icon: <Handshake className="h-6 w-6 text-[#FFC107]" />,
                       title: "Integrity and Respect",
-                      desc: "We foster a culture of honesty, respect, and professionalism, both in the classroom and on the road.",
+                      desc: "We foster a culture of honesty, respect, and professionalism on the road.",
                     },
                     {
                       icon: <Star className="h-6 w-6 text-[#FFEB3B]" />,
@@ -101,8 +101,8 @@ const Program = () => {
                   the trucking industry.
                 </p>
                 <h4 className="partner-title mt-25 mb-15">
-                  We’ve Helped Over <span className="text-white">1,000+</span>{" "}
-                  Students Get CDL Certified
+                  We’ve Helped Over <span className="text-white">1,00+</span>{" "}
+                  Students Get CDL Certified in last 6 months
                 </h4>
                 <div className="partner-iamges-wrap">
                   <img
